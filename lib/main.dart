@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:salam_hack/features/auth/presentation/screens/login.dart';
-import 'package:salam_hack/features/auth/presentation/screens/signup.dart';
+import 'package:salam_hack/features/auth/screens/login.dart';
+import 'package:salam_hack/features/auth/screens/signup.dart';
 import 'package:salam_hack/features/home/home_page.dart';
 
 void main() {
