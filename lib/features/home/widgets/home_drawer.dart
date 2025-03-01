@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:salam_hack/features/shelters/shelters_page.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({super.key});
@@ -16,6 +17,14 @@ class HomeDrawer extends StatelessWidget {
               icon: Icons.home_rounded,
               title: 'Home',
               onTap: (){}
+            ),
+
+             _buildDrawerItem(
+              icon: Icons.night_shelter,
+              title: 'Shelters',
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (_)=> SheltersPage()));
+              }
             ),
           ],
         ),
