@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salam_hack/core/themes/colors.dart';
 
 
 class Login extends StatelessWidget {
@@ -7,7 +8,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffEEEEEE),
+      backgroundColor: AppColors.background,
      // const Color.fromARGB(255, 250, 243, 243),
       body: Container(
         child: Padding(
@@ -44,11 +45,11 @@ class Login extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Container(
+                SizedBox(
                   height: 50,
                   width: 320,
                   child: FloatingActionButton(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: AppColors.primaryBlue,
                     onPressed: () {
                       //Get.to(Homepage());
                     },
@@ -70,7 +71,7 @@ class Login extends StatelessWidget {
                       },
                       child: const Text(
                         'Sign up',
-                        style: TextStyle(color: Colors.blue),
+                        style: TextStyle(color: AppColors.darkBlue,),
                       ))
                 ])
               ],

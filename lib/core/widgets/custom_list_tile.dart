@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salam_hack/core/themes/colors.dart';
 
 class CustomListTile extends StatelessWidget {
   
@@ -23,7 +24,7 @@ class CustomListTile extends StatelessWidget {
       height: 220,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.blueAccent,
+        color: AppColors.lightBlue,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Padding(

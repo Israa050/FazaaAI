@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salam_hack/core/themes/colors.dart';
 import 'package:salam_hack/features/auth/screens/login.dart';
 import 'package:salam_hack/features/auth/screens/signup.dart';
 import 'package:salam_hack/features/home/home_page.dart';
@@ -19,8 +20,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Salam Hack',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primaryColor: AppColors.primaryBlue,
+        //colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        //useMaterial3: true,
       ),
       home: HomePage(),
     );

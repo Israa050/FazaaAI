@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:salam_hack/core/themes/colors.dart';
 import 'package:salam_hack/features/shelters/shelters_page.dart';
 
 class HomeDrawer extends StatelessWidget {
@@ -34,7 +35,7 @@ class HomeDrawer extends StatelessWidget {
   Widget _buildDrawerHeader(){
     return DrawerHeader(
       decoration: BoxDecoration(
-        color: Color(0xff1192FB),
+        color: AppColors.darkBlue,
       ),
       child: Column(
       children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salam_hack/core/themes/colors.dart';
 
 // ignore: must_be_immutable
 class SignUp extends StatelessWidget {
@@ -70,12 +71,12 @@ class SignUp extends StatelessWidget {
               const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       'user Role',
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 8.0,
                     ),
                     checckbox(),
@@ -85,7 +86,7 @@ class SignUp extends StatelessWidget {
                 height: 50,
                 width: 320,
                 child: FloatingActionButton(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: AppColors.primaryBlue,
                   onPressed: () {
                    // Get.to(Homepage());
                   },
@@ -106,7 +107,7 @@ class SignUp extends StatelessWidget {
                     },
                     child: const Text(
                       'Log in',
-                      style: TextStyle(color: Colors.blue),
+                      style: TextStyle(color: AppColors.darkBlue),
                     ),
                   )
                 ],
