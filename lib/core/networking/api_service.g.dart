@@ -10,7 +10,7 @@ part of 'api_service.dart';
 
 class _ApiService implements ApiService {
   _ApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://89cf-197-55-224-19.ngrok-free.app/api/';
+    baseUrl ??= 'https://62a8-197-55-224-19.ngrok-free.app/api/';
   }
 
   final Dio _dio;
@@ -69,12 +69,12 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<void> getUserByID(String userId) async {
+  Future<User?> getUserByID(String userId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<void>(
+    final _options = _setStreamType<User>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -84,7 +84,15 @@ class _ApiService implements ApiService {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    await _dio.fetch<void>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>?>(_options);
+    late User? _value;
+    try {
+      _value = _result.data == null ? null : User.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   @override

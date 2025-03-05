@@ -23,13 +23,21 @@ abstract class ApiService {
   Future<List<User>> getAllUsers();
 
   @GET('${ApiConstants.users}/{id}')
-  Future<void> getUserByID(@Path('id') String userId);
+  Future<User?> getUserByID(@Path('id') String userId);
 
   @PUT('${ApiConstants.users}/{id}')
   Future<void> updateUserById(@Path('id') String id ,@Body() User user);
 
   @DELETE('${ApiConstants.users}/{id}')
   Future<void> deleteUserById(@Path('id') String id);
+
+
+  @GET(ApiConstants.posts)
+  Future<void> getAllPosts();
+
+
+  @GET(ApiConstants.shelters)
+  Future<void> getAllShelters();
 
 
 }
