@@ -1,11 +1,19 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:salam_hack/core/networking/api_service.dart';
+import 'package:salam_hack/core/networking/dio_factory.dart';
 import 'package:salam_hack/core/themes/colors.dart';
-import 'package:salam_hack/features/auth/screens/login.dart';
-import 'package:salam_hack/features/auth/screens/signup.dart';
 import 'package:salam_hack/features/home/home_page.dart';
-import 'package:salam_hack/features/shelters/shelters_page.dart';
 
-void main() {
+void main() async{
+
+  Dio dio = DioFactory.getDio();
+  ApiService apiService = ApiService(dio);
+
+  final users = await apiService.getAllUsers();
+
+  print('Users List ${users.length}');
+  
   runApp(const MyApp());
 }
 
