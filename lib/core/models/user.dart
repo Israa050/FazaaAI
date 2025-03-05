@@ -1,6 +1,12 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 
 
-class User{
+import 'package:json_annotation/json_annotation.dart';
+
+part 'user.g.dart';
+
+@JsonSerializable()
+class User {
 
    int? userId;
    String? username;
@@ -10,6 +16,20 @@ class User{
    String? address;
    String? nickname;
 
+  User({
+    this.userId,
+    this.username,
+    this.passwordHash,
+    this.email,
+    this.phoneNumber,
+    this.address,
+    this.nickname,
+  });
+
+  factory User.fromJson(Map<String, dynamic> json) =>
+      _$UserFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserToJson(this);
 
 
 }
