@@ -19,4 +19,39 @@ abstract class TextStyles {
     color: Colors.white,
     fontWeight: FontWeight.w700,
   );
+
+  
+static TextStyle font20RedBold = TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.w700,
+  color: Color(
+    0xffDC2626,
+  ),
+);
+
+static TextStyle font18BlackSemiBold = TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.w600,
+  color: Colors.black,
+);
+
+static TextStyle font16BlackSemiBold = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w600,
+  color: Colors.black,
+);
+
+static TextStyle font14GreyRegular = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  color: Color(0xFF4B5563),
+);
+
+static TextStyle font12GreyRegular = TextStyle(
+  fontSize: 12,
+  fontWeight: FontWeight.w400,
+  color: Color(0xFF4B5563),
+);
+
 }
+
