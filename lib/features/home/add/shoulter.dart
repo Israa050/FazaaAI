@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:salam/views/homepage.dart';
 
 class Shoulter extends StatefulWidget {
   const Shoulter({super.key});
@@ -178,11 +177,11 @@ class _ShoulterState extends State<Shoulter> {
                     color: Colors.blue,
                     textColor: Colors.white,
                     onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (ctx) => Homepage(),
-                        ),
-                      );
+                      // Navigator.of(context).pushReplacement(
+                      //   MaterialPageRoute(
+                      //     builder: (ctx) => Homepage(),
+                      //   ),
+                      // );
                     },
                     child: const Text(
                       'Post',

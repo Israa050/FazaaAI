@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:salam_hack/core/router/app_router.dart';
 import 'package:salam_hack/core/router/routes.dart';
 import 'package:salam_hack/core/themes/colors.dart';
+import 'package:salam_hack/features/home/add/add_Resource.dart';
+import 'package:salam_hack/features/home/add/shoulter.dart';
 
 void main() {
   runApp(
@@ -23,9 +25,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.primaryBlue,
       ),
-      onGenerateRoute: appRouter.generateRoute,
-      initialRoute: Routes.loginScreen,
-      // home: SignupPage(),
+     // onGenerateRoute: appRouter.generateRoute,
+      //initialRoute: Routes.loginScreen,
+       home: Shoulter(),
     );
   }
 }
