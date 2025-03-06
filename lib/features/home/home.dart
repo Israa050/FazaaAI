@@ -45,7 +45,13 @@ class CrisisPage extends StatelessWidget {
         ),
         drawer: HomeDrawer(),
         backgroundColor: Colors.white,
-        body: HomeBlocBuilder(),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 10,
+            vertical: 10,
+          ),
+          child: HomeBlocBuilder(),
+        ),
 
         // Padding(
         //   padding: const EdgeInsets.symmetric(
