@@ -6,6 +6,8 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
+import 'package:salam_hack/core/models/post.dart';
+import 'package:salam_hack/core/models/shelter.dart';
 import 'package:salam_hack/core/models/user.dart';
 import 'package:salam_hack/core/networking/api_constants.dart';
 
@@ -35,11 +37,11 @@ abstract class ApiService {
 
 
   @GET(ApiConstants.posts)
-  Future<void> getAllPosts();
+  Future<List<Post>> getAllPosts();
 
 
   @GET(ApiConstants.shelters)
-  Future<void> getAllShelters();
+  Future<List<Shelter>> getAllShelters();
 
 
 }
