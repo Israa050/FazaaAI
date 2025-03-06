@@ -1,6 +1,8 @@
 
 
 
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
@@ -17,7 +19,7 @@ abstract class ApiService {
 
 
   @POST(ApiConstants.users)
-  Future<void> createNewUser(@Body() User user);
+  Future<String> createNewUser(@Body() User user);
 
   @GET(ApiConstants.users)
   Future<List<User>> getAllUsers();
