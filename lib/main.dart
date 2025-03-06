@@ -3,6 +3,7 @@ import 'package:salam_hack/core/di/dependency_injection.dart';
 import 'package:salam_hack/core/router/app_router.dart';
 import 'package:salam_hack/core/router/routes.dart';
 import 'package:salam_hack/core/themes/colors.dart';
+import 'package:salam_hack/features/home/home.dart';
 
 void main()async {
   await setupGetIt();
@@ -25,8 +26,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.primaryBlue,
       ),
-      onGenerateRoute: appRouter.generateRoute,
-      initialRoute: Routes.loginScreen,
+     // onGenerateRoute: appRouter.generateRoute,
+      //initialRoute: Routes.loginScreen,
+      home: CrisisPage(),
     );
   }
 }

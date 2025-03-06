@@ -37,23 +37,25 @@ class HomeDrawer extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.darkBlue,
       ),
-      child: Column(
-      children: [
-        CircleAvatar(
-          backgroundColor: Colors.white38,
-          radius: 40,
-          child: Icon(Icons.person,size: 50,),
-        ),
+      child: null,
+      //child:
+      //  Column(
+      // children: [
+      //   CircleAvatar(
+      //     backgroundColor: Colors.white38,
+      //     radius: 40,
+      //     child: Icon(Icons.person,size: 50,),
+      //   ),
 
-        SizedBox(height: 20,),
-        Text(
-          'UserName',
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-      ],
-      ),
+      //   SizedBox(height: 20,),
+      //   Text(
+      //     'UserName',
+      //     style: TextStyle(
+      //       color: Colors.white,
+      //     ),
+      //   ),
+      // ],
+      // ),
     );
   }
 
