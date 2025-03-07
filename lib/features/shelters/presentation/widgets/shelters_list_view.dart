@@ -21,6 +21,7 @@ class SheltersListView extends StatelessWidget {
             title: shelters[index].name,
             description: shelters[index].location,
             username: shelters[index].capacity.toString(),
+            height: 150,
           ),
         );
       },
