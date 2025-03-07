@@ -13,11 +13,14 @@ class PostsList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: posts.length,
       itemBuilder: (context,index){
-        return CustomCardInfo(
-          priority: posts[index].status,
-          title: posts[index].title,
-          description: posts[index].description,
-          username: posts[index].user?.username,
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: CustomCardInfo(
+            priority: posts[index].urgency,
+            title: posts[index].title,
+            description: posts[index].description,
+            username: posts[index].user?.username,
+          ),
         );
       },
     );

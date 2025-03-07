@@ -2,20 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:salam_hack/core/helper/spacing.dart';
 import 'package:salam_hack/core/themes/colors.dart';
 import 'package:salam_hack/core/themes/styles.dart';
-import 'package:salam_hack/features/home/widgets/home_bloc_builder.dart';
-import 'package:salam_hack/features/home/widgets/home_drawer.dart';
+import 'package:salam_hack/features/home/presentation/widgets/home_bloc_builder.dart';
+import 'package:salam_hack/features/home/presentation/widgets/home_drawer.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
-
-class CrisisPage extends StatelessWidget {
-  const CrisisPage({super.key});
 
   @override
   Widget build(BuildContext context) {

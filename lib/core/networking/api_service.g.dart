@@ -10,7 +10,7 @@ part of 'api_service.dart';
 
 class _ApiService implements ApiService {
   _ApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://49c1-154-143-210-119.ngrok-free.app/api/';
+    baseUrl ??= 'https://a17f-45-109-243-82.ngrok-free.app/api/';
   }
 
   final Dio _dio;

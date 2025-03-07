@@ -5,7 +5,9 @@ import 'package:salam_hack/core/router/routes.dart';
 import 'package:salam_hack/features/auth/logic/cubit/auth_cubit.dart';
 import 'package:salam_hack/features/auth/screens/login_page.dart';
 import 'package:salam_hack/features/auth/screens/signup_page.dart';
-import 'package:salam_hack/features/home/home_page.dart';
+import 'package:salam_hack/features/home/logic/cubit/home_cubit.dart';
+import 'package:salam_hack/features/home/presentation/home.dart';
+import 'package:salam_hack/features/home/presentation/home_page.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -15,7 +17,10 @@ class AppRouter {
     switch (settings.name) {
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => const HomePage(),
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<HomeCubit>(),
+            child: const HomeScreen(),
+          ),
         );
       case Routes.loginScreen:
         return MaterialPageRoute(
