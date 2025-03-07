@@ -1,14 +1,24 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:salam_hack/core/widgets/loading.dart';
 import 'package:salam_hack/features/shelters/logic/cubit/shelter_cubit.dart';
 import 'package:salam_hack/features/shelters/logic/cubit/shelter_state.dart';
 import 'package:salam_hack/features/shelters/presentation/widgets/shelters_list_view.dart';
 
-class ShetersBlocBuilder extends StatelessWidget {
+class ShetersBlocBuilder extends StatefulWidget {
   const ShetersBlocBuilder({super.key});
 
+  @override
+  State<ShetersBlocBuilder> createState() => _ShetersBlocBuilderState();
+}
+
+class _ShetersBlocBuilderState extends State<ShetersBlocBuilder> {
+
+  @override
+  void initState() {
+    context.read<ShelterCubit>().emitSheltersListLoaded();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ShelterCubit, ShelterState>(

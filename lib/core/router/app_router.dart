@@ -5,6 +5,8 @@ import 'package:salam_hack/core/router/routes.dart';
 import 'package:salam_hack/features/auth/logic/cubit/auth_cubit.dart';
 import 'package:salam_hack/features/auth/screens/login_page.dart';
 import 'package:salam_hack/features/auth/screens/signup_page.dart';
+import 'package:salam_hack/features/crisis/logic/cubit/crisis_cubit.dart';
+import 'package:salam_hack/features/crisis/presentation/crisis_page.dart';
 import 'package:salam_hack/features/home/logic/cubit/home_cubit.dart';
 import 'package:salam_hack/features/home/presentation/home_screen.dart';
 import 'package:salam_hack/features/home/presentation/home_page.dart';
@@ -42,6 +44,14 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create: (context) => getIt<ShelterCubit>(),
             child: SheltersPage(),
+          ),
+        );
+
+      case Routes.crisisScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<CrisisCubit>(),
+            child: CrisisPage(),
           ),
         );
 

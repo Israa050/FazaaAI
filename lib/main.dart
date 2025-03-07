@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:salam_hack/core/di/dependency_injection.dart';
 import 'package:salam_hack/core/router/app_router.dart';
+import 'package:salam_hack/core/router/routes.dart';
 import 'package:salam_hack/core/themes/colors.dart';
-import 'package:salam_hack/features/shelters/presentation/screens/shelters_page.dart';
 
 void main()async {
   await setupGetIt();
@@ -25,9 +25,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.primaryBlue,
       ),
-     // onGenerateRoute: appRouter.generateRoute,
-      //initialRoute: Routes.loginScreen,
-      home: SheltersPage(),
+      onGenerateRoute: appRouter.generateRoute,
+      initialRoute: Routes.loginScreen,
+      //home: CrisisPage(),
     );
   }
 }

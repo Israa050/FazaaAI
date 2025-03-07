@@ -5,6 +5,8 @@ import 'package:salam_hack/core/networking/api_service.dart';
 import 'package:salam_hack/core/networking/dio_factory.dart';
 import 'package:salam_hack/features/auth/data/repo/auth_repository.dart';
 import 'package:salam_hack/features/auth/logic/cubit/auth_cubit.dart';
+import 'package:salam_hack/features/crisis/data/repo/crisis_repo.dart';
+import 'package:salam_hack/features/crisis/logic/cubit/crisis_cubit.dart';
 import 'package:salam_hack/features/home/data/repo/home_repo.dart';
 import 'package:salam_hack/features/home/logic/cubit/home_cubit.dart';
 import 'package:salam_hack/features/shelters/data/repo/shelters_repo.dart';
@@ -26,6 +28,10 @@ Future<void> setupGetIt() async {
 
   getIt.registerLazySingleton<SheltersRepo>(()=> SheltersRepo(getIt()));
   getIt.registerFactory<ShelterCubit>(()=> ShelterCubit(sheltersRepo: getIt()));
+
+  
+  getIt.registerLazySingleton<CrisisRepo>(()=> CrisisRepo(getIt()));
+  getIt.registerFactory<CrisisCubit>(()=> CrisisCubit(crisisRepo: getIt()));
 
 
   
