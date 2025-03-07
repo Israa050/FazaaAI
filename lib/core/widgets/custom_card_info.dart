@@ -9,8 +9,10 @@ class CustomCardInfo extends StatefulWidget {
   String? title;
   String? description;
   String? username;
+  bool? isPost;
+  double? height;
 
-  CustomCardInfo({super.key,this.title,this.description,this.priority,this.username});
+  CustomCardInfo({super.key,this.title,this.description,this.priority,this.username,this.isPost,this.height});
 
   @override
   State<CustomCardInfo> createState() => _CustomCardInfoState();
@@ -50,7 +52,9 @@ String checkPriority(String prioroty){
 
 @override
   void initState() {
+    if(widget.isPost!){
     widget.priority = checkPriority(widget.priority?? 'Low');
+    }
     super.initState();
   }
 
@@ -58,7 +62,7 @@ String checkPriority(String prioroty){
   Widget build(BuildContext context) {
     return  Container(
               padding: EdgeInsets.all(10),
-              height: 190,
+              height: widget.height?? 190,
               width: double.infinity,
               decoration: BoxDecoration(
                   color: AppColors.moreLighterGray,
@@ -77,6 +81,7 @@ String checkPriority(String prioroty){
               alignment: Alignment.topRight,
               child: Text('2m ago',style: TextStyles.font12GreyRegular,),
             ),
+            widget.isPost!?
                   Container(
                     width: 100,
                     height: 25,
@@ -98,16 +103,19 @@ String checkPriority(String prioroty){
                         ),
                       ),
                     ),
-                  ),
+                  ): SizedBox.shrink(),
+
                   verticalPadding(5),
                   Text(
                     widget.title?? 'Flood in Downtown Area',
                     style: TextStyles.font16BlackSemiBold,
                   ),
+
                   Text(
                     widget.description?? 'Central District, Main Street',
                     style: TextStyles.font14GreyRegular,
                   ),
+
                   verticalPadding(28),
                   _buildRow(
                     widget.username,

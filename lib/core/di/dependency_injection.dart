@@ -7,6 +7,8 @@ import 'package:salam_hack/features/auth/data/repo/auth_repository.dart';
 import 'package:salam_hack/features/auth/logic/cubit/auth_cubit.dart';
 import 'package:salam_hack/features/home/data/repo/home_repo.dart';
 import 'package:salam_hack/features/home/logic/cubit/home_cubit.dart';
+import 'package:salam_hack/features/shelters/data/repo/shelters_repo.dart';
+import 'package:salam_hack/features/shelters/logic/cubit/shelter_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -21,6 +23,9 @@ Future<void> setupGetIt() async {
 
   getIt.registerLazySingleton<HomeRepo>(()=> HomeRepo(getIt()));
   getIt.registerFactory<HomeCubit>(()=> HomeCubit(homeRepo: getIt()));
+
+  getIt.registerLazySingleton<SheltersRepo>(()=> SheltersRepo(getIt()));
+  getIt.registerFactory<ShelterCubit>(()=> ShelterCubit(sheltersRepo: getIt()));
 
 
   
