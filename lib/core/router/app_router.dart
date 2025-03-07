@@ -6,7 +6,7 @@ import 'package:salam_hack/features/auth/logic/cubit/auth_cubit.dart';
 import 'package:salam_hack/features/auth/screens/login_page.dart';
 import 'package:salam_hack/features/auth/screens/signup_page.dart';
 import 'package:salam_hack/features/home/logic/cubit/home_cubit.dart';
-import 'package:salam_hack/features/home/presentation/home.dart';
+import 'package:salam_hack/features/home/presentation/home_screen.dart';
 import 'package:salam_hack/features/home/presentation/home_page.dart';
 
 class AppRouter {

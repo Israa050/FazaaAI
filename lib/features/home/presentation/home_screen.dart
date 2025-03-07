@@ -44,41 +44,6 @@ class HomeScreen extends StatelessWidget {
           ),
           child: HomeBlocBuilder(),
         ),
-
-        // Padding(
-        //   padding: const EdgeInsets.symmetric(
-        //     horizontal: 10,
-        //     vertical: 10,
-        //   ),
-        //   child: SingleChildScrollView(
-        //     child: Column(
-        //       mainAxisAlignment: MainAxisAlignment.start,
-        //       crossAxisAlignment: CrossAxisAlignment.start,
-        //       children: [
-        //         Text(
-        //           'Active Crisis',
-        //           style:TextStyles.font18BlackSemiBold,
-        //         ),
-        //         verticalPadding(
-        //           10,
-        //         ),
-
-        //         CustomCardInfo(
-        //           priority: 'high',
-        //         ),
-        //         verticalPadding(15),
-        //         CustomCardInfo(
-        //           priority: 'Meduim',
-        //         ),
-        //         verticalPadding(15),
-        //         CustomCardInfo(),
-        //         verticalPadding(15),
-        //         CustomCardInfo(),
-
-        //       ],
-        //     ),
-        //   ),
-        // ),
         floatingActionButton: FloatingActionButton.extended(
           backgroundColor: Colors.red,
           onPressed: () {},

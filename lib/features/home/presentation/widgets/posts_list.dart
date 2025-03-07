@@ -25,6 +25,4 @@ class PostsList extends StatelessWidget {
       },
     );
   }
-
-  
 }

@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:salam_hack/core/themes/colors.dart';
-import 'package:salam_hack/features/shelters/shelters_page.dart';
+import 'package:salam_hack/features/shelters/presentation/screens/shelters_page.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({super.key});
