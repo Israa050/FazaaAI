@@ -15,7 +15,13 @@ class CrisisListView extends StatelessWidget {
       itemBuilder: (context,index){
         return Padding(
           padding: const EdgeInsets.all(8.0),
-          child: CrisisTile()
+          child: CrisisTile(
+            type: crisis[index].crisisType,
+            location: crisis[index].location,
+            index: index+1,
+            date: crisis[index].timeOfCrisis,
+            resolved: crisis[index].resolved!,
+          )
         );
       },
     );
