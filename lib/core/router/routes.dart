@@ -5,4 +5,6 @@ abstract class Routes {
   static const String homeScreen = '/home'; 
   static const String sheltersScreen = '/shelters'; 
   static const String crisisScreen = '/crisis'; 
+  static const String addShelterScreen = '/addShelter'; 
+  static const String addPostScreen = '/addPost'; 
 }

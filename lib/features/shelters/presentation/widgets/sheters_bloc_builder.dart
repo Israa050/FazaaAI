@@ -33,7 +33,7 @@ class _ShetersBlocBuilderState extends State<ShetersBlocBuilder> {
             return setupError(error);
           },
           orElse: () {
-            return SizedBox.shrink();
+            return setupError('Errror');
           },
         );
 

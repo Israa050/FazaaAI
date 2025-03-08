@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:salam_hack/core/helper/spacing.dart';
 import 'package:salam_hack/core/themes/colors.dart';
 import 'package:salam_hack/core/themes/styles.dart';
-import 'package:salam_hack/core/widgets/custom_card_info.dart';
-import 'package:salam_hack/core/widgets/custom_list_tile.dart';
+import 'package:salam_hack/features/shelters/presentation/widgets/sheters_bloc_builder.dart';
 
 class SheltersPage extends StatelessWidget {
   const SheltersPage({super.key});
@@ -25,20 +24,23 @@ class SheltersPage extends StatelessWidget {
           horizontal: 15,
           vertical: 18,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Avaliable \nShelters',
-              style: TextStyles.font18BlackSemiBold,
-            ),
-            verticalPadding(10),
-            // CustomCardInfo(
-            //   isPost: false,
-            //   height: 150,
-            // )
-          ],
-        ),
+        child: ShetersBlocBuilder()
+        
+        // Column(
+        //   crossAxisAlignment: CrossAxisAlignment.start,
+        //   children: [
+        //     Text(
+        //       'Avaliable \nShelters',
+        //       style: TextStyles.font18BlackSemiBold,
+        //     ),
+        //     verticalPadding(10),
+        //     ShetersBlocBuilder()
+        //     // CustomCardInfo(
+        //     //   isPost: false,
+        //     //   height: 150,
+        //     // )
+        //   ],
+        // ),
       ),
     );
   }

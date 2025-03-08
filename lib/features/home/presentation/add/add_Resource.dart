@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Addresource extends StatefulWidget {
-  const Addresource({super.key});
+class AddResourcePage extends StatefulWidget {
+  const AddResourcePage({super.key});
 
   @override
-  State<Addresource> createState() => _AddresourceState();
+  State<AddResourcePage> createState() => _AddResourcePageState();
 }
 
-class _AddresourceState extends State<Addresource> {
+class _AddResourcePageState extends State<AddResourcePage> {
   String? selectedType;
   String? selectedStatus;
   String? selectedUrgency;

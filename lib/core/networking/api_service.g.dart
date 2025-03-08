@@ -10,7 +10,7 @@ part of 'api_service.dart';
 
 class _ApiService implements ApiService {
   _ApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://a17f-45-109-243-82.ngrok-free.app/api/';
+    baseUrl ??= 'https://98ae-102-46-123-9.ngrok-free.app/api/';
   }
 
   final Dio _dio;
@@ -222,6 +222,90 @@ class _ApiService implements ApiService {
       _value = _result.data!
           .map((dynamic i) => Crisis.fromJson(i as Map<String, dynamic>))
           .toList();
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<String> createNewPost(Post post) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(post.toJson());
+    final _options = _setStreamType<String>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'posts',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<String>(_options);
+    late String _value;
+    try {
+      _value = _result.data!;
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<String> createNewShelter(Shelter shelter) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(shelter.toJson());
+    final _options = _setStreamType<String>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'shelters',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<String>(_options);
+    late String _value;
+    try {
+      _value = _result.data!;
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<String> login(LoginRequestBody loginRequestBody) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(loginRequestBody.toJson());
+    final _options = _setStreamType<String>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'auth/login',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<String>(_options);
+    late String _value;
+    try {
+      _value = _result.data!;
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salam_hack/core/helper/spacing.dart';
+import 'package:salam_hack/core/router/routes.dart';
 import 'package:salam_hack/core/themes/colors.dart';
 import 'package:salam_hack/core/themes/styles.dart';
 import 'package:salam_hack/features/home/presentation/widgets/home_bloc_builder.dart';
@@ -23,7 +24,9 @@ class HomeScreen extends StatelessWidget {
           // iconTheme: IconThemeData(color: Color(0xff4B5563)),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Routes.crisisScreen);
+              },
               icon: Icon(
                 Icons.notifications_none,
               ),

@@ -1,6 +1,8 @@
 
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:salam_hack/core/helper/constants.dart';
+import 'package:salam_hack/core/helper/shared_pref_helper.dart';
 
 
 class DioFactory {
@@ -31,8 +33,8 @@ class DioFactory {
     dio?.options.headers = {
       'Accept': 'application/json',
       "Content-Type" : "application/json",
-      // 'Authorization':
-      //     'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
+      'Authorization':
+          'Bearer //{await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
     };
   }
 

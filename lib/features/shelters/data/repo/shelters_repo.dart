@@ -19,4 +19,15 @@ class SheltersRepo {
       return ApiResult.failure(ApiErrorHandler.handle(errro));
     }
   }
+
+   Future<ApiResult<String>> addNewShelter(Shelter shelter) async {
+    try {
+      final response = await _apiService.createNewShelter(shelter);
+      return ApiResult.success(response);
+    } catch (errro) {
+      return ApiResult.failure(ApiErrorHandler.handle(errro));
+    }
+  }
+
+
 }

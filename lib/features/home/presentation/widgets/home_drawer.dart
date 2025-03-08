@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:salam_hack/core/router/routes.dart';
 import 'package:salam_hack/core/themes/colors.dart';
-import 'package:salam_hack/features/shelters/presentation/screens/shelters_page.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({super.key});
@@ -24,7 +24,7 @@ class HomeDrawer extends StatelessWidget {
               icon: Icons.night_shelter,
               title: 'Shelters',
               onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (_)=> SheltersPage()));
+                Navigator.of(context).pushNamed(Routes.sheltersScreen);
               }
             ),
           ],

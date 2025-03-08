@@ -1,13 +1,14 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:salam_hack/core/router/routes.dart';
 import 'package:salam_hack/core/themes/styles.dart';
+import 'package:salam_hack/features/auth/logic/cubit/auth_cubit.dart';
 import 'package:salam_hack/features/auth/widgets/custom_text_button.dart';
 import 'package:salam_hack/features/auth/widgets/custom_text_form_field.dart';
 
 class LoginPage extends StatefulWidget {
-
-   const LoginPage({super.key});
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -15,7 +16,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool isObscureText = true;
-    final _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -76,11 +77,13 @@ class _LoginPageState extends State<LoginPage> {
                                 isObscureText = !isObscureText;
                               });
                             },
-                            icon: isObscureText? Icon(
-                              Icons.visibility_off,
-                            ):
-                            Icon(Icons.visibility,)
-                            ,
+                            icon: isObscureText
+                                ? Icon(
+                                    Icons.visibility_off,
+                                  )
+                                : Icon(
+                                    Icons.visibility,
+                                  ),
                           ),
                         ),
                       ),
@@ -90,44 +93,44 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 50,
                 ),
-      
                 AppTextButton(
-                                  onPressed: () {
-                //authCubit.login();
-                Navigator.of(context).pushReplacementNamed(Routes.homeScreen);
-                                  },
-                                  buttonText: 'Login',
-                                  buttonHeight: 70,
-                                  textStyle: TextStyles.font18WhiteBold,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: 'Don\'t have an account? ',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                      ),
-                    ),
-                    TextSpan(
-                        text: 'Signup',
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 18,
-                        ),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            //print('Login Text Clicked');
-                            Navigator.of(context).pushNamed(Routes.signupScreen);
-                          }),
-                  ],
+                  onPressed: () {
+                    context.read<AuthCubit>().emitLoginState();
+                    // Navigator.of(context)
+                    //     .pushReplacementNamed(Routes.homeScreen);
+                  },
+                  buttonText: 'Login',
+                  buttonHeight: 70,
+                  textStyle: TextStyles.font18WhiteBold,
                 ),
-                                  ),
-                                ),
-                
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Don\'t have an account? ',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                          ),
+                        ),
+                        TextSpan(
+                            text: 'Signup',
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: 18,
+                            ),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                //print('Login Text Clicked');
+                                Navigator.of(context)
+                                    .pushNamed(Routes.signupScreen);
+                              }),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

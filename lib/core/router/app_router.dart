@@ -8,9 +8,11 @@ import 'package:salam_hack/features/auth/screens/signup_page.dart';
 import 'package:salam_hack/features/crisis/logic/cubit/crisis_cubit.dart';
 import 'package:salam_hack/features/crisis/presentation/crisis_page.dart';
 import 'package:salam_hack/features/home/logic/cubit/home_cubit.dart';
+import 'package:salam_hack/features/home/presentation/add/add_Resource.dart';
 import 'package:salam_hack/features/home/presentation/home_screen.dart';
 import 'package:salam_hack/features/home/presentation/home_page.dart';
 import 'package:salam_hack/features/shelters/logic/cubit/shelter_cubit.dart';
+import 'package:salam_hack/features/shelters/presentation/screens/add_shelter.dart';
 import 'package:salam_hack/features/shelters/presentation/screens/shelters_page.dart';
 
 class AppRouter {
@@ -28,7 +30,10 @@ class AppRouter {
         );
       case Routes.loginScreen:
         return MaterialPageRoute(
-          builder: (_) => LoginPage(),
+          builder: (_) => BlocProvider<AuthCubit>(
+            create: (context) => getIt<AuthCubit>(),
+            child: LoginPage(),
+          ),
         );
 
       case Routes.signupScreen:
@@ -41,7 +46,7 @@ class AppRouter {
 
       case Routes.sheltersScreen:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
+          builder: (_) => BlocProvider<ShelterCubit>(
             create: (context) => getIt<ShelterCubit>(),
             child: SheltersPage(),
           ),
@@ -49,11 +54,17 @@ class AppRouter {
 
       case Routes.crisisScreen:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
+          builder: (_) => BlocProvider<CrisisCubit>(
             create: (context) => getIt<CrisisCubit>(),
             child: CrisisPage(),
           ),
         );
+
+      case Routes.addPostScreen:
+        return MaterialPageRoute(builder: (_) => AddResourcePage());
+
+      case Routes.addShelterScreen:
+        return MaterialPageRoute(builder: (_) => AddShelterScreen());
 
       default:
         return null;
