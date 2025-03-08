@@ -31,9 +31,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.primaryBlue,
       ),
-      onGenerateRoute: appRouter.generateRoute,
-      initialRoute: isLoggedInUser? Routes.homeScreen : Routes.loginScreen,
-     // home: AddResourcePage(),
+     // onGenerateRoute: appRouter.generateRoute,
+      //initialRoute: isLoggedInUser? Routes.homeScreen : Routes.loginScreen,
+      home: AddResourcePage(),
     );
   }
 }
