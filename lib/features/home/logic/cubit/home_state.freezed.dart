@@ -22,6 +22,7 @@ mixin _$HomeState<T> {
     required TResult Function() loading,
     required TResult Function(T data) posts,
     required TResult Function(String error) error,
+    required TResult Function(T posts) addNewPost,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$HomeState<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? posts,
     TResult? Function(String error)? error,
+    TResult? Function(T posts)? addNewPost,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$HomeState<T> {
     TResult Function()? loading,
     TResult Function(T data)? posts,
     TResult Function(String error)? error,
+    TResult Function(T posts)? addNewPost,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$HomeState<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Posts<T> value) posts,
     required TResult Function(Error<T> value) error,
+    required TResult Function(addNewPost<T> value) addNewPost,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$HomeState<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Posts<T> value)? posts,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(addNewPost<T> value)? addNewPost,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$HomeState<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Posts<T> value)? posts,
     TResult Function(Error<T> value)? error,
+    TResult Function(addNewPost<T> value)? addNewPost,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,6 +140,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() loading,
     required TResult Function(T data) posts,
     required TResult Function(String error) error,
+    required TResult Function(T posts) addNewPost,
   }) {
     return initial();
   }
@@ -145,6 +152,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? posts,
     TResult? Function(String error)? error,
+    TResult? Function(T posts)? addNewPost,
   }) {
     return initial?.call();
   }
@@ -156,6 +164,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? loading,
     TResult Function(T data)? posts,
     TResult Function(String error)? error,
+    TResult Function(T posts)? addNewPost,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -171,6 +180,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Posts<T> value) posts,
     required TResult Function(Error<T> value) error,
+    required TResult Function(addNewPost<T> value) addNewPost,
   }) {
     return initial(this);
   }
@@ -182,6 +192,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Posts<T> value)? posts,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(addNewPost<T> value)? addNewPost,
   }) {
     return initial?.call(this);
   }
@@ -193,6 +204,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Posts<T> value)? posts,
     TResult Function(Error<T> value)? error,
+    TResult Function(addNewPost<T> value)? addNewPost,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -251,6 +263,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function() loading,
     required TResult Function(T data) posts,
     required TResult Function(String error) error,
+    required TResult Function(T posts) addNewPost,
   }) {
     return loading();
   }
@@ -262,6 +275,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? posts,
     TResult? Function(String error)? error,
+    TResult? Function(T posts)? addNewPost,
   }) {
     return loading?.call();
   }
@@ -273,6 +287,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function()? loading,
     TResult Function(T data)? posts,
     TResult Function(String error)? error,
+    TResult Function(T posts)? addNewPost,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -288,6 +303,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Posts<T> value) posts,
     required TResult Function(Error<T> value) error,
+    required TResult Function(addNewPost<T> value) addNewPost,
   }) {
     return loading(this);
   }
@@ -299,6 +315,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Posts<T> value)? posts,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(addNewPost<T> value)? addNewPost,
   }) {
     return loading?.call(this);
   }
@@ -310,6 +327,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Posts<T> value)? posts,
     TResult Function(Error<T> value)? error,
+    TResult Function(addNewPost<T> value)? addNewPost,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -396,6 +414,7 @@ class _$PostsImpl<T> implements Posts<T> {
     required TResult Function() loading,
     required TResult Function(T data) posts,
     required TResult Function(String error) error,
+    required TResult Function(T posts) addNewPost,
   }) {
     return posts(data);
   }
@@ -407,6 +426,7 @@ class _$PostsImpl<T> implements Posts<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? posts,
     TResult? Function(String error)? error,
+    TResult? Function(T posts)? addNewPost,
   }) {
     return posts?.call(data);
   }
@@ -418,6 +438,7 @@ class _$PostsImpl<T> implements Posts<T> {
     TResult Function()? loading,
     TResult Function(T data)? posts,
     TResult Function(String error)? error,
+    TResult Function(T posts)? addNewPost,
     required TResult orElse(),
   }) {
     if (posts != null) {
@@ -433,6 +454,7 @@ class _$PostsImpl<T> implements Posts<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Posts<T> value) posts,
     required TResult Function(Error<T> value) error,
+    required TResult Function(addNewPost<T> value) addNewPost,
   }) {
     return posts(this);
   }
@@ -444,6 +466,7 @@ class _$PostsImpl<T> implements Posts<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Posts<T> value)? posts,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(addNewPost<T> value)? addNewPost,
   }) {
     return posts?.call(this);
   }
@@ -455,6 +478,7 @@ class _$PostsImpl<T> implements Posts<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Posts<T> value)? posts,
     TResult Function(Error<T> value)? error,
+    TResult Function(addNewPost<T> value)? addNewPost,
     required TResult orElse(),
   }) {
     if (posts != null) {
@@ -548,6 +572,7 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function() loading,
     required TResult Function(T data) posts,
     required TResult Function(String error) error,
+    required TResult Function(T posts) addNewPost,
   }) {
     return error(this.error);
   }
@@ -559,6 +584,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? posts,
     TResult? Function(String error)? error,
+    TResult? Function(T posts)? addNewPost,
   }) {
     return error?.call(this.error);
   }
@@ -570,6 +596,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function()? loading,
     TResult Function(T data)? posts,
     TResult Function(String error)? error,
+    TResult Function(T posts)? addNewPost,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -585,6 +612,7 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Posts<T> value) posts,
     required TResult Function(Error<T> value) error,
+    required TResult Function(addNewPost<T> value) addNewPost,
   }) {
     return error(this);
   }
@@ -596,6 +624,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Posts<T> value)? posts,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(addNewPost<T> value)? addNewPost,
   }) {
     return error?.call(this);
   }
@@ -607,6 +636,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Posts<T> value)? posts,
     TResult Function(Error<T> value)? error,
+    TResult Function(addNewPost<T> value)? addNewPost,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -625,5 +655,164 @@ abstract class Error<T> implements HomeState<T> {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$addNewPostImplCopyWith<T, $Res> {
+  factory _$$addNewPostImplCopyWith(
+          _$addNewPostImpl<T> value, $Res Function(_$addNewPostImpl<T>) then) =
+      __$$addNewPostImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T posts});
+}
+
+/// @nodoc
+class __$$addNewPostImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$addNewPostImpl<T>>
+    implements _$$addNewPostImplCopyWith<T, $Res> {
+  __$$addNewPostImplCopyWithImpl(
+      _$addNewPostImpl<T> _value, $Res Function(_$addNewPostImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? posts = freezed,
+  }) {
+    return _then(_$addNewPostImpl<T>(
+      freezed == posts
+          ? _value.posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$addNewPostImpl<T> implements addNewPost<T> {
+  const _$addNewPostImpl(this.posts);
+
+  @override
+  final T posts;
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.addNewPost(posts: $posts)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$addNewPostImpl<T> &&
+            const DeepCollectionEquality().equals(other.posts, posts));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(posts));
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$addNewPostImplCopyWith<T, _$addNewPostImpl<T>> get copyWith =>
+      __$$addNewPostImplCopyWithImpl<T, _$addNewPostImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) posts,
+    required TResult Function(String error) error,
+    required TResult Function(T posts) addNewPost,
+  }) {
+    return addNewPost(this.posts);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? posts,
+    TResult? Function(String error)? error,
+    TResult? Function(T posts)? addNewPost,
+  }) {
+    return addNewPost?.call(this.posts);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? posts,
+    TResult Function(String error)? error,
+    TResult Function(T posts)? addNewPost,
+    required TResult orElse(),
+  }) {
+    if (addNewPost != null) {
+      return addNewPost(this.posts);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Posts<T> value) posts,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(addNewPost<T> value) addNewPost,
+  }) {
+    return addNewPost(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Posts<T> value)? posts,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(addNewPost<T> value)? addNewPost,
+  }) {
+    return addNewPost?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Posts<T> value)? posts,
+    TResult Function(Error<T> value)? error,
+    TResult Function(addNewPost<T> value)? addNewPost,
+    required TResult orElse(),
+  }) {
+    if (addNewPost != null) {
+      return addNewPost(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class addNewPost<T> implements HomeState<T> {
+  const factory addNewPost(final T posts) = _$addNewPostImpl<T>;
+
+  T get posts;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$addNewPostImplCopyWith<T, _$addNewPostImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

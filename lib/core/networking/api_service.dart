@@ -1,6 +1,5 @@
-
-
-
+import 'dart:convert';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:retrofit/error_logger.dart';
@@ -14,12 +13,9 @@ import 'package:salam_hack/features/auth/data/model/login_request_body.dart';
 
 part 'api_service.g.dart';
 
-
 @RestApi(baseUrl: ApiConstants.apiBaseUrl)
 abstract class ApiService {
-
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
-
 
   @POST(ApiConstants.users)
   Future<String> createNewUser(@Body() User user);
@@ -31,15 +27,13 @@ abstract class ApiService {
   Future<User?> getUserByID(@Path('id') String userId);
 
   @PUT('${ApiConstants.users}/{id}')
-  Future<void> updateUserById(@Path('id') String id ,@Body() User user);
+  Future<void> updateUserById(@Path('id') String id, @Body() User user);
 
   @DELETE('${ApiConstants.users}/{id}')
   Future<void> deleteUserById(@Path('id') String id);
 
-
   @GET(ApiConstants.posts)
   Future<List<Post>> getAllPosts();
-
 
   @GET(ApiConstants.shelters)
   Future<List<Shelter>> getAllShelters();
@@ -48,7 +42,27 @@ abstract class ApiService {
   Future<List<Crisis>> getAllCrisis();
 
   @POST(ApiConstants.posts)
-  Future<String> createNewPost(@Body() Post post);
+  @MultiPart()
+  @Header("Content-Type: multipart/form-data")
+  Future<String> createNewPost(
+    @Part() int userId,
+    @Part() String title,
+    @Part() String description,
+    @Part() String type,
+    @Part() String urgency,
+    @Part() String status,
+    @Part() String location,
+    @Part() String quantity,
+    @Part() String contactInfo,
+    @Part() File photoUrl,
+  );
+
+  @POST(ApiConstants.posts)
+  @MultiPart()
+  @Header("Content-Type: multipart/form-data")
+  Future<String> createNewPost2(
+   @Part() Post post,
+  );
 
   @POST(ApiConstants.shelters)
   Future<String> createNewShelter(@Body() Shelter shelter);
@@ -56,5 +70,6 @@ abstract class ApiService {
   @POST(ApiConstants.auth)
   Future<String> login(@Body() LoginRequestBody loginRequestBody);
 
-
+  @GET(ApiConstants.me)
+  Future<User> getCurrentUser();
 }

@@ -14,7 +14,8 @@ class CrisisPage extends StatelessWidget {
           'Crisis Alerts',
           style: TextStyles.font20RedBold.copyWith(color: Colors.white),
         ),
-        backgroundColor: AppColors.lightBlue,
+        backgroundColor: AppColors.primaryBlue,
+        iconTheme: IconThemeData(color: Colors.white,),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(

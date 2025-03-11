@@ -49,7 +49,9 @@ class HomeScreen extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton.extended(
           backgroundColor: Colors.red,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushNamed(Routes.addPostScreen);
+          },
           label: Text(
             'Report Emergency',
             style: TextStyles.font16BlackSemiBold.copyWith(

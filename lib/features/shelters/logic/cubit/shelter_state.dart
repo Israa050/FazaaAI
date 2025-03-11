@@ -9,4 +9,5 @@ class ShelterState<T> with _$ShelterState<T> {
   const factory ShelterState.loading() = Loading;
   const factory ShelterState.loaded(T data) = SheltersSuccess<T>;
   const factory ShelterState.error({required String error}) = SheltersError;
+  const factory ShelterState.addNewShelter(T data) = AddNewShelter<T>;
 }

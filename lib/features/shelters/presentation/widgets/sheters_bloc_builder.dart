@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:salam_hack/core/widgets/loading.dart';
 import 'package:salam_hack/features/shelters/logic/cubit/shelter_cubit.dart';
 import 'package:salam_hack/features/shelters/logic/cubit/shelter_state.dart';
 import 'package:salam_hack/features/shelters/presentation/widgets/shelters_list_view.dart';
@@ -33,7 +34,7 @@ class _ShetersBlocBuilderState extends State<ShetersBlocBuilder> {
             return setupError(error);
           },
           orElse: () {
-            return setupError('Errror');
+            return LoadingPage();
           },
         );
 

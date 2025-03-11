@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:salam_hack/core/widgets/loading.dart';
 import 'package:salam_hack/features/crisis/logic/cubit/crisis_cubit.dart';
 import 'package:salam_hack/features/crisis/logic/cubit/crisis_state.dart';
 import 'package:salam_hack/features/crisis/presentation/widgets/crisis_list_view.dart';
@@ -33,7 +34,7 @@ class _CrisisBlocBuilderState extends State<CrisisBlocBuilder> {
             return setupError(error);
           },
           orElse: () {
-            return SizedBox.shrink();
+            return LoadingPage();
           }
         );
       }

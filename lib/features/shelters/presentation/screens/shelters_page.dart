@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salam_hack/core/helper/spacing.dart';
+import 'package:salam_hack/core/router/routes.dart';
 import 'package:salam_hack/core/themes/colors.dart';
 import 'package:salam_hack/core/themes/styles.dart';
 import 'package:salam_hack/features/shelters/presentation/widgets/sheters_bloc_builder.dart';
@@ -20,27 +21,34 @@ class SheltersPage extends StatelessWidget {
       ),
       backgroundColor: AppColors.background,
       body: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 15,
-          vertical: 18,
-        ),
-        child: ShetersBlocBuilder()
-        
-        // Column(
-        //   crossAxisAlignment: CrossAxisAlignment.start,
-        //   children: [
-        //     Text(
-        //       'Avaliable \nShelters',
-        //       style: TextStyles.font18BlackSemiBold,
-        //     ),
-        //     verticalPadding(10),
-        //     ShetersBlocBuilder()
-        //     // CustomCardInfo(
-        //     //   isPost: false,
-        //     //   height: 150,
-        //     // )
-        //   ],
-        // ),
+          padding: EdgeInsets.symmetric(
+            horizontal: 15,
+            vertical: 18,
+          ),
+          child: ShetersBlocBuilder()
+
+          // Column(
+          //   crossAxisAlignment: CrossAxisAlignment.start,
+          //   children: [
+          //     Text(
+          //       'Avaliable \nShelters',
+          //       style: TextStyles.font18BlackSemiBold,
+          //     ),
+          //     verticalPadding(10),
+          //     ShetersBlocBuilder()
+          //     // CustomCardInfo(
+          //     //   isPost: false,
+          //     //   height: 150,
+          //     // )
+          //   ],
+          // ),
+          ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppColors.primaryBlue,
+        onPressed: () {
+          Navigator.of(context).pushNamed(Routes.addShelterScreen);
+        },
+        child: Icon(Icons.add_home_outlined),
       ),
     );
   }
