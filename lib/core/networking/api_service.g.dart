@@ -10,7 +10,7 @@ part of 'api_service.dart';
 
 class _ApiService implements ApiService {
   _ApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://98ae-102-46-123-9.ngrok-free.app/api/';
+    baseUrl ??= 'https://1f7c-102-46-123-9.ngrok-free.app/api/';
   }
 
   final Dio _dio;
@@ -230,14 +230,80 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<String> createNewPost(Post post) async {
+  Future<String> createNewPost(
+    int userId,
+    String title,
+    String description,
+    String type,
+    String urgency,
+    String status,
+    String location,
+    String quantity,
+    String contactInfo,
+    File photoUrl,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(post.toJson());
+    final _data = FormData();
+    _data.fields.add(MapEntry('userId', userId.toString()));
+    _data.fields.add(MapEntry('title', title));
+    _data.fields.add(MapEntry('description', description));
+    _data.fields.add(MapEntry('type', type));
+    _data.fields.add(MapEntry('urgency', urgency));
+    _data.fields.add(MapEntry('status', status));
+    _data.fields.add(MapEntry('location', location));
+    _data.fields.add(MapEntry('quantity', quantity));
+    _data.fields.add(MapEntry('contactInfo', contactInfo));
+    _data.files.add(
+      MapEntry(
+        'photoUrl',
+        MultipartFile.fromFileSync(
+          photoUrl.path,
+          filename: photoUrl.path.split(Platform.pathSeparator).last,
+        ),
+      ),
+    );
     final _options = _setStreamType<String>(
-      Options(method: 'POST', headers: _headers, extra: _extra)
+      Options(
+        method: 'POST',
+        headers: _headers,
+        extra: _extra,
+        contentType: 'multipart/form-data',
+      )
+          .compose(
+            _dio.options,
+            'posts',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<String>(_options);
+    late String _value;
+    try {
+      _value = _result.data!;
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<String> createNewPost2(Post post) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = FormData();
+    _data.fields.add(MapEntry('post', jsonEncode(post)));
+    final _options = _setStreamType<String>(
+      Options(
+        method: 'POST',
+        headers: _headers,
+        extra: _extra,
+        contentType: 'multipart/form-data',
+      )
           .compose(
             _dio.options,
             'posts',
@@ -306,6 +372,33 @@ class _ApiService implements ApiService {
     late String _value;
     try {
       _value = _result.data!;
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<User> getCurrentUser() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<User>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'auth/me',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late User _value;
+    try {
+      _value = User.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

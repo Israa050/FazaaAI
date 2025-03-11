@@ -8,10 +8,18 @@ import 'package:salam_hack/features/auth/logic/cubit/auth_state.dart';
 import 'package:salam_hack/features/auth/widgets/custom_text_button.dart';
 import 'package:salam_hack/features/auth/widgets/custom_text_form_field.dart';
 
-class SignupPage extends StatelessWidget {
-  final _formKey = GlobalKey<FormState>();
+class SignupPage extends StatefulWidget {
 
   SignupPage({super.key});
+
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
+  final _formKey = GlobalKey<FormState>();
+
+  bool isObscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -120,6 +128,7 @@ class SignupPage extends StatelessWidget {
                         ),
                         AppTextFormField(
                           hintText: 'password',
+                          isObscureText:isObscureText ,
                           validator: (value) {
                             if (isFormFieldEmpty(value)) {
                               return 'This field is required';
@@ -127,10 +136,18 @@ class SignupPage extends StatelessWidget {
                             return null;
                           },
                           suffixIcon: IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.visibility_off,
-                            ),
+                            onPressed: () {
+                               setState(() {
+                                isObscureText = !isObscureText;
+                              });
+                            },
+                            icon: isObscureText
+                                ? Icon(
+                                    Icons.visibility_off,
+                                  )
+                                : Icon(
+                                    Icons.visibility,
+                                  ),
                           ),
                           controller:
                               context.read<AuthCubit>().passwordController,

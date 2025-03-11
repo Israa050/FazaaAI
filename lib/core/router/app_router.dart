@@ -10,7 +10,6 @@ import 'package:salam_hack/features/crisis/presentation/crisis_page.dart';
 import 'package:salam_hack/features/home/logic/cubit/home_cubit.dart';
 import 'package:salam_hack/features/home/presentation/add/add_Resource.dart';
 import 'package:salam_hack/features/home/presentation/home_screen.dart';
-import 'package:salam_hack/features/home/presentation/home_page.dart';
 import 'package:salam_hack/features/shelters/logic/cubit/shelter_cubit.dart';
 import 'package:salam_hack/features/shelters/presentation/screens/add_shelter.dart';
 import 'package:salam_hack/features/shelters/presentation/screens/shelters_page.dart';
@@ -61,10 +60,18 @@ class AppRouter {
         );
 
       case Routes.addPostScreen:
-        return MaterialPageRoute(builder: (_) => AddResourcePage());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider<HomeCubit>(
+                  create: (context) => getIt<HomeCubit>(),
+                  child: AddResourcePage(),
+                ));
 
       case Routes.addShelterScreen:
-        return MaterialPageRoute(builder: (_) => AddShelterScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider<ShelterCubit>(
+                  create: (context) => getIt<ShelterCubit>(),
+                  child: AddShelterScreen(),
+                ));
 
       default:
         return null;

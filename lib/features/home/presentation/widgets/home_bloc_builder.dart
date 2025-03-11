@@ -18,6 +18,7 @@ class _HomeBlocBuilderState extends State<HomeBlocBuilder> {
 
   @override
   void initState() {
+    context.read<HomeCubit>().getCurrentUser();
     context.read<HomeCubit>().emitPostsListLoadedState();
     super.initState();
   }
@@ -26,6 +27,7 @@ class _HomeBlocBuilderState extends State<HomeBlocBuilder> {
     return BlocBuilder<HomeCubit, HomeState>(builder: (context,state){
 
       if(state is Posts){
+        //var postsList = context.read<HomeCubit>().myPosts;
         return PostsList(posts: state.data);
       }else if (state is Error){
         return setupError(state.error);

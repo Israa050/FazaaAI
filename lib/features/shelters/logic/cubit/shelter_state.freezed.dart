@@ -22,6 +22,7 @@ mixin _$ShelterState<T> {
     required TResult Function() loading,
     required TResult Function(T data) loaded,
     required TResult Function(String error) error,
+    required TResult Function(T data) addNewShelter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$ShelterState<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? loaded,
     TResult? Function(String error)? error,
+    TResult? Function(T data)? addNewShelter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$ShelterState<T> {
     TResult Function()? loading,
     TResult Function(T data)? loaded,
     TResult Function(String error)? error,
+    TResult Function(T data)? addNewShelter,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$ShelterState<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(SheltersSuccess<T> value) loaded,
     required TResult Function(SheltersError<T> value) error,
+    required TResult Function(AddNewShelter<T> value) addNewShelter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$ShelterState<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(SheltersSuccess<T> value)? loaded,
     TResult? Function(SheltersError<T> value)? error,
+    TResult? Function(AddNewShelter<T> value)? addNewShelter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$ShelterState<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(SheltersSuccess<T> value)? loaded,
     TResult Function(SheltersError<T> value)? error,
+    TResult Function(AddNewShelter<T> value)? addNewShelter,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,6 +140,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() loading,
     required TResult Function(T data) loaded,
     required TResult Function(String error) error,
+    required TResult Function(T data) addNewShelter,
   }) {
     return initial();
   }
@@ -145,6 +152,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? loaded,
     TResult? Function(String error)? error,
+    TResult? Function(T data)? addNewShelter,
   }) {
     return initial?.call();
   }
@@ -156,6 +164,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? loading,
     TResult Function(T data)? loaded,
     TResult Function(String error)? error,
+    TResult Function(T data)? addNewShelter,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -171,6 +180,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(SheltersSuccess<T> value) loaded,
     required TResult Function(SheltersError<T> value) error,
+    required TResult Function(AddNewShelter<T> value) addNewShelter,
   }) {
     return initial(this);
   }
@@ -182,6 +192,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(SheltersSuccess<T> value)? loaded,
     TResult? Function(SheltersError<T> value)? error,
+    TResult? Function(AddNewShelter<T> value)? addNewShelter,
   }) {
     return initial?.call(this);
   }
@@ -193,6 +204,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(SheltersSuccess<T> value)? loaded,
     TResult Function(SheltersError<T> value)? error,
+    TResult Function(AddNewShelter<T> value)? addNewShelter,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -251,6 +263,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function() loading,
     required TResult Function(T data) loaded,
     required TResult Function(String error) error,
+    required TResult Function(T data) addNewShelter,
   }) {
     return loading();
   }
@@ -262,6 +275,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? loaded,
     TResult? Function(String error)? error,
+    TResult? Function(T data)? addNewShelter,
   }) {
     return loading?.call();
   }
@@ -273,6 +287,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function()? loading,
     TResult Function(T data)? loaded,
     TResult Function(String error)? error,
+    TResult Function(T data)? addNewShelter,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -288,6 +303,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(SheltersSuccess<T> value) loaded,
     required TResult Function(SheltersError<T> value) error,
+    required TResult Function(AddNewShelter<T> value) addNewShelter,
   }) {
     return loading(this);
   }
@@ -299,6 +315,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(SheltersSuccess<T> value)? loaded,
     TResult? Function(SheltersError<T> value)? error,
+    TResult? Function(AddNewShelter<T> value)? addNewShelter,
   }) {
     return loading?.call(this);
   }
@@ -310,6 +327,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(SheltersSuccess<T> value)? loaded,
     TResult Function(SheltersError<T> value)? error,
+    TResult Function(AddNewShelter<T> value)? addNewShelter,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -397,6 +415,7 @@ class _$SheltersSuccessImpl<T> implements SheltersSuccess<T> {
     required TResult Function() loading,
     required TResult Function(T data) loaded,
     required TResult Function(String error) error,
+    required TResult Function(T data) addNewShelter,
   }) {
     return loaded(data);
   }
@@ -408,6 +427,7 @@ class _$SheltersSuccessImpl<T> implements SheltersSuccess<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? loaded,
     TResult? Function(String error)? error,
+    TResult? Function(T data)? addNewShelter,
   }) {
     return loaded?.call(data);
   }
@@ -419,6 +439,7 @@ class _$SheltersSuccessImpl<T> implements SheltersSuccess<T> {
     TResult Function()? loading,
     TResult Function(T data)? loaded,
     TResult Function(String error)? error,
+    TResult Function(T data)? addNewShelter,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -434,6 +455,7 @@ class _$SheltersSuccessImpl<T> implements SheltersSuccess<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(SheltersSuccess<T> value) loaded,
     required TResult Function(SheltersError<T> value) error,
+    required TResult Function(AddNewShelter<T> value) addNewShelter,
   }) {
     return loaded(this);
   }
@@ -445,6 +467,7 @@ class _$SheltersSuccessImpl<T> implements SheltersSuccess<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(SheltersSuccess<T> value)? loaded,
     TResult? Function(SheltersError<T> value)? error,
+    TResult? Function(AddNewShelter<T> value)? addNewShelter,
   }) {
     return loaded?.call(this);
   }
@@ -456,6 +479,7 @@ class _$SheltersSuccessImpl<T> implements SheltersSuccess<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(SheltersSuccess<T> value)? loaded,
     TResult Function(SheltersError<T> value)? error,
+    TResult Function(AddNewShelter<T> value)? addNewShelter,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -550,6 +574,7 @@ class _$SheltersErrorImpl<T> implements SheltersError<T> {
     required TResult Function() loading,
     required TResult Function(T data) loaded,
     required TResult Function(String error) error,
+    required TResult Function(T data) addNewShelter,
   }) {
     return error(this.error);
   }
@@ -561,6 +586,7 @@ class _$SheltersErrorImpl<T> implements SheltersError<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? loaded,
     TResult? Function(String error)? error,
+    TResult? Function(T data)? addNewShelter,
   }) {
     return error?.call(this.error);
   }
@@ -572,6 +598,7 @@ class _$SheltersErrorImpl<T> implements SheltersError<T> {
     TResult Function()? loading,
     TResult Function(T data)? loaded,
     TResult Function(String error)? error,
+    TResult Function(T data)? addNewShelter,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -587,6 +614,7 @@ class _$SheltersErrorImpl<T> implements SheltersError<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(SheltersSuccess<T> value) loaded,
     required TResult Function(SheltersError<T> value) error,
+    required TResult Function(AddNewShelter<T> value) addNewShelter,
   }) {
     return error(this);
   }
@@ -598,6 +626,7 @@ class _$SheltersErrorImpl<T> implements SheltersError<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(SheltersSuccess<T> value)? loaded,
     TResult? Function(SheltersError<T> value)? error,
+    TResult? Function(AddNewShelter<T> value)? addNewShelter,
   }) {
     return error?.call(this);
   }
@@ -609,6 +638,7 @@ class _$SheltersErrorImpl<T> implements SheltersError<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(SheltersSuccess<T> value)? loaded,
     TResult Function(SheltersError<T> value)? error,
+    TResult Function(AddNewShelter<T> value)? addNewShelter,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -628,5 +658,165 @@ abstract class SheltersError<T> implements ShelterState<T> {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SheltersErrorImplCopyWith<T, _$SheltersErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddNewShelterImplCopyWith<T, $Res> {
+  factory _$$AddNewShelterImplCopyWith(_$AddNewShelterImpl<T> value,
+          $Res Function(_$AddNewShelterImpl<T>) then) =
+      __$$AddNewShelterImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$AddNewShelterImplCopyWithImpl<T, $Res>
+    extends _$ShelterStateCopyWithImpl<T, $Res, _$AddNewShelterImpl<T>>
+    implements _$$AddNewShelterImplCopyWith<T, $Res> {
+  __$$AddNewShelterImplCopyWithImpl(_$AddNewShelterImpl<T> _value,
+      $Res Function(_$AddNewShelterImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ShelterState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$AddNewShelterImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddNewShelterImpl<T> implements AddNewShelter<T> {
+  const _$AddNewShelterImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'ShelterState<$T>.addNewShelter(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddNewShelterImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of ShelterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddNewShelterImplCopyWith<T, _$AddNewShelterImpl<T>> get copyWith =>
+      __$$AddNewShelterImplCopyWithImpl<T, _$AddNewShelterImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) loaded,
+    required TResult Function(String error) error,
+    required TResult Function(T data) addNewShelter,
+  }) {
+    return addNewShelter(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? loaded,
+    TResult? Function(String error)? error,
+    TResult? Function(T data)? addNewShelter,
+  }) {
+    return addNewShelter?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? loaded,
+    TResult Function(String error)? error,
+    TResult Function(T data)? addNewShelter,
+    required TResult orElse(),
+  }) {
+    if (addNewShelter != null) {
+      return addNewShelter(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(SheltersSuccess<T> value) loaded,
+    required TResult Function(SheltersError<T> value) error,
+    required TResult Function(AddNewShelter<T> value) addNewShelter,
+  }) {
+    return addNewShelter(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(SheltersSuccess<T> value)? loaded,
+    TResult? Function(SheltersError<T> value)? error,
+    TResult? Function(AddNewShelter<T> value)? addNewShelter,
+  }) {
+    return addNewShelter?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(SheltersSuccess<T> value)? loaded,
+    TResult Function(SheltersError<T> value)? error,
+    TResult Function(AddNewShelter<T> value)? addNewShelter,
+    required TResult orElse(),
+  }) {
+    if (addNewShelter != null) {
+      return addNewShelter(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddNewShelter<T> implements ShelterState<T> {
+  const factory AddNewShelter(final T data) = _$AddNewShelterImpl<T>;
+
+  T get data;
+
+  /// Create a copy of ShelterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AddNewShelterImplCopyWith<T, _$AddNewShelterImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

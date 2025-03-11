@@ -50,8 +50,8 @@ class AuthCubit extends Cubit<AuthState<dynamic>> {
     emit(const AuthState.loading());
 
     final response = await _authRepo
-        .login(LoginRequestBody(username: 'Shahd', password: 's@123'));
-
+        .login( LoginRequestBody(username: userNameController.text, password: passwordController.text));
+                    //LoginRequestBody(username: 'Shahd', password: 's@123')
     response.when(
       success: (token) async {
       await saveUserToken(token);
@@ -65,7 +65,7 @@ class AuthCubit extends Cubit<AuthState<dynamic>> {
   }
 
     Future<void> saveUserToken(String token) async {
-    //await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
+    await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
     DioFactory.setTokenIntoHeaderAfterLogin(token);
   }
 

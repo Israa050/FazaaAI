@@ -57,7 +57,7 @@ class CrisisTile extends StatelessWidget {
               ),
         children: [
           Text(
-            description ?? 'data',
+            description ?? '',
           ),
           Text(
             date ?? '\n2025/3/1 12:00AM',

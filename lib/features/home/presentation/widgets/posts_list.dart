@@ -16,6 +16,7 @@ class PostsList extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.all(8.0),
           child: CustomCardInfo(
+            isPost: true,
             priority: posts[index].urgency,
             title: posts[index].title,
             description: posts[index].description,
