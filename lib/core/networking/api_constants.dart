@@ -1,6 +1,6 @@
 
 class ApiConstants {
-  static const String apiBaseUrl = "https://1f7c-102-46-123-9.ngrok-free.app/api/";
+  static const String apiBaseUrl = "https://1c6d-102-46-123-9.ngrok-free.app/api/";
 
   static const String users = "users";
   static const String crisis = "crises";

@@ -41,21 +41,21 @@ abstract class ApiService {
   @GET(ApiConstants.crisis)
   Future<List<Crisis>> getAllCrisis();
 
-  @POST(ApiConstants.posts)
-  @MultiPart()
-  @Header("Content-Type: multipart/form-data")
-  Future<String> createNewPost(
-    @Part() int userId,
-    @Part() String title,
-    @Part() String description,
-    @Part() String type,
-    @Part() String urgency,
-    @Part() String status,
-    @Part() String location,
-    @Part() String quantity,
-    @Part() String contactInfo,
-    @Part() File photoUrl,
-  );
+  // @MultiPart()
+  // @POST(ApiConstants.posts)
+  // @Header("Content-Type: multipart/form-data")
+  // Future<String> createNewPost(
+  //   @Part() int userId,
+  //   @Part() String title,
+  //   @Part() String description,
+  //   @Part() String type,
+  //   @Part() String urgency,
+  //   @Part() String status,
+  //   @Part() String location,
+  //   @Part() String quantity,
+  //   @Part() String contactInfo,
+  //   @Part() MultipartFile photoUrl,
+  // );
 
   @POST(ApiConstants.posts)
   @MultiPart()

@@ -4,6 +4,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:salam_hack/core/themes/colors.dart';
+import 'package:salam_hack/main.dart';
 
 class CustomImageContainer extends StatefulWidget {
 
@@ -25,6 +26,7 @@ class _CustomImageContainerState extends State<CustomImageContainer> {
     if(image != null){
       setState(() {
         _image = File(image.path);
+        myImage = _image;
       }); 
     }
   }

@@ -10,7 +10,7 @@ part of 'api_service.dart';
 
 class _ApiService implements ApiService {
   _ApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://1f7c-102-46-123-9.ngrok-free.app/api/';
+    baseUrl ??= 'https://1c6d-102-46-123-9.ngrok-free.app/api/';
   }
 
   final Dio _dio;
@@ -222,67 +222,6 @@ class _ApiService implements ApiService {
       _value = _result.data!
           .map((dynamic i) => Crisis.fromJson(i as Map<String, dynamic>))
           .toList();
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<String> createNewPost(
-    int userId,
-    String title,
-    String description,
-    String type,
-    String urgency,
-    String status,
-    String location,
-    String quantity,
-    String contactInfo,
-    File photoUrl,
-  ) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = FormData();
-    _data.fields.add(MapEntry('userId', userId.toString()));
-    _data.fields.add(MapEntry('title', title));
-    _data.fields.add(MapEntry('description', description));
-    _data.fields.add(MapEntry('type', type));
-    _data.fields.add(MapEntry('urgency', urgency));
-    _data.fields.add(MapEntry('status', status));
-    _data.fields.add(MapEntry('location', location));
-    _data.fields.add(MapEntry('quantity', quantity));
-    _data.fields.add(MapEntry('contactInfo', contactInfo));
-    _data.files.add(
-      MapEntry(
-        'photoUrl',
-        MultipartFile.fromFileSync(
-          photoUrl.path,
-          filename: photoUrl.path.split(Platform.pathSeparator).last,
-        ),
-      ),
-    );
-    final _options = _setStreamType<String>(
-      Options(
-        method: 'POST',
-        headers: _headers,
-        extra: _extra,
-        contentType: 'multipart/form-data',
-      )
-          .compose(
-            _dio.options,
-            'posts',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<String>(_options);
-    late String _value;
-    try {
-      _value = _result.data!;
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
