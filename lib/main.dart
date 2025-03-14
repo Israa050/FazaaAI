@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:salam_hack/core/models/clspost.dart';
+import 'package:salam_hack/features/home/presentation/add/add_Resource.dart';
 import 'core/di/dependency_injection.dart';
 import 'core/helper/constants.dart';
 import 'core/helper/extensions.dart';
@@ -75,7 +76,7 @@ class MyApp extends StatelessWidget {
       ),
       // onGenerateRoute: appRouter.generateRoute,
       //initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
-      home: TestPost(),
+      home: AddResourcePage(),
     );
   }
 }

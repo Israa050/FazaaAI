@@ -38,8 +38,8 @@ class _CustomImageContainerState extends State<CustomImageContainer> {
         pickImage();
       },
       child: DottedBorder(
-        color: AppColors.lightBlue,
-        strokeWidth: 2,
+        color: Colors.black,
+        strokeWidth: 3,
         borderType: BorderType.RRect,
         radius: Radius.circular(12),
         child: Container(
@@ -57,7 +57,6 @@ class _CustomImageContainerState extends State<CustomImageContainer> {
             )
             :
             Image.file(_image!),
-    
           ),
         ),
       ),
