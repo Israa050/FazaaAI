@@ -4,12 +4,13 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
-import 'package:salam_hack/core/models/crisis.dart';
-import 'package:salam_hack/core/models/post.dart';
-import 'package:salam_hack/core/models/shelter.dart';
-import 'package:salam_hack/core/models/user.dart';
-import 'package:salam_hack/core/networking/api_constants.dart';
-import 'package:salam_hack/features/auth/data/model/login_request_body.dart';
+import 'package:salam_hack/core/models/clspost.dart';
+import '../models/crisis.dart';
+import '../models/post.dart';
+import '../models/shelter.dart';
+import '../models/user.dart';
+import 'api_constants.dart';
+import '../../features/auth/data/model/login_request_body.dart';
 
 part 'api_service.g.dart';
 
@@ -57,12 +58,17 @@ abstract class ApiService {
   //   @Part() MultipartFile photoUrl,
   // );
 
-  @POST(ApiConstants.posts)
+ 
+
+
+   @POST(ApiConstants.posts)
   @MultiPart()
   @Header("Content-Type: multipart/form-data")
-  Future<String> createNewPost2(
-   @Part() Post post,
-  );
+  Future<String> createPost(
+   @Body() FormData post,
+   );
+
+
 
   @POST(ApiConstants.shelters)
   Future<String> createNewShelter(@Body() Shelter shelter);

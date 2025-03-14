@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:salam_hack/core/widgets/loading.dart';
-import 'package:salam_hack/features/shelters/logic/cubit/shelter_cubit.dart';
-import 'package:salam_hack/features/shelters/logic/cubit/shelter_state.dart';
-import 'package:salam_hack/features/shelters/presentation/widgets/shelters_list_view.dart';
+import '../../../../core/widgets/loading.dart';
+import '../../logic/cubit/shelter_cubit.dart';
+import '../../logic/cubit/shelter_state.dart';
+import 'shelters_list_view.dart';
 
 class ShetersBlocBuilder extends StatefulWidget {
   const ShetersBlocBuilder({super.key});

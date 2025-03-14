@@ -10,7 +10,7 @@ part of 'api_service.dart';
 
 class _ApiService implements ApiService {
   _ApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://1c6d-102-46-123-9.ngrok-free.app/api/';
+    baseUrl ??= 'https://3efe-197-55-232-82.ngrok-free.app/api/';
   }
 
   final Dio _dio;
@@ -230,12 +230,11 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<String> createNewPost2(Post post) async {
+  Future<String> createPost(FormData post) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = FormData();
-    _data.fields.add(MapEntry('post', jsonEncode(post)));
+    final _data = post;
     final _options = _setStreamType<String>(
       Options(
         method: 'POST',

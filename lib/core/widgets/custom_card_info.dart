@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/helper/spacing.dart';
-import 'package:salam_hack/core/themes/colors.dart';
-import 'package:salam_hack/core/themes/styles.dart';
+import '../helper/spacing.dart';
+import '../themes/colors.dart';
+import '../themes/styles.dart';
 
 class CustomCardInfo extends StatefulWidget {
   String? priority;

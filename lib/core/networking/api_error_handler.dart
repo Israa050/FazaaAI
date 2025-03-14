@@ -2,7 +2,7 @@
 
 
 import 'package:dio/dio.dart';
-import 'package:salam_hack/core/networking/api_error_model.dart';
+import 'api_error_model.dart';
 
 class ApiErrorHandler {
   static ApiErrorModel handle(dynamic error) {

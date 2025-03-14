@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:salam_hack/core/di/dependency_injection.dart';
-import 'package:salam_hack/core/router/routes.dart';
-import 'package:salam_hack/features/auth/logic/cubit/auth_cubit.dart';
-import 'package:salam_hack/features/auth/screens/login_page.dart';
-import 'package:salam_hack/features/auth/screens/signup_page.dart';
-import 'package:salam_hack/features/crisis/logic/cubit/crisis_cubit.dart';
-import 'package:salam_hack/features/crisis/presentation/crisis_page.dart';
-import 'package:salam_hack/features/home/logic/cubit/home_cubit.dart';
-import 'package:salam_hack/features/home/presentation/add/add_Resource.dart';
-import 'package:salam_hack/features/home/presentation/home_screen.dart';
-import 'package:salam_hack/features/shelters/logic/cubit/shelter_cubit.dart';
-import 'package:salam_hack/features/shelters/presentation/screens/add_shelter.dart';
-import 'package:salam_hack/features/shelters/presentation/screens/shelters_page.dart';
+import '../di/dependency_injection.dart';
+import 'routes.dart';
+import '../../features/auth/logic/cubit/auth_cubit.dart';
+import '../../features/auth/screens/login_page.dart';
+import '../../features/auth/screens/signup_page.dart';
+import '../../features/crisis/logic/cubit/crisis_cubit.dart';
+import '../../features/crisis/presentation/crisis_page.dart';
+import '../../features/home/logic/cubit/home_cubit.dart';
+import '../../features/home/presentation/add/add_Resource.dart';
+import '../../features/home/presentation/home_screen.dart';
+import '../../features/shelters/logic/cubit/shelter_cubit.dart';
+import '../../features/shelters/presentation/screens/add_shelter.dart';
+import '../../features/shelters/presentation/screens/shelters_page.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {

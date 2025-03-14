@@ -1,8 +1,8 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/models/shelter.dart';
-import 'package:salam_hack/core/widgets/custom_card_info.dart';
+import '../../../../core/models/shelter.dart';
+import '../../../../core/widgets/custom_card_info.dart';
 
 class SheltersListView extends StatelessWidget {
   List<Shelter> shelters;

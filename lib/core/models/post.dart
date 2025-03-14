@@ -1,7 +1,9 @@
 
 
 import 'package:json_annotation/json_annotation.dart';
-import 'package:salam_hack/core/models/user.dart';
+import 'user.dart';
+import 'dart:io';
+import 'package:dio/dio.dart';
 
 part 'post.g.dart';
 
@@ -41,3 +43,5 @@ class Post {
 
   
 }
+
+

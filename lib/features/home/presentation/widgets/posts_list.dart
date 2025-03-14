@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/models/post.dart';
-import 'package:salam_hack/core/widgets/custom_card_info.dart';
+import '../../../../core/models/post.dart';
+import '../../../../core/widgets/custom_card_info.dart';
 
 class PostsList extends StatelessWidget {
   List<Post> posts;

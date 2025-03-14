@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:salam_hack/core/widgets/loading.dart';
-import 'package:salam_hack/features/home/logic/cubit/home_cubit.dart';
-import 'package:salam_hack/features/home/logic/cubit/home_state.dart';
-import 'package:salam_hack/features/home/presentation/widgets/posts_list.dart';
+import '../../../../core/widgets/loading.dart';
+import '../../logic/cubit/home_cubit.dart';
+import '../../logic/cubit/home_state.dart';
+import 'posts_list.dart';
 
 class HomeBlocBuilder extends StatefulWidget {
   const HomeBlocBuilder({super.key});

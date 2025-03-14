@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:salam_hack/core/models/shelter.dart';
-import 'package:salam_hack/features/shelters/data/repo/shelters_repo.dart';
-import 'package:salam_hack/features/shelters/logic/cubit/shelter_state.dart';
+import '../../../../core/models/shelter.dart';
+import '../../data/repo/shelters_repo.dart';
+import 'shelter_state.dart';
 
 class ShelterCubit extends Cubit<ShelterState> {
   final SheltersRepo sheltersRepo;

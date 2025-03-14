@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/themes/colors.dart';
-import 'package:salam_hack/features/home/presentation/widgets/home_drawer.dart';
-import 'package:salam_hack/core/widgets/custom_icon_button.dart';
-import 'package:salam_hack/core/widgets/custom_list_tile.dart';
+import '../../../core/themes/colors.dart';
+import 'widgets/home_drawer.dart';
+import '../../../core/widgets/custom_icon_button.dart';
+import '../../../core/widgets/custom_list_tile.dart';
 
 ///old implementation of home page
 class HomePage extends StatelessWidget {

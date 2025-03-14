@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/themes/colors.dart';
+import '../../../core/themes/colors.dart';
 
 // ignore: must_be_immutable
 class SignUp extends StatelessWidget {

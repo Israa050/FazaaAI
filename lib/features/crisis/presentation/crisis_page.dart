@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/themes/colors.dart';
-import 'package:salam_hack/core/themes/styles.dart';
-import 'package:salam_hack/features/crisis/presentation/widgets/crisis_bloc_builder.dart';
+import '../../../core/themes/colors.dart';
+import '../../../core/themes/styles.dart';
+import 'widgets/crisis_bloc_builder.dart';
 
 class CrisisPage extends StatelessWidget {
   const CrisisPage({super.key});

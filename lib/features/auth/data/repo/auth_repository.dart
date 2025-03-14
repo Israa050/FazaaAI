@@ -1,10 +1,10 @@
 
 
-import 'package:salam_hack/core/models/user.dart';
-import 'package:salam_hack/core/networking/api_error_handler.dart';
-import 'package:salam_hack/core/networking/api_result.dart';
-import 'package:salam_hack/core/networking/api_service.dart';
-import 'package:salam_hack/features/auth/data/model/login_request_body.dart';
+import '../../../../core/models/user.dart';
+import '../../../../core/networking/api_error_handler.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../../../core/networking/api_service.dart';
+import '../model/login_request_body.dart';
 
 class AuthRepo {
   final ApiService _apiService;

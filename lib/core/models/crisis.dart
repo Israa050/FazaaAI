@@ -1,7 +1,7 @@
 
 
 import 'package:json_annotation/json_annotation.dart';
-import 'package:salam_hack/core/models/user.dart';
+import 'user.dart';
 
 part 'crisis.g.dart';
 

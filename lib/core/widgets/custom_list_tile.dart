@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/themes/colors.dart';
+import '../themes/colors.dart';
 
 class CustomListTile extends StatelessWidget {
   

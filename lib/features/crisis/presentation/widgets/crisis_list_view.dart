@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/models/crisis.dart';
-import 'package:salam_hack/features/crisis/presentation/widgets/crisis_tile.dart';
+import '../../../../core/models/crisis.dart';
+import 'crisis_tile.dart';
 
 class CrisisListView extends StatelessWidget {
   final List<Crisis> crisis;

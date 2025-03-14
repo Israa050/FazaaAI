@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/themes/colors.dart';
-import 'package:salam_hack/core/themes/styles.dart';
+import '../../../../core/themes/colors.dart';
+import '../../../../core/themes/styles.dart';
 
 class CrisisTile extends StatelessWidget {
   String? type;
