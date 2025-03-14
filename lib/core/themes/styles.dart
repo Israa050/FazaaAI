@@ -41,6 +41,12 @@ static TextStyle font16BlackSemiBold = TextStyle(
   color: Colors.black,
 );
 
+static TextStyle font16GreyRegular = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w400,
+  color: AppColors.textGrey,
+);
+
 static TextStyle font14GreyRegular = TextStyle(
   fontSize: 14,
   fontWeight: FontWeight.w400,
