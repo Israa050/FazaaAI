@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:salam_hack/core/router/routes.dart';
-import 'package:salam_hack/core/themes/colors.dart';
-import 'package:salam_hack/features/home/logic/cubit/home_cubit.dart';
+import '../../../../core/router/routes.dart';
+import '../../../../core/themes/colors.dart';
+import '../../logic/cubit/home_cubit.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({super.key});

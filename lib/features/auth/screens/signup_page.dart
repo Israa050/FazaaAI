@@ -1,12 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:salam_hack/core/router/routes.dart';
-import 'package:salam_hack/core/themes/styles.dart';
-import 'package:salam_hack/features/auth/logic/cubit/auth_cubit.dart';
-import 'package:salam_hack/features/auth/logic/cubit/auth_state.dart';
-import 'package:salam_hack/features/auth/widgets/custom_text_button.dart';
-import 'package:salam_hack/features/auth/widgets/custom_text_form_field.dart';
+import '../../../core/router/routes.dart';
+import '../../../core/themes/styles.dart';
+import '../logic/cubit/auth_cubit.dart';
+import '../logic/cubit/auth_state.dart';
+import '../widgets/custom_text_button.dart';
+import '../widgets/custom_text_form_field.dart';
 
 class SignupPage extends StatefulWidget {
 

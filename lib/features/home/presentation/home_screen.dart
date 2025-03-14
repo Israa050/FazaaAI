@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/helper/spacing.dart';
-import 'package:salam_hack/core/router/routes.dart';
-import 'package:salam_hack/core/themes/colors.dart';
-import 'package:salam_hack/core/themes/styles.dart';
-import 'package:salam_hack/features/home/presentation/widgets/home_bloc_builder.dart';
-import 'package:salam_hack/features/home/presentation/widgets/home_drawer.dart';
+import '../../../core/helper/spacing.dart';
+import '../../../core/router/routes.dart';
+import '../../../core/themes/colors.dart';
+import '../../../core/themes/styles.dart';
+import 'widgets/home_bloc_builder.dart';
+import 'widgets/home_drawer.dart';
 
 
 class HomeScreen extends StatelessWidget {

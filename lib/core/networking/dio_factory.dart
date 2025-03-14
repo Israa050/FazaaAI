@@ -1,8 +1,8 @@
 
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:salam_hack/core/helper/constants.dart';
-import 'package:salam_hack/core/helper/shared_pref_helper.dart';
+import '../helper/constants.dart';
+import '../helper/shared_pref_helper.dart';
 
 
 class DioFactory {
@@ -52,6 +52,7 @@ class DioFactory {
         responseHeader: true,
         responseBody: true,
         error: true,
+        
       ),
     );
   }

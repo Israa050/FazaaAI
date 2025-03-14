@@ -1,9 +1,9 @@
 
 
-import 'package:salam_hack/core/models/shelter.dart';
-import 'package:salam_hack/core/networking/api_error_handler.dart';
-import 'package:salam_hack/core/networking/api_result.dart';
-import 'package:salam_hack/core/networking/api_service.dart';
+import '../../../../core/models/shelter.dart';
+import '../../../../core/networking/api_error_handler.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../../../core/networking/api_service.dart';
 
 class SheltersRepo {
 

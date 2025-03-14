@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/helper/constants.dart';
-import 'package:salam_hack/core/helper/shared_pref_helper.dart';
-import 'package:salam_hack/core/models/user.dart';
-import 'package:salam_hack/core/networking/dio_factory.dart';
-import 'package:salam_hack/features/auth/data/model/login_request_body.dart';
-import 'package:salam_hack/features/auth/data/repo/auth_repository.dart';
-import 'package:salam_hack/features/auth/logic/cubit/auth_state.dart';
+import '../../../../core/helper/constants.dart';
+import '../../../../core/helper/shared_pref_helper.dart';
+import '../../../../core/models/user.dart';
+import '../../../../core/networking/dio_factory.dart';
+import '../../data/model/login_request_body.dart';
+import '../../data/repo/auth_repository.dart';
+import 'auth_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthCubit extends Cubit<AuthState<dynamic>> {

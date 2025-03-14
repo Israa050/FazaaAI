@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:salam_hack/core/themes/colors.dart';
-import 'package:salam_hack/main.dart';
+import '../themes/colors.dart';
+import '../../main.dart';
 
 class CustomImageContainer extends StatefulWidget {
 
@@ -53,7 +53,7 @@ class _CustomImageContainerState extends State<CustomImageContainer> {
             child:(_image==null)?  Icon(
               Icons.add,
               size: 50,
-              color: AppColors.lightBlue,
+              color: Colors.black,
             )
             :
             Image.file(_image!),

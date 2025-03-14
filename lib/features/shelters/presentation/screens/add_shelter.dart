@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:salam_hack/core/themes/styles.dart';
-import 'package:salam_hack/features/auth/widgets/custom_text_button.dart';
-import 'package:salam_hack/features/auth/widgets/custom_text_form_field.dart';
-import 'package:salam_hack/features/shelters/logic/cubit/shelter_cubit.dart';
-import 'package:salam_hack/features/shelters/logic/cubit/shelter_state.dart';
+import '../../../../core/themes/styles.dart';
+import '../../../auth/widgets/custom_text_button.dart';
+import '../../../auth/widgets/custom_text_form_field.dart';
+import '../../logic/cubit/shelter_cubit.dart';
+import '../../logic/cubit/shelter_state.dart';
 
 class AddShelterScreen extends StatefulWidget {
   const AddShelterScreen({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:salam_hack/features/crisis/data/repo/crisis_repo.dart';
-import 'package:salam_hack/features/crisis/logic/cubit/crisis_state.dart';
+import '../../data/repo/crisis_repo.dart';
+import 'crisis_state.dart';
 
 
 class CrisisCubit extends Cubit<CrisisState> {

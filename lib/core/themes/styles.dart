@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/themes/colors.dart';
+import 'colors.dart';
 
 abstract class TextStyles {
   static const TextStyle font14LightGrayRegular = TextStyle(

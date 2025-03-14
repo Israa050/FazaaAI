@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:salam_hack/core/helper/shared_pref_helper.dart';
-import 'package:salam_hack/core/models/post.dart';
-import 'package:salam_hack/features/home/data/repo/home_repo.dart';
-import 'package:salam_hack/features/home/logic/cubit/home_state.dart';
-import 'package:salam_hack/main.dart';
+import 'package:salam_hack/core/models/clspost.dart';
+import '../../../../core/helper/shared_pref_helper.dart';
+import '../../../../core/models/post.dart';
+import '../../data/repo/home_repo.dart';
+import 'home_state.dart';
+import '../../../../main.dart';
 
 
 
@@ -51,7 +52,8 @@ class HomeCubit extends Cubit<HomeState> {
 
   void emitAddNewPost()async{
       emit(HomeState.loading());
-     var newPost =  Post(
+     var newPost =  ClsPostRequest(
+      userId: currentUser!.userId!,
         title: titleController.text,
         description: descriptionController.text,
         type: typeController.text,
@@ -59,6 +61,8 @@ class HomeCubit extends Cubit<HomeState> {
         quantity: int.tryParse(quantityController.text)?? 0,
         status: myStatus,
         urgency: myUrgency,
+        contactInfo: phoneController.text,
+        photoUrl: myImage
       );
     var response = await homeRepo.addNewPost(newPost);
      response.when(

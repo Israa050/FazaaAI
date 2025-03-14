@@ -2,7 +2,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/themes/colors.dart';
+import '../../../core/themes/colors.dart';
 
 class AppTextButton extends StatelessWidget {
   final double? borderRadius;

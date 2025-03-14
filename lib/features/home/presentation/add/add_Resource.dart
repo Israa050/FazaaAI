@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:salam_hack/core/helper/spacing.dart';
-import 'package:salam_hack/core/themes/colors.dart';
-import 'package:salam_hack/core/themes/styles.dart';
-import 'package:salam_hack/core/widgets/custom_image_container.dart';
-import 'package:salam_hack/features/auth/widgets/custom_text_form_field.dart';
-import 'package:salam_hack/features/home/logic/cubit/home_cubit.dart';
-import 'package:salam_hack/features/home/logic/cubit/home_state.dart';
+import '../../../../core/helper/spacing.dart';
+import '../../../../core/themes/colors.dart';
+import '../../../../core/themes/styles.dart';
+import '../../../../core/widgets/custom_image_container.dart';
+import '../../../auth/widgets/custom_text_form_field.dart';
+import '../../logic/cubit/home_cubit.dart';
+import '../../logic/cubit/home_state.dart';
 
 class AddResourcePage extends StatefulWidget {
   const AddResourcePage({super.key});

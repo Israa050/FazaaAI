@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/helper/spacing.dart';
-import 'package:salam_hack/core/router/routes.dart';
-import 'package:salam_hack/core/themes/colors.dart';
-import 'package:salam_hack/core/themes/styles.dart';
-import 'package:salam_hack/features/shelters/presentation/widgets/sheters_bloc_builder.dart';
+import '../../../../core/helper/spacing.dart';
+import '../../../../core/router/routes.dart';
+import '../../../../core/themes/colors.dart';
+import '../../../../core/themes/styles.dart';
+import '../widgets/sheters_bloc_builder.dart';
 
 class SheltersPage extends StatelessWidget {
   const SheltersPage({super.key});
