@@ -6,10 +6,10 @@ import '../../features/auth/logic/cubit/auth_cubit.dart';
 import '../../features/auth/screens/login_page.dart';
 import '../../features/auth/screens/signup_page.dart';
 import '../../features/crisis/logic/cubit/crisis_cubit.dart';
-import '../../features/crisis/presentation/crisis_page.dart';
-import '../../features/home/logic/cubit/home_cubit.dart';
-import '../../features/home/presentation/add/add_Resource.dart';
-import '../../features/home/presentation/home_screen.dart';
+import '../../features/crisis/presentation/screens/crisis_page.dart';
+import '../../features/post/logic/cubit/post_cubit.dart';
+import '../../features/post/presentation/add/add_Resource.dart';
+import '../../features/post/presentation/home_screen.dart';
 import '../../features/shelters/logic/cubit/shelter_cubit.dart';
 import '../../features/shelters/presentation/screens/add_shelter.dart';
 import '../../features/shelters/presentation/screens/shelters_page.dart';
@@ -23,7 +23,7 @@ class AppRouter {
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => getIt<HomeCubit>(),
+            create: (context) => getIt<PostCubit>(),
             child: const HomeScreen(),
           ),
         );
@@ -61,8 +61,8 @@ class AppRouter {
 
       case Routes.addPostScreen:
         return MaterialPageRoute(
-            builder: (_) => BlocProvider<HomeCubit>(
-                  create: (context) => getIt<HomeCubit>(),
+            builder: (_) => BlocProvider<PostCubit>(
+                  create: (context) => getIt<PostCubit>(),
                   child: AddResourcePage(),
                 ));
 

@@ -6,8 +6,8 @@ import '../../../../core/themes/colors.dart';
 import '../../../../core/themes/styles.dart';
 import '../../../../core/widgets/custom_image_container.dart';
 import '../../../auth/widgets/custom_text_form_field.dart';
-import '../../logic/cubit/home_cubit.dart';
-import '../../logic/cubit/home_state.dart';
+import '../../logic/cubit/post_cubit.dart';
+import '../../logic/cubit/post_state.dart';
 
 class AddResourcePage extends StatefulWidget {
   const AddResourcePage({super.key});

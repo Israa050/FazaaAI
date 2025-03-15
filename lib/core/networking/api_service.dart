@@ -5,6 +5,8 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 import 'package:salam_hack/core/models/clspost.dart';
+import 'package:salam_hack/features/crisis/data/model/generated_crisis_response.dart';
+import 'package:salam_hack/features/crisis/data/model/report_crisis_request.dart';
 import '../models/crisis.dart';
 import '../models/post.dart';
 import '../models/shelter.dart';
@@ -39,8 +41,8 @@ abstract class ApiService {
   @GET(ApiConstants.shelters)
   Future<List<Shelter>> getAllShelters();
 
-  @GET(ApiConstants.crisis)
-  Future<List<Crisis>> getAllCrisis();
+  // @GET(ApiConstants.crisis)
+  // Future<List<Crisis>> getAllCrisis();
 
   // @MultiPart()
   // @POST(ApiConstants.posts)
@@ -78,4 +80,14 @@ abstract class ApiService {
 
   @GET(ApiConstants.me)
   Future<User> getCurrentUser();
+
+  @POST(ApiConstants.reportCrisis)
+  Future<GeneratedCrisisResponse> reportCrisisWithAI(@Body() ReportCrisisRequestBody reportCrisis);
+
+  @GET(ApiConstants.crisis)
+  Future<List<GeneratedCrisisResponse>> getAllCrisis();
+
+  @PUT('${ApiConstants.crisis}/{id}/resolved')
+  Future<GeneratedCrisisResponse> markCrisisAsResolved(@Path('id') String id);
+  
 }

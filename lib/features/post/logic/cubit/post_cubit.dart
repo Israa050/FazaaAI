@@ -4,14 +4,14 @@ import 'package:salam_hack/core/models/clspost.dart';
 import '../../../../core/helper/shared_pref_helper.dart';
 import '../../../../core/models/post.dart';
 import '../../data/repo/home_repo.dart';
-import 'home_state.dart';
+import 'post_state.dart';
 import '../../../../main.dart';
 
 
 
-class HomeCubit extends Cubit<HomeState> {
-  final HomeRepo homeRepo;
-  HomeCubit({required this.homeRepo}) : super(HomeState.initial());
+class PostCubit extends Cubit<PostState> {
+  final PostRepo homeRepo;
+  PostCubit({required this.homeRepo}) : super(PostState.initial());
 
   TextEditingController titleController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
@@ -33,24 +33,24 @@ class HomeCubit extends Cubit<HomeState> {
         currentUser = user;
        // print('CurrentUser name: ${currentUser?.username}');
     }, failure: (error){
-          emit(HomeState.error(error: error.message?? ''));
+          emit(PostState.error(error: error.message?? ''));
     });
   }
 
   void emitPostsListLoadedState()async{
-    emit(HomeState.loading());
+    emit(PostState.loading());
     var response = await homeRepo.getAllPosts();
     response.when(
       success: (posts)async{
-        emit(HomeState.posts(posts.reversed));
+        emit(PostState.posts(posts.reversed));
       },
        failure: (error){
-          emit(HomeState.error(error: error.message?? ''));
+          emit(PostState.error(error: error.message?? ''));
        });
   }
 
   void emitAddNewPost()async{
-      emit(HomeState.loading());
+      emit(PostState.loading());
      var newPost =  ClsPostRequest(
       userId: currentUser!.userId!,
         title: titleController.text,
@@ -66,13 +66,13 @@ class HomeCubit extends Cubit<HomeState> {
     var response = await homeRepo.addNewPost(newPost);
      response.when(
       success: (posts)async{
-        emit(HomeState.addNewPost(posts));
+        emit(PostState.addNewPost(posts));
      //   myPosts?.insert(0, newPost);
         //emit(HomeState.loading());
       //  emit(HomeState.addNewPost(myPosts));
       },
        failure: (error){
-          emit(HomeState.error(error: error.message?? ''));
+          emit(PostState.error(error: error.message?? ''));
        });
   }
 

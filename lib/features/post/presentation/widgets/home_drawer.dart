@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/router/routes.dart';
 import '../../../../core/themes/colors.dart';
-import '../../logic/cubit/home_cubit.dart';
+import '../../logic/cubit/post_cubit.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({super.key});
@@ -35,7 +35,7 @@ class HomeDrawer extends StatelessWidget {
               icon: Icons.logout,
               title: 'Logout',
               onTap: (){
-                context.read<HomeCubit>().logout();
+                context.read<PostCubit>().logout();
                 Navigator.of(context).pushNamed(Routes.loginScreen);
               }
               

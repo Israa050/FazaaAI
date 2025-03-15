@@ -22,6 +22,8 @@ mixin _$CrisisState<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function(GeneratedCrisisResponse crisis) generated,
+    required TResult Function(T crisis) resolved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +32,8 @@ mixin _$CrisisState<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function(GeneratedCrisisResponse crisis)? generated,
+    TResult? Function(T crisis)? resolved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +42,8 @@ mixin _$CrisisState<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function(GeneratedCrisisResponse crisis)? generated,
+    TResult Function(T crisis)? resolved,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +53,8 @@ mixin _$CrisisState<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(CrisisSuccess<T> value) success,
     required TResult Function(CrisisError<T> value) error,
+    required TResult Function(CrisisAdded<T> value) generated,
+    required TResult Function(CrisisResolved<T> value) resolved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +63,8 @@ mixin _$CrisisState<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(CrisisSuccess<T> value)? success,
     TResult? Function(CrisisError<T> value)? error,
+    TResult? Function(CrisisAdded<T> value)? generated,
+    TResult? Function(CrisisResolved<T> value)? resolved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +73,8 @@ mixin _$CrisisState<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(CrisisSuccess<T> value)? success,
     TResult Function(CrisisError<T> value)? error,
+    TResult Function(CrisisAdded<T> value)? generated,
+    TResult Function(CrisisResolved<T> value)? resolved,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,6 +146,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function(GeneratedCrisisResponse crisis) generated,
+    required TResult Function(T crisis) resolved,
   }) {
     return initial();
   }
@@ -145,6 +159,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function(GeneratedCrisisResponse crisis)? generated,
+    TResult? Function(T crisis)? resolved,
   }) {
     return initial?.call();
   }
@@ -156,6 +172,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function(GeneratedCrisisResponse crisis)? generated,
+    TResult Function(T crisis)? resolved,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -171,6 +189,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(CrisisSuccess<T> value) success,
     required TResult Function(CrisisError<T> value) error,
+    required TResult Function(CrisisAdded<T> value) generated,
+    required TResult Function(CrisisResolved<T> value) resolved,
   }) {
     return initial(this);
   }
@@ -182,6 +202,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(CrisisSuccess<T> value)? success,
     TResult? Function(CrisisError<T> value)? error,
+    TResult? Function(CrisisAdded<T> value)? generated,
+    TResult? Function(CrisisResolved<T> value)? resolved,
   }) {
     return initial?.call(this);
   }
@@ -193,6 +215,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(CrisisSuccess<T> value)? success,
     TResult Function(CrisisError<T> value)? error,
+    TResult Function(CrisisAdded<T> value)? generated,
+    TResult Function(CrisisResolved<T> value)? resolved,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -251,6 +275,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function(GeneratedCrisisResponse crisis) generated,
+    required TResult Function(T crisis) resolved,
   }) {
     return loading();
   }
@@ -262,6 +288,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function(GeneratedCrisisResponse crisis)? generated,
+    TResult? Function(T crisis)? resolved,
   }) {
     return loading?.call();
   }
@@ -273,6 +301,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function(GeneratedCrisisResponse crisis)? generated,
+    TResult Function(T crisis)? resolved,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -288,6 +318,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(CrisisSuccess<T> value) success,
     required TResult Function(CrisisError<T> value) error,
+    required TResult Function(CrisisAdded<T> value) generated,
+    required TResult Function(CrisisResolved<T> value) resolved,
   }) {
     return loading(this);
   }
@@ -299,6 +331,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(CrisisSuccess<T> value)? success,
     TResult? Function(CrisisError<T> value)? error,
+    TResult? Function(CrisisAdded<T> value)? generated,
+    TResult? Function(CrisisResolved<T> value)? resolved,
   }) {
     return loading?.call(this);
   }
@@ -310,6 +344,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(CrisisSuccess<T> value)? success,
     TResult Function(CrisisError<T> value)? error,
+    TResult Function(CrisisAdded<T> value)? generated,
+    TResult Function(CrisisResolved<T> value)? resolved,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -397,6 +433,8 @@ class _$CrisisSuccessImpl<T> implements CrisisSuccess<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function(GeneratedCrisisResponse crisis) generated,
+    required TResult Function(T crisis) resolved,
   }) {
     return success(data);
   }
@@ -408,6 +446,8 @@ class _$CrisisSuccessImpl<T> implements CrisisSuccess<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function(GeneratedCrisisResponse crisis)? generated,
+    TResult? Function(T crisis)? resolved,
   }) {
     return success?.call(data);
   }
@@ -419,6 +459,8 @@ class _$CrisisSuccessImpl<T> implements CrisisSuccess<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function(GeneratedCrisisResponse crisis)? generated,
+    TResult Function(T crisis)? resolved,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -434,6 +476,8 @@ class _$CrisisSuccessImpl<T> implements CrisisSuccess<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(CrisisSuccess<T> value) success,
     required TResult Function(CrisisError<T> value) error,
+    required TResult Function(CrisisAdded<T> value) generated,
+    required TResult Function(CrisisResolved<T> value) resolved,
   }) {
     return success(this);
   }
@@ -445,6 +489,8 @@ class _$CrisisSuccessImpl<T> implements CrisisSuccess<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(CrisisSuccess<T> value)? success,
     TResult? Function(CrisisError<T> value)? error,
+    TResult? Function(CrisisAdded<T> value)? generated,
+    TResult? Function(CrisisResolved<T> value)? resolved,
   }) {
     return success?.call(this);
   }
@@ -456,6 +502,8 @@ class _$CrisisSuccessImpl<T> implements CrisisSuccess<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(CrisisSuccess<T> value)? success,
     TResult Function(CrisisError<T> value)? error,
+    TResult Function(CrisisAdded<T> value)? generated,
+    TResult Function(CrisisResolved<T> value)? resolved,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -550,6 +598,8 @@ class _$CrisisErrorImpl<T> implements CrisisError<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function(GeneratedCrisisResponse crisis) generated,
+    required TResult Function(T crisis) resolved,
   }) {
     return error(this.error);
   }
@@ -561,6 +611,8 @@ class _$CrisisErrorImpl<T> implements CrisisError<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function(GeneratedCrisisResponse crisis)? generated,
+    TResult? Function(T crisis)? resolved,
   }) {
     return error?.call(this.error);
   }
@@ -572,6 +624,8 @@ class _$CrisisErrorImpl<T> implements CrisisError<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function(GeneratedCrisisResponse crisis)? generated,
+    TResult Function(T crisis)? resolved,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -587,6 +641,8 @@ class _$CrisisErrorImpl<T> implements CrisisError<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(CrisisSuccess<T> value) success,
     required TResult Function(CrisisError<T> value) error,
+    required TResult Function(CrisisAdded<T> value) generated,
+    required TResult Function(CrisisResolved<T> value) resolved,
   }) {
     return error(this);
   }
@@ -598,6 +654,8 @@ class _$CrisisErrorImpl<T> implements CrisisError<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(CrisisSuccess<T> value)? success,
     TResult? Function(CrisisError<T> value)? error,
+    TResult? Function(CrisisAdded<T> value)? generated,
+    TResult? Function(CrisisResolved<T> value)? resolved,
   }) {
     return error?.call(this);
   }
@@ -609,6 +667,8 @@ class _$CrisisErrorImpl<T> implements CrisisError<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(CrisisSuccess<T> value)? success,
     TResult Function(CrisisError<T> value)? error,
+    TResult Function(CrisisAdded<T> value)? generated,
+    TResult Function(CrisisResolved<T> value)? resolved,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -628,5 +688,338 @@ abstract class CrisisError<T> implements CrisisState<T> {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CrisisErrorImplCopyWith<T, _$CrisisErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CrisisAddedImplCopyWith<T, $Res> {
+  factory _$$CrisisAddedImplCopyWith(_$CrisisAddedImpl<T> value,
+          $Res Function(_$CrisisAddedImpl<T>) then) =
+      __$$CrisisAddedImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({GeneratedCrisisResponse crisis});
+}
+
+/// @nodoc
+class __$$CrisisAddedImplCopyWithImpl<T, $Res>
+    extends _$CrisisStateCopyWithImpl<T, $Res, _$CrisisAddedImpl<T>>
+    implements _$$CrisisAddedImplCopyWith<T, $Res> {
+  __$$CrisisAddedImplCopyWithImpl(
+      _$CrisisAddedImpl<T> _value, $Res Function(_$CrisisAddedImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CrisisState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? crisis = null,
+  }) {
+    return _then(_$CrisisAddedImpl<T>(
+      crisis: null == crisis
+          ? _value.crisis
+          : crisis // ignore: cast_nullable_to_non_nullable
+              as GeneratedCrisisResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CrisisAddedImpl<T> implements CrisisAdded<T> {
+  const _$CrisisAddedImpl({required this.crisis});
+
+  @override
+  final GeneratedCrisisResponse crisis;
+
+  @override
+  String toString() {
+    return 'CrisisState<$T>.generated(crisis: $crisis)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CrisisAddedImpl<T> &&
+            (identical(other.crisis, crisis) || other.crisis == crisis));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, crisis);
+
+  /// Create a copy of CrisisState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CrisisAddedImplCopyWith<T, _$CrisisAddedImpl<T>> get copyWith =>
+      __$$CrisisAddedImplCopyWithImpl<T, _$CrisisAddedImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) error,
+    required TResult Function(GeneratedCrisisResponse crisis) generated,
+    required TResult Function(T crisis) resolved,
+  }) {
+    return generated(crisis);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function(GeneratedCrisisResponse crisis)? generated,
+    TResult? Function(T crisis)? resolved,
+  }) {
+    return generated?.call(crisis);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? error,
+    TResult Function(GeneratedCrisisResponse crisis)? generated,
+    TResult Function(T crisis)? resolved,
+    required TResult orElse(),
+  }) {
+    if (generated != null) {
+      return generated(crisis);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(CrisisSuccess<T> value) success,
+    required TResult Function(CrisisError<T> value) error,
+    required TResult Function(CrisisAdded<T> value) generated,
+    required TResult Function(CrisisResolved<T> value) resolved,
+  }) {
+    return generated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(CrisisSuccess<T> value)? success,
+    TResult? Function(CrisisError<T> value)? error,
+    TResult? Function(CrisisAdded<T> value)? generated,
+    TResult? Function(CrisisResolved<T> value)? resolved,
+  }) {
+    return generated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(CrisisSuccess<T> value)? success,
+    TResult Function(CrisisError<T> value)? error,
+    TResult Function(CrisisAdded<T> value)? generated,
+    TResult Function(CrisisResolved<T> value)? resolved,
+    required TResult orElse(),
+  }) {
+    if (generated != null) {
+      return generated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CrisisAdded<T> implements CrisisState<T> {
+  const factory CrisisAdded({required final GeneratedCrisisResponse crisis}) =
+      _$CrisisAddedImpl<T>;
+
+  GeneratedCrisisResponse get crisis;
+
+  /// Create a copy of CrisisState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CrisisAddedImplCopyWith<T, _$CrisisAddedImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CrisisResolvedImplCopyWith<T, $Res> {
+  factory _$$CrisisResolvedImplCopyWith(_$CrisisResolvedImpl<T> value,
+          $Res Function(_$CrisisResolvedImpl<T>) then) =
+      __$$CrisisResolvedImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T crisis});
+}
+
+/// @nodoc
+class __$$CrisisResolvedImplCopyWithImpl<T, $Res>
+    extends _$CrisisStateCopyWithImpl<T, $Res, _$CrisisResolvedImpl<T>>
+    implements _$$CrisisResolvedImplCopyWith<T, $Res> {
+  __$$CrisisResolvedImplCopyWithImpl(_$CrisisResolvedImpl<T> _value,
+      $Res Function(_$CrisisResolvedImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CrisisState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? crisis = freezed,
+  }) {
+    return _then(_$CrisisResolvedImpl<T>(
+      crisis: freezed == crisis
+          ? _value.crisis
+          : crisis // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CrisisResolvedImpl<T> implements CrisisResolved<T> {
+  const _$CrisisResolvedImpl({required this.crisis});
+
+  @override
+  final T crisis;
+
+  @override
+  String toString() {
+    return 'CrisisState<$T>.resolved(crisis: $crisis)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CrisisResolvedImpl<T> &&
+            const DeepCollectionEquality().equals(other.crisis, crisis));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(crisis));
+
+  /// Create a copy of CrisisState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CrisisResolvedImplCopyWith<T, _$CrisisResolvedImpl<T>> get copyWith =>
+      __$$CrisisResolvedImplCopyWithImpl<T, _$CrisisResolvedImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) error,
+    required TResult Function(GeneratedCrisisResponse crisis) generated,
+    required TResult Function(T crisis) resolved,
+  }) {
+    return resolved(crisis);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function(GeneratedCrisisResponse crisis)? generated,
+    TResult? Function(T crisis)? resolved,
+  }) {
+    return resolved?.call(crisis);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? error,
+    TResult Function(GeneratedCrisisResponse crisis)? generated,
+    TResult Function(T crisis)? resolved,
+    required TResult orElse(),
+  }) {
+    if (resolved != null) {
+      return resolved(crisis);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(CrisisSuccess<T> value) success,
+    required TResult Function(CrisisError<T> value) error,
+    required TResult Function(CrisisAdded<T> value) generated,
+    required TResult Function(CrisisResolved<T> value) resolved,
+  }) {
+    return resolved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(CrisisSuccess<T> value)? success,
+    TResult? Function(CrisisError<T> value)? error,
+    TResult? Function(CrisisAdded<T> value)? generated,
+    TResult? Function(CrisisResolved<T> value)? resolved,
+  }) {
+    return resolved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(CrisisSuccess<T> value)? success,
+    TResult Function(CrisisError<T> value)? error,
+    TResult Function(CrisisAdded<T> value)? generated,
+    TResult Function(CrisisResolved<T> value)? resolved,
+    required TResult orElse(),
+  }) {
+    if (resolved != null) {
+      return resolved(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CrisisResolved<T> implements CrisisState<T> {
+  const factory CrisisResolved({required final T crisis}) =
+      _$CrisisResolvedImpl<T>;
+
+  T get crisis;
+
+  /// Create a copy of CrisisState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CrisisResolvedImplCopyWith<T, _$CrisisResolvedImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -8,11 +8,11 @@ import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_service.dart';
 
-class HomeRepo {
+class PostRepo {
 
    final ApiService _apiService;
 
-  HomeRepo(this._apiService);
+  PostRepo(this._apiService);
 
   Future<ApiResult<List<Post>>> getAllPosts() async {
     try {

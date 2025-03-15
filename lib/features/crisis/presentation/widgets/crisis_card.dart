@@ -1,9 +1,12 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:salam_hack/features/crisis/data/model/generated_crisis_response.dart';
+import 'package:salam_hack/features/crisis/presentation/screens/survival_guide_screen.dart';
 
 class CrisisCard extends StatelessWidget {
-  const CrisisCard({super.key});
+  GeneratedCrisisResponse? generatedCrisisResponse;
+  CrisisCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +25,14 @@ class CrisisCard extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                "Flood in Downtown Area",
+                 "Flood in Downtown Area",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ),
-            Text(
-              "2m ago",
-              style: TextStyle(fontSize: 12, color: Colors.grey),
-            ),
+            // Text(
+            //   "2m ago",
+            //   style: TextStyle(fontSize: 12, color: Colors.grey),
+            // ),
           ],
         ),
         SizedBox(height: 4),
@@ -71,6 +74,17 @@ class CrisisCard extends StatelessWidget {
             IconButton(
               onPressed: () {
                 // Action for guide icon
+                  Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SurvivalGuideScreen(
+                crisisType: generatedCrisisResponse!.crisisType ?? "Wildfire",
+                location: generatedCrisisResponse!.city?? 'DownTown',
+                survivalGuide: generatedCrisisResponse!.survivalGuide??
+                    "1. Follow evacuation orders. \n2. Avoid breathing in smoke. \n3. Call emergency services at 911.",
+              ),
+            ),
+          );
               },
               icon: Icon(Icons.menu_book, size: 24, color: Colors.black54),
             ),
