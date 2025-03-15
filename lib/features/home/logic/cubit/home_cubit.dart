@@ -22,7 +22,7 @@ class HomeCubit extends Cubit<HomeState> {
   String myStatus = 'pending';
   String myUrgency = 'low';
 
- // List<Post>? myPosts;
+  List<Post>? myPosts;
 
  //User? currentUser;
 
@@ -42,8 +42,7 @@ class HomeCubit extends Cubit<HomeState> {
     var response = await homeRepo.getAllPosts();
     response.when(
       success: (posts)async{
-        emit(HomeState.posts(posts));
-      //  myPosts?.addAll(posts);
+        emit(HomeState.posts(posts.reversed));
       },
        failure: (error){
           emit(HomeState.error(error: error.message?? ''));

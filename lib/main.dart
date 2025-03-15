@@ -1,24 +1,22 @@
+
 import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:salam_hack/core/models/clspost.dart';
-import 'package:salam_hack/features/home/presentation/add/add_Resource.dart';
+import 'package:salam_hack/features/home/presentation/home_screen.dart';
 import 'core/di/dependency_injection.dart';
 import 'core/helper/constants.dart';
 import 'core/helper/extensions.dart';
 import 'core/helper/shared_pref_helper.dart';
 import 'core/helper/spacing.dart';
-import 'core/models/post.dart';
 import 'core/models/user.dart';
 import 'core/networking/api_service.dart';
 import 'core/router/app_router.dart';
-import 'core/router/routes.dart';
 import 'core/themes/colors.dart';
 import 'core/widgets/custom_image_container.dart';
 
-ApiService apiService = getIt<ApiService>();
 
 User? currentUser;
 
@@ -26,33 +24,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupGetIt();
   await checkIfLoggedInUser();
-
-//   FilePickerResult? result = await FilePicker.platform.pickFiles();
-// File? file;
-// if (result != null) {
-//   file = File(result.files.single.path!);
-//   print(file.path);
-// } else {
-//   // User canceled the picker
-// }
-  //final ImagePicker picker = ImagePicker();
-// Pick an image.
-//final XFile? image = await picker.pickImage(source: ImageSource.gallery);
-  // ApiService apiService = getIt<ApiService>();
-  // await apiService.createNewPost(
-  //   7,
-  //   'Title',
-  //   'Description',
-  //   'type',
-  //   'urgency',
-  //   'status',
-  //   'location',
-  //   'quantity',
-  //   'contactInfo',
-  //   file!,
-  // );
-
-  //await apiService.createNewPost2(Post());
   runApp(
     MyApp(
       appRouter: AppRouter(),
@@ -76,7 +47,7 @@ class MyApp extends StatelessWidget {
       ),
       // onGenerateRoute: appRouter.generateRoute,
       //initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
-      home: AddResourcePage(),
+      home: HomeScreen(),
     );
   }
 }
