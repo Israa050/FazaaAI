@@ -165,6 +165,18 @@ class _CustomCardInfoState extends State<CustomCardInfo> {
           style:
               TextStyles.font14GreyRegular.copyWith(color: Color(0xFF2563EB)),
         ),
+        Expanded(
+            flex: 2,
+            child: horizontalPadding(
+              10,
+            )),
+        SizedBox(
+          height: 40,
+          width: 60,
+          child: Image.asset(
+            'assets/icons/book.png',
+          ),
+        ),
       ],
     );
   }
