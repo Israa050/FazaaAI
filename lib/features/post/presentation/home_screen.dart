@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:salam_hack/core/widgets/custom_card_info.dart';
-import 'package:salam_hack/features/home/presentation/widgets/post_card.dart';
+import 'package:salam_hack/features/post/presentation/widgets/post_card.dart';
 import '../../../core/helper/spacing.dart';
 import '../../../core/router/routes.dart';
 import '../../../core/themes/colors.dart';
 import '../../../core/themes/styles.dart';
-import 'widgets/home_bloc_builder.dart';
 import 'widgets/home_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -27,7 +26,7 @@ class HomeScreen extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () {
-                Navigator.of(context).pushNamed(Routes.crisisScreen);
+                //Navigator.of(context).pushNamed(Routes.crisisScreen);
               },
               icon: Icon(
                 Icons.notifications_none,

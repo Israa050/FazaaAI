@@ -22,9 +22,16 @@ class _CrisisBlocBuilderState extends State<CrisisBlocBuilder> {
   }
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CrisisCubit, CrisisState>(
+    return BlocConsumer<CrisisCubit, CrisisState>(
+      listener: (context, state) {
+        if(state is CrisisAdded){
+        //  context.read<CrisisCubit>().emiCrisisSuccess();
+        }else if(state is CrisisResolved){
+         // context.read<CrisisCubit>().emiCrisisSuccess();
+        }
+      },
       buildWhen: (previous, current) =>
-          current is CrisisSuccess || current is CrisisError,
+          current is CrisisSuccess || current is CrisisError || current is CrisisAdded || current is CrisisResolved,
       builder: (context,state){
         return state.maybeWhen(
           success: (crisis) {

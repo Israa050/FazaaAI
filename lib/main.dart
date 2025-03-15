@@ -1,11 +1,14 @@
-
 import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:salam_hack/core/models/clspost.dart';
-import 'package:salam_hack/features/home/presentation/home_screen.dart';
+import 'package:salam_hack/features/crisis/logic/cubit/crisis_cubit.dart';
+import 'package:salam_hack/features/crisis/presentation/screens/add_crisis_page.dart';
+import 'package:salam_hack/features/crisis/presentation/screens/crisis_page.dart';
+import 'package:salam_hack/features/post/presentation/home_screen.dart';
 import 'core/di/dependency_injection.dart';
 import 'core/helper/constants.dart';
 import 'core/helper/extensions.dart';
@@ -16,7 +19,6 @@ import 'core/networking/api_service.dart';
 import 'core/router/app_router.dart';
 import 'core/themes/colors.dart';
 import 'core/widgets/custom_image_container.dart';
-
 
 User? currentUser;
 
@@ -39,15 +41,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Salam Hack',
-      theme: ThemeData(
-        primaryColor: AppColors.primaryBlue,
+    return BlocProvider<CrisisCubit>(
+      create: (context) => getIt<CrisisCubit>(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Salam Hack',
+        theme: ThemeData(
+          primaryColor: AppColors.primaryBlue,
+        ),
+        // onGenerateRoute: appRouter.generateRoute,
+        //initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
+        home: CrisisPage(),
       ),
-      // onGenerateRoute: appRouter.generateRoute,
-      //initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
-      home: HomeScreen(),
     );
   }
 }
@@ -167,52 +172,50 @@ class TestPost extends StatelessWidget {
     );
 
     dio.interceptors.add(InterceptorsWrapper(
-  onRequest: (options, handler) {
-    print("Request Headers: ${options.headers}");
-    print("Request Data: ${options.data}");
-    return handler.next(options);
-  },
-));
+      onRequest: (options, handler) {
+        print("Request Headers: ${options.headers}");
+        print("Request Data: ${options.data}");
+        return handler.next(options);
+      },
+    ));
 
-dio.interceptors.add(InterceptorsWrapper(
-  onRequest: (options, handler) async {
-    print("Request Headers: ${options.headers}");
-    
-    if (options.data is FormData) {
-      FormData formData = options.data as FormData;
-      print("Sending FormData:");
-      
-      formData.fields.forEach((field) {
-        print("${field.key}: ${field.value}");
-      });
+    dio.interceptors.add(InterceptorsWrapper(
+      onRequest: (options, handler) async {
+        print("Request Headers: ${options.headers}");
 
-      formData.files.forEach((file) {
-        print("${file.key}: ${file.value.filename} - ${file.value.length}");
-      });
-    } else {
-      print("Request Data: ${options.data}");
-    }
-    return handler.next(options);
-  },
-));
+        if (options.data is FormData) {
+          FormData formData = options.data as FormData;
+          print("Sending FormData:");
+
+          formData.fields.forEach((field) {
+            print("${field.key}: ${field.value}");
+          });
+
+          formData.files.forEach((file) {
+            print("${file.key}: ${file.value.filename} - ${file.value.length}");
+          });
+        } else {
+          print("Request Data: ${options.data}");
+        }
+        return handler.next(options);
+      },
+    ));
 
     ApiService apiService2 = ApiService(dio);
 
-   // await apiService2.createMyPost(formData);
+    // await apiService2.createMyPost(formData);
 
     print("FormData: ${formData.fields}");
     print("File: ${myPost.photoUrl?.path}");
 
     print("FormData fields:");
-formData.fields.forEach((field) => print("${field.key}: ${field.value}"));
+    formData.fields.forEach((field) => print("${field.key}: ${field.value}"));
 
-if (myPost.photoUrl != null) {
-  print("Photo File Path: ${myPost.photoUrl!.path}");
-} else {
-  print("No photo selected.");
-}
-
-
+    if (myPost.photoUrl != null) {
+      print("Photo File Path: ${myPost.photoUrl!.path}");
+    } else {
+      print("No photo selected.");
+    }
 
     ///FormData formData = await myPost.toFormData();
 

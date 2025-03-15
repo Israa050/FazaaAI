@@ -7,4 +7,6 @@ abstract class Routes {
   static const String crisisScreen = '/crisis'; 
   static const String addShelterScreen = '/addShelter'; 
   static const String addPostScreen = '/addPost'; 
+  static const String notificationsScreen = '/notifications'; 
+  static const String addCrisisScreen = '/addCrisis'; 
 }
