@@ -9,7 +9,7 @@ import '../../features/crisis/logic/cubit/crisis_cubit.dart';
 import '../../features/crisis/presentation/screens/crisis_page.dart';
 import '../../features/post/logic/cubit/post_cubit.dart';
 import '../../features/post/presentation/add/add_Resource.dart';
-import '../../features/post/presentation/home_screen.dart';
+import '../../features/post/presentation/post_screen.dart';
 import '../../features/shelters/logic/cubit/shelter_cubit.dart';
 import '../../features/shelters/presentation/screens/add_shelter.dart';
 import '../../features/shelters/presentation/screens/shelters_page.dart';
@@ -24,7 +24,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => getIt<PostCubit>(),
-            child: const HomeScreen(),
+            child: const PostScreen(),
           ),
         );
       case Routes.loginScreen:

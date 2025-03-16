@@ -8,7 +8,10 @@ import 'package:salam_hack/core/models/clspost.dart';
 import 'package:salam_hack/features/crisis/logic/cubit/crisis_cubit.dart';
 import 'package:salam_hack/features/crisis/presentation/screens/add_crisis_page.dart';
 import 'package:salam_hack/features/crisis/presentation/screens/crisis_page.dart';
-import 'package:salam_hack/features/post/presentation/home_screen.dart';
+import 'package:salam_hack/features/dashboard/presentation/dash_board_screen.dart';
+import 'package:salam_hack/features/notifications/presentation/screens/notifications_page.dart';
+import 'package:salam_hack/features/post/presentation/post_screen.dart';
+import 'package:salam_hack/features/shelters/presentation/screens/shelters_page.dart';
 import 'core/di/dependency_injection.dart';
 import 'core/helper/constants.dart';
 import 'core/helper/extensions.dart';
@@ -51,7 +54,7 @@ class MyApp extends StatelessWidget {
         ),
         // onGenerateRoute: appRouter.generateRoute,
         //initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
-        home: CrisisPage(),
+        home: NotificationPage(),
       ),
     );
   }

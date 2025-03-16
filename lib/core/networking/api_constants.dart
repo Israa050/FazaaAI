@@ -16,5 +16,7 @@ class ApiConstants {
   static const String allPosts = "post/all";
   static const String notifications = "notifications/user";
   static const String markNotificationAsRead = "notifications/read";
+  static const String allCrisis = "crisis/all";
+  static const String survivalGuide = "survival-guide";
 
 }

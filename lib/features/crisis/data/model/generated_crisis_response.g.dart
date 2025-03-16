@@ -16,7 +16,9 @@ GeneratedCrisisResponse _$GeneratedCrisisResponseFromJson(
       city: json['city'] as String?,
       survivalGuide: json['survivalGuide'] as String?,
       resolved: json['resolved'] as bool?,
-    );
+    )..user = json['user'] == null
+        ? null
+        : UsetData.fromJson(json['user'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$GeneratedCrisisResponseToJson(
         GeneratedCrisisResponse instance) =>
@@ -28,4 +30,15 @@ Map<String, dynamic> _$GeneratedCrisisResponseToJson(
       'enhancedDescription': instance.enhancedDescription,
       'survivalGuide': instance.survivalGuide,
       'resolved': instance.resolved,
+      'user': instance.user,
+    };
+
+UsetData _$UsetDataFromJson(Map<String, dynamic> json) => UsetData(
+      id: (json['id'] as num?)?.toInt(),
+      username: json['username'] as String?,
+    );
+
+Map<String, dynamic> _$UsetDataToJson(UsetData instance) => <String, dynamic>{
+      'id': instance.id,
+      'username': instance.username,
     };
