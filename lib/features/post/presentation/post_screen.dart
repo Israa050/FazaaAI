@@ -7,8 +7,8 @@ import '../../../core/themes/colors.dart';
 import '../../../core/themes/styles.dart';
 import 'widgets/home_drawer.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class PostScreen extends StatelessWidget {
+  const PostScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

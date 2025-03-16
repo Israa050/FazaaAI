@@ -13,6 +13,7 @@ class GeneratedCrisisResponse {
   String? enhancedDescription;
   String? survivalGuide;
   bool? resolved;
+  UsetData? user;
 
   GeneratedCrisisResponse({
     this.id,
@@ -26,4 +27,20 @@ class GeneratedCrisisResponse {
 
    factory GeneratedCrisisResponse.fromJson(Map<String, dynamic> json) =>
       _$GeneratedCrisisResponseFromJson(json);
+}
+
+
+@JsonSerializable()
+class UsetData {
+  int? id;
+  String? username;
+
+  UsetData({
+    this.id,
+    this.username,
+  });
+
+  factory UsetData.fromJson(Map<String, dynamic> json) =>
+      _$UsetDataFromJson(json);
+
 }
