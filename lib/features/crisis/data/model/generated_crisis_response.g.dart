@@ -11,7 +11,7 @@ GeneratedCrisisResponse _$GeneratedCrisisResponseFromJson(
     GeneratedCrisisResponse(
       id: (json['id'] as num?)?.toInt(),
       userDescription: json['userDescription'] as String?,
-      crisisType: json['crisisType'] as String?,
+      type: json['type'] as String?,
       enhancedDescription: json['enhancedDescription'] as String?,
       city: json['city'] as String?,
       survivalGuide: json['survivalGuide'] as String?,
@@ -26,7 +26,7 @@ Map<String, dynamic> _$GeneratedCrisisResponseToJson(
       'id': instance.id,
       'userDescription': instance.userDescription,
       'city': instance.city,
-      'crisisType': instance.crisisType,
+      'type': instance.type,
       'enhancedDescription': instance.enhancedDescription,
       'survivalGuide': instance.survivalGuide,
       'resolved': instance.resolved,

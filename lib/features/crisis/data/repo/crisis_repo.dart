@@ -3,7 +3,6 @@
 import 'package:salam_hack/features/crisis/data/model/generated_crisis_response.dart';
 import 'package:salam_hack/features/crisis/data/model/report_crisis_request.dart';
 
-import '../../../../core/models/crisis.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_service.dart';

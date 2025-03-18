@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:salam_hack/features/auth/screens/login.dart';
+import 'package:salam_hack/features/crisis/presentation/screens/add__crisis.dart';
+import 'package:salam_hack/features/crisis/presentation/screens/add_crisis_page.dart';
+import 'package:salam_hack/features/dashboard/logic/cubit/home_cubit.dart';
+import 'package:salam_hack/features/dashboard/presentation/dashboarde.dart';
+import 'package:salam_hack/features/notifications/logic/cubit/notification_cubit.dart';
+import 'package:salam_hack/features/notifications/presentation/screens/notifications_page.dart';
 import '../di/dependency_injection.dart';
 import 'routes.dart';
 import '../../features/auth/logic/cubit/auth_cubit.dart';
@@ -8,7 +15,7 @@ import '../../features/auth/screens/signup_page.dart';
 import '../../features/crisis/logic/cubit/crisis_cubit.dart';
 import '../../features/crisis/presentation/screens/crisis_page.dart';
 import '../../features/post/logic/cubit/post_cubit.dart';
-import '../../features/post/presentation/add/add_Resource.dart';
+import '../../features/post/presentation/add/add_post.dart';
 import '../../features/post/presentation/post_screen.dart';
 import '../../features/shelters/logic/cubit/shelter_cubit.dart';
 import '../../features/shelters/presentation/screens/add_shelter.dart';
@@ -22,7 +29,14 @@ class AppRouter {
     switch (settings.name) {
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
+          builder: (_) => BlocProvider<HomeCubit>(
+            create: (context) => getIt<HomeCubit>(),
+            child: Dashboarde(),
+          ),
+        );
+      case Routes.postsScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider<PostCubit>(
             create: (context) => getIt<PostCubit>(),
             child: const PostScreen(),
           ),
@@ -31,7 +45,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BlocProvider<AuthCubit>(
             create: (context) => getIt<AuthCubit>(),
-            child: LoginPage(),
+            child: Login(),
           ),
         );
 
@@ -72,6 +86,22 @@ class AppRouter {
                   create: (context) => getIt<ShelterCubit>(),
                   child: AddShelterScreen(),
                 ));
+
+      case Routes.addCrisisScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<CrisisCubit>(),
+            child: AddCrisisScreen(),
+          ),
+        );
+
+      case Routes.notificationsScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider<NotificationCubit>(
+            create: (context) => getIt<NotificationCubit>(),
+            child: NotificationsPage(),
+          ),
+        );
 
       default:
         return null;

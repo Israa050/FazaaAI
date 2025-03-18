@@ -45,8 +45,8 @@ class AppTextFormField extends StatelessWidget {
     return Stack(
       children: [
         TextFormField(
-          minLines: minLines ?? 1,
-          maxLines: maxLines,
+          //minLines: minLines ?? 1,
+          //maxLines: maxLines,
           keyboardType: textInputType,
           controller: controller,
           decoration: InputDecoration(

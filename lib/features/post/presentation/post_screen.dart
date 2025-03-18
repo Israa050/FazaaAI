@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salam_hack/core/widgets/custom_card_info.dart';
+import 'package:salam_hack/features/post/presentation/widgets/home_bloc_builder.dart';
 import 'package:salam_hack/features/post/presentation/widgets/post_card.dart';
 import '../../../core/helper/spacing.dart';
 import '../../../core/router/routes.dart';
@@ -23,19 +24,19 @@ class PostScreen extends StatelessWidget {
           backgroundColor: Colors.white,
           // Colors.white,
           // iconTheme: IconThemeData(color: Color(0xff4B5563)),
-          actions: [
-            IconButton(
-              onPressed: () {
-                //Navigator.of(context).pushNamed(Routes.crisisScreen);
-              },
-              icon: Icon(
-                Icons.notifications_none,
-              ),
-            ),
-            horizontalPadding(
-              5,
-            ),
-          ],
+          // actions: [
+          //   IconButton(
+          //     onPressed: () {
+          //       //Navigator.of(context).pushNamed(Routes.crisisScreen);
+          //     },
+          //     icon: Icon(
+          //       Icons.notifications_none,
+          //     ),
+          //   ),
+          //   horizontalPadding(
+          //     5,
+          //   ),
+          // ],
           elevation: 4,
           iconTheme: IconThemeData(color: Colors.black),
         ),
@@ -46,36 +47,37 @@ class PostScreen extends StatelessWidget {
               horizontal: 12,
               vertical: 15,
             ),
-            child: ListView(
-              children: [
+            child: 
+            // ListView(
+            //   children: [
 
-                PostCard(
-                  title: 'Flood in DownTown',
-                  status: 'In progress',
-                  location: 'DownTown',
-                  priority: 'High',
-                  timeAgo: '2 min ago',
-                ),
+            //     PostCard(
+            //       title: 'Flood in DownTown',
+            //       status: 'In progress',
+            //       location: 'DownTown',
+            //       priority: 'High',
+            //       timeAgo: '2 min ago',
+            //     ),
 
-                PostCard(
-                  title: 'Flood in DownTown',
-                  status: 'In progress',
-                  location: 'DownTown',
-                  priority: 'Meduim',
-                  timeAgo: '2 min ago',
-                ),
+            //     PostCard(
+            //       title: 'Flood in DownTown',
+            //       status: 'In progress',
+            //       location: 'DownTown',
+            //       priority: 'Meduim',
+            //       timeAgo: '2 min ago',
+            //     ),
 
-                  PostCard(
-                  title: 'Flood in DownTown',
-                  location: 'DownTown',
-                  priority: 'low',
-                  timeAgo: '2 min ago',
-                  status: 'Done',
-                ),
-              ],
-            )
+            //       PostCard(
+            //       title: 'Flood in DownTown',
+            //       location: 'DownTown',
+            //       priority: 'low',
+            //       timeAgo: '2 min ago',
+            //       status: 'Done',
+            //     ),
+            //   ],
+            // )
 
-            // HomeBlocBuilder(),
+             HomeBlocBuilder(),
             ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: AppColors.primaryBlue,

@@ -14,6 +14,7 @@ class DashboardScreen extends StatelessWidget {
          style: TextStyles.font20RedBold.copyWith(color: Colors.black),
         ),
         centerTitle: true,
+        
       ),
       body: Center(
         child: SizedBox(

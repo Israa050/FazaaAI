@@ -22,7 +22,9 @@ mixin _$PostState<T> {
     required TResult Function() loading,
     required TResult Function(T data) posts,
     required TResult Function(String error) error,
-    required TResult Function(T posts) addNewPost,
+    required TResult Function(PostResponse post) addNewPost,
+    required TResult Function(PostResponse post) markAsDone,
+    required TResult Function(dynamic data) match,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,7 +33,9 @@ mixin _$PostState<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? posts,
     TResult? Function(String error)? error,
-    TResult? Function(T posts)? addNewPost,
+    TResult? Function(PostResponse post)? addNewPost,
+    TResult? Function(PostResponse post)? markAsDone,
+    TResult? Function(dynamic data)? match,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,7 +44,9 @@ mixin _$PostState<T> {
     TResult Function()? loading,
     TResult Function(T data)? posts,
     TResult Function(String error)? error,
-    TResult Function(T posts)? addNewPost,
+    TResult Function(PostResponse post)? addNewPost,
+    TResult Function(PostResponse post)? markAsDone,
+    TResult Function(dynamic data)? match,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +57,8 @@ mixin _$PostState<T> {
     required TResult Function(Posts<T> value) posts,
     required TResult Function(Error<T> value) error,
     required TResult Function(addNewPost<T> value) addNewPost,
+    required TResult Function(MarkAsDone<T> value) markAsDone,
+    required TResult Function(Match<T> value) match,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +68,8 @@ mixin _$PostState<T> {
     TResult? Function(Posts<T> value)? posts,
     TResult? Function(Error<T> value)? error,
     TResult? Function(addNewPost<T> value)? addNewPost,
+    TResult? Function(MarkAsDone<T> value)? markAsDone,
+    TResult? Function(Match<T> value)? match,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +79,8 @@ mixin _$PostState<T> {
     TResult Function(Posts<T> value)? posts,
     TResult Function(Error<T> value)? error,
     TResult Function(addNewPost<T> value)? addNewPost,
+    TResult Function(MarkAsDone<T> value)? markAsDone,
+    TResult Function(Match<T> value)? match,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,7 +152,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() loading,
     required TResult Function(T data) posts,
     required TResult Function(String error) error,
-    required TResult Function(T posts) addNewPost,
+    required TResult Function(PostResponse post) addNewPost,
+    required TResult Function(PostResponse post) markAsDone,
+    required TResult Function(dynamic data) match,
   }) {
     return initial();
   }
@@ -152,7 +166,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? posts,
     TResult? Function(String error)? error,
-    TResult? Function(T posts)? addNewPost,
+    TResult? Function(PostResponse post)? addNewPost,
+    TResult? Function(PostResponse post)? markAsDone,
+    TResult? Function(dynamic data)? match,
   }) {
     return initial?.call();
   }
@@ -164,7 +180,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? loading,
     TResult Function(T data)? posts,
     TResult Function(String error)? error,
-    TResult Function(T posts)? addNewPost,
+    TResult Function(PostResponse post)? addNewPost,
+    TResult Function(PostResponse post)? markAsDone,
+    TResult Function(dynamic data)? match,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -181,6 +199,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(Posts<T> value) posts,
     required TResult Function(Error<T> value) error,
     required TResult Function(addNewPost<T> value) addNewPost,
+    required TResult Function(MarkAsDone<T> value) markAsDone,
+    required TResult Function(Match<T> value) match,
   }) {
     return initial(this);
   }
@@ -193,6 +213,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(Posts<T> value)? posts,
     TResult? Function(Error<T> value)? error,
     TResult? Function(addNewPost<T> value)? addNewPost,
+    TResult? Function(MarkAsDone<T> value)? markAsDone,
+    TResult? Function(Match<T> value)? match,
   }) {
     return initial?.call(this);
   }
@@ -205,6 +227,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(Posts<T> value)? posts,
     TResult Function(Error<T> value)? error,
     TResult Function(addNewPost<T> value)? addNewPost,
+    TResult Function(MarkAsDone<T> value)? markAsDone,
+    TResult Function(Match<T> value)? match,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -263,7 +287,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function() loading,
     required TResult Function(T data) posts,
     required TResult Function(String error) error,
-    required TResult Function(T posts) addNewPost,
+    required TResult Function(PostResponse post) addNewPost,
+    required TResult Function(PostResponse post) markAsDone,
+    required TResult Function(dynamic data) match,
   }) {
     return loading();
   }
@@ -275,7 +301,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? posts,
     TResult? Function(String error)? error,
-    TResult? Function(T posts)? addNewPost,
+    TResult? Function(PostResponse post)? addNewPost,
+    TResult? Function(PostResponse post)? markAsDone,
+    TResult? Function(dynamic data)? match,
   }) {
     return loading?.call();
   }
@@ -287,7 +315,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function()? loading,
     TResult Function(T data)? posts,
     TResult Function(String error)? error,
-    TResult Function(T posts)? addNewPost,
+    TResult Function(PostResponse post)? addNewPost,
+    TResult Function(PostResponse post)? markAsDone,
+    TResult Function(dynamic data)? match,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -304,6 +334,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(Posts<T> value) posts,
     required TResult Function(Error<T> value) error,
     required TResult Function(addNewPost<T> value) addNewPost,
+    required TResult Function(MarkAsDone<T> value) markAsDone,
+    required TResult Function(Match<T> value) match,
   }) {
     return loading(this);
   }
@@ -316,6 +348,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(Posts<T> value)? posts,
     TResult? Function(Error<T> value)? error,
     TResult? Function(addNewPost<T> value)? addNewPost,
+    TResult? Function(MarkAsDone<T> value)? markAsDone,
+    TResult? Function(Match<T> value)? match,
   }) {
     return loading?.call(this);
   }
@@ -328,6 +362,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(Posts<T> value)? posts,
     TResult Function(Error<T> value)? error,
     TResult Function(addNewPost<T> value)? addNewPost,
+    TResult Function(MarkAsDone<T> value)? markAsDone,
+    TResult Function(Match<T> value)? match,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -414,7 +450,9 @@ class _$PostsImpl<T> implements Posts<T> {
     required TResult Function() loading,
     required TResult Function(T data) posts,
     required TResult Function(String error) error,
-    required TResult Function(T posts) addNewPost,
+    required TResult Function(PostResponse post) addNewPost,
+    required TResult Function(PostResponse post) markAsDone,
+    required TResult Function(dynamic data) match,
   }) {
     return posts(data);
   }
@@ -426,7 +464,9 @@ class _$PostsImpl<T> implements Posts<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? posts,
     TResult? Function(String error)? error,
-    TResult? Function(T posts)? addNewPost,
+    TResult? Function(PostResponse post)? addNewPost,
+    TResult? Function(PostResponse post)? markAsDone,
+    TResult? Function(dynamic data)? match,
   }) {
     return posts?.call(data);
   }
@@ -438,7 +478,9 @@ class _$PostsImpl<T> implements Posts<T> {
     TResult Function()? loading,
     TResult Function(T data)? posts,
     TResult Function(String error)? error,
-    TResult Function(T posts)? addNewPost,
+    TResult Function(PostResponse post)? addNewPost,
+    TResult Function(PostResponse post)? markAsDone,
+    TResult Function(dynamic data)? match,
     required TResult orElse(),
   }) {
     if (posts != null) {
@@ -455,6 +497,8 @@ class _$PostsImpl<T> implements Posts<T> {
     required TResult Function(Posts<T> value) posts,
     required TResult Function(Error<T> value) error,
     required TResult Function(addNewPost<T> value) addNewPost,
+    required TResult Function(MarkAsDone<T> value) markAsDone,
+    required TResult Function(Match<T> value) match,
   }) {
     return posts(this);
   }
@@ -467,6 +511,8 @@ class _$PostsImpl<T> implements Posts<T> {
     TResult? Function(Posts<T> value)? posts,
     TResult? Function(Error<T> value)? error,
     TResult? Function(addNewPost<T> value)? addNewPost,
+    TResult? Function(MarkAsDone<T> value)? markAsDone,
+    TResult? Function(Match<T> value)? match,
   }) {
     return posts?.call(this);
   }
@@ -479,6 +525,8 @@ class _$PostsImpl<T> implements Posts<T> {
     TResult Function(Posts<T> value)? posts,
     TResult Function(Error<T> value)? error,
     TResult Function(addNewPost<T> value)? addNewPost,
+    TResult Function(MarkAsDone<T> value)? markAsDone,
+    TResult Function(Match<T> value)? match,
     required TResult orElse(),
   }) {
     if (posts != null) {
@@ -572,7 +620,9 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function() loading,
     required TResult Function(T data) posts,
     required TResult Function(String error) error,
-    required TResult Function(T posts) addNewPost,
+    required TResult Function(PostResponse post) addNewPost,
+    required TResult Function(PostResponse post) markAsDone,
+    required TResult Function(dynamic data) match,
   }) {
     return error(this.error);
   }
@@ -584,7 +634,9 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? posts,
     TResult? Function(String error)? error,
-    TResult? Function(T posts)? addNewPost,
+    TResult? Function(PostResponse post)? addNewPost,
+    TResult? Function(PostResponse post)? markAsDone,
+    TResult? Function(dynamic data)? match,
   }) {
     return error?.call(this.error);
   }
@@ -596,7 +648,9 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function()? loading,
     TResult Function(T data)? posts,
     TResult Function(String error)? error,
-    TResult Function(T posts)? addNewPost,
+    TResult Function(PostResponse post)? addNewPost,
+    TResult Function(PostResponse post)? markAsDone,
+    TResult Function(dynamic data)? match,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -613,6 +667,8 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function(Posts<T> value) posts,
     required TResult Function(Error<T> value) error,
     required TResult Function(addNewPost<T> value) addNewPost,
+    required TResult Function(MarkAsDone<T> value) markAsDone,
+    required TResult Function(Match<T> value) match,
   }) {
     return error(this);
   }
@@ -625,6 +681,8 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function(Posts<T> value)? posts,
     TResult? Function(Error<T> value)? error,
     TResult? Function(addNewPost<T> value)? addNewPost,
+    TResult? Function(MarkAsDone<T> value)? markAsDone,
+    TResult? Function(Match<T> value)? match,
   }) {
     return error?.call(this);
   }
@@ -637,6 +695,8 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function(Posts<T> value)? posts,
     TResult Function(Error<T> value)? error,
     TResult Function(addNewPost<T> value)? addNewPost,
+    TResult Function(MarkAsDone<T> value)? markAsDone,
+    TResult Function(Match<T> value)? match,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -664,7 +724,7 @@ abstract class _$$addNewPostImplCopyWith<T, $Res> {
           _$addNewPostImpl<T> value, $Res Function(_$addNewPostImpl<T>) then) =
       __$$addNewPostImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T posts});
+  $Res call({PostResponse post});
 }
 
 /// @nodoc
@@ -680,13 +740,13 @@ class __$$addNewPostImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? posts = freezed,
+    Object? post = null,
   }) {
     return _then(_$addNewPostImpl<T>(
-      freezed == posts
-          ? _value.posts
-          : posts // ignore: cast_nullable_to_non_nullable
-              as T,
+      null == post
+          ? _value.post
+          : post // ignore: cast_nullable_to_non_nullable
+              as PostResponse,
     ));
   }
 }
@@ -694,14 +754,14 @@ class __$$addNewPostImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$addNewPostImpl<T> implements addNewPost<T> {
-  const _$addNewPostImpl(this.posts);
+  const _$addNewPostImpl(this.post);
 
   @override
-  final T posts;
+  final PostResponse post;
 
   @override
   String toString() {
-    return 'PostState<$T>.addNewPost(posts: $posts)';
+    return 'PostState<$T>.addNewPost(post: $post)';
   }
 
   @override
@@ -709,12 +769,11 @@ class _$addNewPostImpl<T> implements addNewPost<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$addNewPostImpl<T> &&
-            const DeepCollectionEquality().equals(other.posts, posts));
+            (identical(other.post, post) || other.post == post));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(posts));
+  int get hashCode => Object.hash(runtimeType, post);
 
   /// Create a copy of PostState
   /// with the given fields replaced by the non-null parameter values.
@@ -731,9 +790,11 @@ class _$addNewPostImpl<T> implements addNewPost<T> {
     required TResult Function() loading,
     required TResult Function(T data) posts,
     required TResult Function(String error) error,
-    required TResult Function(T posts) addNewPost,
+    required TResult Function(PostResponse post) addNewPost,
+    required TResult Function(PostResponse post) markAsDone,
+    required TResult Function(dynamic data) match,
   }) {
-    return addNewPost(this.posts);
+    return addNewPost(post);
   }
 
   @override
@@ -743,9 +804,11 @@ class _$addNewPostImpl<T> implements addNewPost<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? posts,
     TResult? Function(String error)? error,
-    TResult? Function(T posts)? addNewPost,
+    TResult? Function(PostResponse post)? addNewPost,
+    TResult? Function(PostResponse post)? markAsDone,
+    TResult? Function(dynamic data)? match,
   }) {
-    return addNewPost?.call(this.posts);
+    return addNewPost?.call(post);
   }
 
   @override
@@ -755,11 +818,13 @@ class _$addNewPostImpl<T> implements addNewPost<T> {
     TResult Function()? loading,
     TResult Function(T data)? posts,
     TResult Function(String error)? error,
-    TResult Function(T posts)? addNewPost,
+    TResult Function(PostResponse post)? addNewPost,
+    TResult Function(PostResponse post)? markAsDone,
+    TResult Function(dynamic data)? match,
     required TResult orElse(),
   }) {
     if (addNewPost != null) {
-      return addNewPost(this.posts);
+      return addNewPost(post);
     }
     return orElse();
   }
@@ -772,6 +837,8 @@ class _$addNewPostImpl<T> implements addNewPost<T> {
     required TResult Function(Posts<T> value) posts,
     required TResult Function(Error<T> value) error,
     required TResult Function(addNewPost<T> value) addNewPost,
+    required TResult Function(MarkAsDone<T> value) markAsDone,
+    required TResult Function(Match<T> value) match,
   }) {
     return addNewPost(this);
   }
@@ -784,6 +851,8 @@ class _$addNewPostImpl<T> implements addNewPost<T> {
     TResult? Function(Posts<T> value)? posts,
     TResult? Function(Error<T> value)? error,
     TResult? Function(addNewPost<T> value)? addNewPost,
+    TResult? Function(MarkAsDone<T> value)? markAsDone,
+    TResult? Function(Match<T> value)? match,
   }) {
     return addNewPost?.call(this);
   }
@@ -796,6 +865,8 @@ class _$addNewPostImpl<T> implements addNewPost<T> {
     TResult Function(Posts<T> value)? posts,
     TResult Function(Error<T> value)? error,
     TResult Function(addNewPost<T> value)? addNewPost,
+    TResult Function(MarkAsDone<T> value)? markAsDone,
+    TResult Function(Match<T> value)? match,
     required TResult orElse(),
   }) {
     if (addNewPost != null) {
@@ -806,13 +877,354 @@ class _$addNewPostImpl<T> implements addNewPost<T> {
 }
 
 abstract class addNewPost<T> implements PostState<T> {
-  const factory addNewPost(final T posts) = _$addNewPostImpl<T>;
+  const factory addNewPost(final PostResponse post) = _$addNewPostImpl<T>;
 
-  T get posts;
+  PostResponse get post;
 
   /// Create a copy of PostState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$addNewPostImplCopyWith<T, _$addNewPostImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MarkAsDoneImplCopyWith<T, $Res> {
+  factory _$$MarkAsDoneImplCopyWith(
+          _$MarkAsDoneImpl<T> value, $Res Function(_$MarkAsDoneImpl<T>) then) =
+      __$$MarkAsDoneImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({PostResponse post});
+}
+
+/// @nodoc
+class __$$MarkAsDoneImplCopyWithImpl<T, $Res>
+    extends _$PostStateCopyWithImpl<T, $Res, _$MarkAsDoneImpl<T>>
+    implements _$$MarkAsDoneImplCopyWith<T, $Res> {
+  __$$MarkAsDoneImplCopyWithImpl(
+      _$MarkAsDoneImpl<T> _value, $Res Function(_$MarkAsDoneImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PostState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? post = null,
+  }) {
+    return _then(_$MarkAsDoneImpl<T>(
+      null == post
+          ? _value.post
+          : post // ignore: cast_nullable_to_non_nullable
+              as PostResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MarkAsDoneImpl<T> implements MarkAsDone<T> {
+  const _$MarkAsDoneImpl(this.post);
+
+  @override
+  final PostResponse post;
+
+  @override
+  String toString() {
+    return 'PostState<$T>.markAsDone(post: $post)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MarkAsDoneImpl<T> &&
+            (identical(other.post, post) || other.post == post));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, post);
+
+  /// Create a copy of PostState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MarkAsDoneImplCopyWith<T, _$MarkAsDoneImpl<T>> get copyWith =>
+      __$$MarkAsDoneImplCopyWithImpl<T, _$MarkAsDoneImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) posts,
+    required TResult Function(String error) error,
+    required TResult Function(PostResponse post) addNewPost,
+    required TResult Function(PostResponse post) markAsDone,
+    required TResult Function(dynamic data) match,
+  }) {
+    return markAsDone(post);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? posts,
+    TResult? Function(String error)? error,
+    TResult? Function(PostResponse post)? addNewPost,
+    TResult? Function(PostResponse post)? markAsDone,
+    TResult? Function(dynamic data)? match,
+  }) {
+    return markAsDone?.call(post);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? posts,
+    TResult Function(String error)? error,
+    TResult Function(PostResponse post)? addNewPost,
+    TResult Function(PostResponse post)? markAsDone,
+    TResult Function(dynamic data)? match,
+    required TResult orElse(),
+  }) {
+    if (markAsDone != null) {
+      return markAsDone(post);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Posts<T> value) posts,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(addNewPost<T> value) addNewPost,
+    required TResult Function(MarkAsDone<T> value) markAsDone,
+    required TResult Function(Match<T> value) match,
+  }) {
+    return markAsDone(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Posts<T> value)? posts,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(addNewPost<T> value)? addNewPost,
+    TResult? Function(MarkAsDone<T> value)? markAsDone,
+    TResult? Function(Match<T> value)? match,
+  }) {
+    return markAsDone?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Posts<T> value)? posts,
+    TResult Function(Error<T> value)? error,
+    TResult Function(addNewPost<T> value)? addNewPost,
+    TResult Function(MarkAsDone<T> value)? markAsDone,
+    TResult Function(Match<T> value)? match,
+    required TResult orElse(),
+  }) {
+    if (markAsDone != null) {
+      return markAsDone(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MarkAsDone<T> implements PostState<T> {
+  const factory MarkAsDone(final PostResponse post) = _$MarkAsDoneImpl<T>;
+
+  PostResponse get post;
+
+  /// Create a copy of PostState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MarkAsDoneImplCopyWith<T, _$MarkAsDoneImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MatchImplCopyWith<T, $Res> {
+  factory _$$MatchImplCopyWith(
+          _$MatchImpl<T> value, $Res Function(_$MatchImpl<T>) then) =
+      __$$MatchImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({dynamic data});
+}
+
+/// @nodoc
+class __$$MatchImplCopyWithImpl<T, $Res>
+    extends _$PostStateCopyWithImpl<T, $Res, _$MatchImpl<T>>
+    implements _$$MatchImplCopyWith<T, $Res> {
+  __$$MatchImplCopyWithImpl(
+      _$MatchImpl<T> _value, $Res Function(_$MatchImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PostState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$MatchImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MatchImpl<T> implements Match<T> {
+  const _$MatchImpl(this.data);
+
+  @override
+  final dynamic data;
+
+  @override
+  String toString() {
+    return 'PostState<$T>.match(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MatchImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of PostState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MatchImplCopyWith<T, _$MatchImpl<T>> get copyWith =>
+      __$$MatchImplCopyWithImpl<T, _$MatchImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) posts,
+    required TResult Function(String error) error,
+    required TResult Function(PostResponse post) addNewPost,
+    required TResult Function(PostResponse post) markAsDone,
+    required TResult Function(dynamic data) match,
+  }) {
+    return match(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? posts,
+    TResult? Function(String error)? error,
+    TResult? Function(PostResponse post)? addNewPost,
+    TResult? Function(PostResponse post)? markAsDone,
+    TResult? Function(dynamic data)? match,
+  }) {
+    return match?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? posts,
+    TResult Function(String error)? error,
+    TResult Function(PostResponse post)? addNewPost,
+    TResult Function(PostResponse post)? markAsDone,
+    TResult Function(dynamic data)? match,
+    required TResult orElse(),
+  }) {
+    if (match != null) {
+      return match(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Posts<T> value) posts,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(addNewPost<T> value) addNewPost,
+    required TResult Function(MarkAsDone<T> value) markAsDone,
+    required TResult Function(Match<T> value) match,
+  }) {
+    return match(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Posts<T> value)? posts,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(addNewPost<T> value)? addNewPost,
+    TResult? Function(MarkAsDone<T> value)? markAsDone,
+    TResult? Function(Match<T> value)? match,
+  }) {
+    return match?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Posts<T> value)? posts,
+    TResult Function(Error<T> value)? error,
+    TResult Function(addNewPost<T> value)? addNewPost,
+    TResult Function(MarkAsDone<T> value)? markAsDone,
+    TResult Function(Match<T> value)? match,
+    required TResult orElse(),
+  }) {
+    if (match != null) {
+      return match(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Match<T> implements PostState<T> {
+  const factory Match(final dynamic data) = _$MatchImpl<T>;
+
+  dynamic get data;
+
+  /// Create a copy of PostState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MatchImplCopyWith<T, _$MatchImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
