@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:salam_hack/features/crisis/data/model/generated_crisis_response.dart';
 import 'package:salam_hack/features/crisis/presentation/widgets/crisis_card.dart';
-import '../../../../core/models/crisis.dart';
 
 class CrisisListView extends StatelessWidget {
-  final List<Crisis> crisis;
+  final List<GeneratedCrisisResponse> crisis;
   const CrisisListView({super.key,required this.crisis});
 
   @override
@@ -14,7 +14,7 @@ class CrisisListView extends StatelessWidget {
       itemCount: crisis.length,
       itemBuilder: (context,index){
         return CrisisCard(
-          
+          generatedCrisisResponse: crisis[index],
         );
         // Padding(
         //   padding: const EdgeInsets.all(8.0),

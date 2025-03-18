@@ -1,5 +1,6 @@
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:salam_hack/core/models/clsuser.dart';
 import 'package:salam_hack/features/post/data/models/item.dart';
 
 part 'post_response.g.dart';
@@ -16,6 +17,8 @@ class PostResponse {
   String? city;
   String? phoneNumber;
   List<Item>? items;
+  String? username;
+  int? userId;
   PostResponse({
     this.id,
     this.userDescription,
@@ -26,12 +29,11 @@ class PostResponse {
     this.city,
     this.phoneNumber,
     this.items,
+    this.username,
+    this.userId,
   });
 
    factory PostResponse.fromJson(Map<String, dynamic> json) =>
       _$PostResponseFromJson(json);
-
-
-
 
 }

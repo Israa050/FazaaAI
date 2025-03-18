@@ -15,11 +15,14 @@ class CrisisCubit extends Cubit<CrisisState> {
 
   bool isResolved = false;
 
+  List<GeneratedCrisisResponse>? myCrisis;
+
   void emiCrisisSuccess() async {
     emit(CrisisState.loading());
     var response = await crisisRepo.getAllCrisis();
     response.when(success: (crisis) async {
-      emit(CrisisState.success(crisis.reversed));
+      myCrisis = crisis.reversed.toList();
+      emit(CrisisState.success(myCrisis));
     }, failure: (error) {
       emit(CrisisState.error(error: error.message ?? ''));
     });
@@ -33,7 +36,10 @@ class CrisisCubit extends Cubit<CrisisState> {
 
     response.when(
       success: (generatedCrisisResponse) {
+        myCrisis?.insert(0, generatedCrisisResponse); // Add new crisis to the list
         emit(CrisisState.generated(crisis: generatedCrisisResponse));
+        //typeController.text = generatedCrisisResponse.type!;
+        emit(CrisisState.success(List.from(myCrisis!))); // Emit updated list
       },
       failure: (error) {
         emit(CrisisState.error(error: error.message ?? ''));

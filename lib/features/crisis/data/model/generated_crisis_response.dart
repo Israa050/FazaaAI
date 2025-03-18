@@ -9,7 +9,7 @@ class GeneratedCrisisResponse {
   int? id;
   String? userDescription;
   String? city;
-  String? crisisType;
+  String? type;
   String? enhancedDescription;
   String? survivalGuide;
   bool? resolved;
@@ -18,7 +18,7 @@ class GeneratedCrisisResponse {
   GeneratedCrisisResponse({
     this.id,
     this.userDescription,
-    this.crisisType,
+    this.type,
     this.enhancedDescription,
     this.city,
     this.survivalGuide,

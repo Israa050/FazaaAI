@@ -40,7 +40,11 @@ class CustomDialog extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: const Text("OK"),
+               style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xff38BDF8), // Button color
+            foregroundColor: Colors.white, // Text color
+          ),
+            child: const Text("OK"),
             ),
           ],
         ),

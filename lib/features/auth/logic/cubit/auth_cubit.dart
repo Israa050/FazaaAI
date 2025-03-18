@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salam_hack/core/helper/extensions.dart';
 import '../../../../core/helper/constants.dart';
 import '../../../../core/helper/shared_pref_helper.dart';
 import '../../../../core/models/user.dart';
@@ -47,10 +48,13 @@ class AuthCubit extends Cubit<AuthState<dynamic>> {
   }
 
   void emitLoginState() async {
+    if(emailController.text.isNullOrEmpty() && passwordController.text.isNullOrEmpty()){
+      return;
+    }
     emit(const AuthState.loading());
-
+  
     final response = await _authRepo
-        .login( LoginRequestBody(username: userNameController.text, password: passwordController.text));
+        .login( LoginRequestBody(email: emailController.text, password: passwordController.text));
                     //LoginRequestBody(username: 'Shahd', password: 's@123')
     response.when(
       success: (token) async {

@@ -1,12 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:salam_hack/core/helper/spacing.dart';
 import 'package:salam_hack/core/router/routes.dart';
-import 'package:salam_hack/core/widgets/custom_dialog.dart';
-import 'package:salam_hack/core/widgets/swich_dialog.dart';
-import 'package:salam_hack/features/crisis/presentation/screens/add_crisis_page.dart';
-import 'package:salam_hack/features/crisis/presentation/screens/survival_guide_screen.dart';
-import 'package:salam_hack/features/crisis/presentation/widgets/crisis_card.dart';
 import 'package:salam_hack/features/post/presentation/widgets/home_drawer.dart';
 import '../../../../core/themes/colors.dart';
 import '../../../../core/themes/styles.dart';
@@ -27,19 +20,7 @@ class CrisisPage extends StatelessWidget {
         backgroundColor: Colors.white,
         // Colors.white,
         // iconTheme: IconThemeData(color: Color(0xff4B5563)),
-        actions: [
-          IconButton(
-            onPressed: () {
-              //  Navigator.of(context).pushNamed(Routes.crisisScreen);
-            },
-            icon: Icon(
-              Icons.notifications_none,
-            ),
-          ),
-          horizontalPadding(
-            5,
-          ),
-        ],
+     
         elevation: 4,
         iconTheme: IconThemeData(color: Colors.black),
       ),
@@ -58,31 +39,36 @@ class CrisisPage extends StatelessWidget {
           // )
           CrisisBlocBuilder(),
           ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.primaryBlue,
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context)=> AddCrisisScreen())
-           
-          );
-          // //Navigator.of(context).pushNamed(Routes.addPostScreen);
-          // // showCupertinoDialog(
-          // //   context: context,
-          // //   builder: (context) => SwitchDialog(
-          // //     title: 'Mark Crisis as resolved',
-          // //     description: '',
-          // //     initialValue: true,
-          // //     onSave: (bool){
-
-          // //     },
-          // //   ),
-          // );
-        },
-        child: Icon(
-          Icons.add,
-          color: Colors.white,
-          size: 25,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(right: 10,bottom: 40),
+        child: FloatingActionButton(
+          backgroundColor: AppColors.primaryBlue,
+          onPressed: () {
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(builder: (context)=> AddCrisisScreen())
+             
+            // );
+        
+            Navigator.of(context).pushNamed(Routes.addCrisisScreen);
+            // //Navigator.of(context).pushNamed(Routes.addPostScreen);
+            // // showCupertinoDialog(
+            // //   context: context,
+            // //   builder: (context) => SwitchDialog(
+            // //     title: 'Mark Crisis as resolved',
+            // //     description: '',
+            // //     initialValue: true,
+            // //     onSave: (bool){
+        
+            // //     },
+            // //   ),
+            // );
+          },
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
+            size: 25,
+          ),
         ),
       ),
     );

@@ -1,16 +1,55 @@
 import 'package:flutter/material.dart';
-import 'package:salam/views/add__crisis.dart';
-import 'package:salam/views/login.dart';
-import 'package:salam/views/posts.dart';
-import 'package:salam/views/shoulter.dart';
-import 'package:salam/views/user.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:salam_hack/core/helper/spacing.dart';
+import 'package:salam_hack/core/router/routes.dart';
+import 'package:salam_hack/features/dashboard/logic/cubit/home_cubit.dart';
 
-class Dashboarde extends StatelessWidget {
+class Dashboarde extends StatefulWidget {
   const Dashboarde({super.key});
+
+  @override
+  State<Dashboarde> createState() => _DashboardeState();
+}
+
+class _DashboardeState extends State<Dashboarde> {
+
+
+  @override
+  void initState() {
+    context.read<HomeCubit>().emitLoadUserData();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+           actions: [
+          IconButton(
+            onPressed: () {
+                Navigator.of(context).pushNamed(Routes.notificationsScreen);
+            },
+            icon: Icon(
+              Icons.notifications_none,
+            ),
+          ),
+          horizontalPadding(
+            5,
+          ),
+
+           IconButton(
+            onPressed: () {
+              context.read<HomeCubit>().logout();
+                Navigator.of(context).pushReplacementNamed(Routes.loginScreen);
+            },
+            icon: Icon(
+              Icons.logout_outlined,
+            ),
+          ),
+
+
+        ],
+      ),
       backgroundColor: Colors.white,
       body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -34,11 +73,12 @@ class Dashboarde extends StatelessWidget {
                               minWidth: 100,
                               color: Color.fromARGB(255, 11, 145, 255),
                               onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Posts()));
+                                Navigator.of(context).pushNamed(Routes.postsScreen);
+                                // Navigator.of(context).push(MaterialPageRoute(
+                                //     builder: (context) => Posts()));
                               },
                               child: const Icon(
-                                (Icons.comment),
+                                (Icons.comment_rounded),
                                 size: 80,
                                 color: Colors.white,
                               ),
@@ -66,11 +106,11 @@ class Dashboarde extends StatelessWidget {
                               minWidth: 100,
                               color: const Color.fromARGB(255, 11, 145, 255),
                               onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Shoulter()));
+                                // Navigator.of(context).push(MaterialPageRoute(
+                                //     builder: (context) => Shoulter()));
                               },
                               child: const Icon(
-                                Icons.home,
+                                Icons.home_rounded,
                                 size: 80,
                                 color: Colors.white,
                               ),
@@ -105,13 +145,15 @@ class Dashboarde extends StatelessWidget {
                               minWidth: 100,
                               color: const Color.fromARGB(255, 11, 145, 255),
                               onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => AddCrisis()));
+                                // Navigator.of(context).push(MaterialPageRoute(
+                                //     builder: (context) => AddCrisis()));
+                                Navigator.of(context).pushNamed(Routes.crisisScreen);
+
                               },
                               child: const Icon(
-                                Icons.warning_amber,
+                                Icons.warning_amber_rounded,
                                 size: 80,
-                                color: Colors.white,
+                                color: Colors.amber,
                               ),
                             ),
                             SizedBox(
@@ -136,11 +178,11 @@ class Dashboarde extends StatelessWidget {
                               minWidth: 100,
                               color: const Color.fromARGB(255, 11, 145, 255),
                               onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Login()));
+                                // Navigator.of(context).push(MaterialPageRoute(
+                                //     builder: (context) => Login()));
                               },
                               child: const Icon(
-                                Icons.person,
+                                Icons.person_rounded,
                                 size: 80,
                                 color: Colors.white,
                               ),
@@ -165,45 +207,3 @@ class Dashboarde extends StatelessWidget {
     );
   }
 }
-
-/*class dashboard extends StatelessWidget {
-  final IconData icon;
-  final String text;
-  final Function route;
-  const dashboard({
-    required this.icon,
-    required this.text,
-    required this.route,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(40.0),
-      ),
-      child: Column(children: [
-        MaterialButton(
-          height: 100,
-          minWidth: 100,
-          color: const Color.fromARGB(255, 11, 145, 255),
-          onPressed: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => route()));
-          },
-          child: Icon(
-            icon,
-            size: 60,
-            color: Colors.white,
-          ),
-        ),
-        Text(
-          text,
-          style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 30, color: Colors.black),
-        )
-      ]),
-    );
-  }
-}*/

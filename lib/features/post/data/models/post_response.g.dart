@@ -18,6 +18,8 @@ PostResponse _$PostResponseFromJson(Map<String, dynamic> json) => PostResponse(
       items: (json['items'] as List<dynamic>?)
           ?.map((e) => Item.fromJson(e as Map<String, dynamic>))
           .toList(),
+      username: json['username'] as String?,
+      userId: (json['userId'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$PostResponseToJson(PostResponse instance) =>
@@ -31,4 +33,6 @@ Map<String, dynamic> _$PostResponseToJson(PostResponse instance) =>
       'city': instance.city,
       'phoneNumber': instance.phoneNumber,
       'items': instance.items,
+      'username': instance.username,
+      'userId': instance.userId,
     };

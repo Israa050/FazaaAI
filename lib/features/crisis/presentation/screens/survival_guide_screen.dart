@@ -16,7 +16,8 @@ class SurvivalGuideScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> guideSteps = survivalGuide.split("\n");
+    List<String> guideSteps = survivalGuide.split(RegExp(r'(\d+\.\s*)')).where((e) => e.trim().isNotEmpty).toList();
+
 
     return Scaffold(
       appBar: AppBar(
@@ -40,36 +41,39 @@ class SurvivalGuideScreen extends StatelessWidget {
           horizontal: 15,
           vertical: 15,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              '$crisisType Survival Guide',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              location,
-              style: TextStyle(fontSize: 16, color: Colors.grey[600]),
-            ),
-            const SizedBox(height: 8),
-            Divider(thickness: 3),
-            const SizedBox(height: 8),
-            Column(
-              children: guideSteps.map((step) {
-                return ListTile(
-                  leading:
-                      Icon(Icons.check_circle, color: Colors.green), // ✅ Icon
-                  title: Text(
-                    step.replaceAll(
-                        RegExp(r'^\d+\.\s*'), ''), // Remove numbering
-                    style: TextStyle(fontSize: 18),
-                  ),
-                );
-              }).toList(),
-            ),
-            const SizedBox(height: 8),
-            // Divider(thickness: 2),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '$crisisType Survival Guide',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                location,
+                style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+              ),
+              const SizedBox(height: 8),
+              Divider(thickness: 3),
+              const SizedBox(height: 8),
+              Column(
+                children: guideSteps.map((step) {
+                  return ListTile(
+                    leading:
+                        Icon(Icons.check_circle, color: Colors.green), // ✅ Icon
+                    title: Text(
+                      step.trim(),
+                      ///.replaceAll(
+                         // RegExp(r'^\d+\.\s*'), ''), // Remove numbering
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  );
+                }).toList(),
+              ),
+              const SizedBox(height: 8),
+              // Divider(thickness: 2),
+            ],
+          ),
         ),
       ),
     );

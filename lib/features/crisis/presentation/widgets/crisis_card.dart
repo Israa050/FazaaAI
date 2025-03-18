@@ -1,12 +1,13 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:salam_hack/core/themes/styles.dart';
 import 'package:salam_hack/features/crisis/data/model/generated_crisis_response.dart';
 import 'package:salam_hack/features/crisis/presentation/screens/survival_guide_screen.dart';
 
 class CrisisCard extends StatelessWidget {
-  GeneratedCrisisResponse? generatedCrisisResponse;
-  CrisisCard({super.key});
+  GeneratedCrisisResponse generatedCrisisResponse;
+  CrisisCard({super.key,required this.generatedCrisisResponse});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,9 @@ class CrisisCard extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                 "Flood in Downtown Area",
+                generatedCrisisResponse.enhancedDescription??  "Flood in Downtown Area",
+                maxLines: 1,
+                textWidthBasis: TextWidthBasis.longestLine,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ),
@@ -44,7 +47,7 @@ class CrisisCard extends StatelessWidget {
             SizedBox(width: 4),
             Expanded(
               child: Text(
-                "Central District, Main Street",
+               generatedCrisisResponse.city??  "Central District, Main Street",
                 style: TextStyle(fontSize: 14, color: Colors.black87),
               ),
             ),
@@ -59,16 +62,18 @@ class CrisisCard extends StatelessWidget {
             // Source Button
             TextButton.icon(
               onPressed: () {},
-              icon: Icon(Icons.link, size: 18, color: Colors.blue),
-              label: Text("Source"),
+              icon: Icon(Icons.edit, size: 18, color: Colors.blue),
+              label: Text(generatedCrisisResponse.user!.username ?? 'username',style: TextStyles.font14DarkBlueMedium,),
             ),
 
-            // Details Button
-            TextButton.icon(
-              onPressed: () {},
-              icon: Icon(Icons.info_outline, size: 18, color: Colors.black54),
-              label: Text("Details"),
-            ),
+            // // Details Button
+            // TextButton.icon(
+            //   onPressed: () {
+            //     showCrisisDialog(context,generatedCrisisResponse);
+            //   },
+            //   icon: Icon(Icons.info_outline, size: 18, color: Colors.black54),
+            //   label: Text("Details"),
+            // ),
 
             // Guide Icon Button (No Label)
             IconButton(
@@ -78,9 +83,9 @@ class CrisisCard extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) => SurvivalGuideScreen(
-                crisisType: generatedCrisisResponse!.crisisType ?? "Wildfire",
-                location: generatedCrisisResponse!.city?? 'DownTown',
-                survivalGuide: generatedCrisisResponse!.survivalGuide??
+                crisisType: generatedCrisisResponse.type ?? "Wildfire",
+                location: generatedCrisisResponse.city?? 'DownTown',
+                survivalGuide: generatedCrisisResponse.survivalGuide??
                     "1. Follow evacuation orders. \n2. Avoid breathing in smoke. \n3. Call emergency services at 911.",
               ),
             ),

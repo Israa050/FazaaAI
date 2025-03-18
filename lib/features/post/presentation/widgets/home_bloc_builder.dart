@@ -18,23 +18,28 @@ class _HomeBlocBuilderState extends State<HomeBlocBuilder> {
 
   @override
   void initState() {
-    context.read<PostCubit>().getCurrentUser();
+    //context.read<PostCubit>().getCurrentUser();
     context.read<PostCubit>().emitPostsListLoadedState();
     super.initState();
   }
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PostCubit, PostState>(builder: (context,state){
-
-      if(state is Posts){
-        //var postsList = context.read<HomeCubit>().myPosts;
-        return PostsList(posts: state.data);
-      }else if (state is Error){
-        return setupError(state.error);
-      }
-      return LoadingPage();
-
-    });
+    return RefreshIndicator(
+      onRefresh: ()async {
+        context.read<PostCubit>().emitPostsListLoadedState();
+      },
+      child: BlocBuilder<PostCubit, PostState>(builder: (context,state){
+      
+        if(state is Posts){
+          //var postsList = context.read<HomeCubit>().myPosts;
+          return PostsList(posts: state.data);
+        }else if (state is Error){
+          return setupError(state.error);
+        }
+        return LoadingPage();
+      
+      }),
+    );
   }
 
    Widget setupError(String message) {

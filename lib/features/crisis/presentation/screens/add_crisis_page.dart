@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:salam_hack/core/di/dependency_injection.dart';
 import 'package:salam_hack/core/helper/show_dialog.dart';
 import 'package:salam_hack/core/themes/colors.dart';
+import 'package:salam_hack/core/widgets/loading.dart';
 import 'package:salam_hack/features/crisis/logic/cubit/crisis_cubit.dart';
 import 'package:salam_hack/features/crisis/logic/cubit/crisis_state.dart';
 
@@ -14,17 +14,8 @@ class AddCrisisScreen extends StatefulWidget {
 }
 
 class _AddCrisisScreenState extends State<AddCrisisScreen> {
-  
   bool isResolved = false;
   bool isLoading = false;
-
-  @override
-  void dispose() {
-    context.read<CrisisCubit>().descriptionController.clear();
-    context.read<CrisisCubit>().typeController.clear();
-    context.read<CrisisCubit>().locationController.clear();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,38 +33,49 @@ class _AddCrisisScreenState extends State<AddCrisisScreen> {
       body: BlocListener<CrisisCubit, CrisisState>(
         listener: (context, state) {
           if (state is CrisisAdded) {
+            setState(() {
+              isLoading = false;
+            });
             print('Crisis Added');
             showCustomDialog(
               context,
-              title: '${state.crisis.crisisType} Crisis Generated Successfully',
-              description: '${state.crisis.enhancedDescription}',
+              title: '${state.crisis.type} Crisis Generated Successfully',
+              description: '',
               isSuccess: true,
             );
           } else if (state is CrisisError) {
+            setState(() {
+              isLoading = false;
+            });
             showCustomDialog(
               context,
               title: 'Error Generating your Crisis',
               description: state.error,
               isSuccess: false,
             );
+          } else if (state is Loading) {
+            setState(() {
+              isLoading = true;
+            });
           }
         },
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Stack(
             children: [
-              _buildDescriptionField(),
-              const SizedBox(height: 12),
-              _buildTextField(
-                  context.read<CrisisCubit>().typeController, "Type"),
-              const SizedBox(height: 12),
-              _buildTextField(
-                  context.read<CrisisCubit>().locationController, "Location"),
-              const SizedBox(height: 20),
-              _buildResolvedSwitch(),
-              const SizedBox(height: 30),
-              _buildSubmitButton(),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildDescriptionField(),
+                  const SizedBox(height: 12),
+                  _buildTextField(
+                      context.read<CrisisCubit>().locationController,
+                      "Location"),
+                  const SizedBox(height: 40),
+                  _buildSubmitButton(),
+                ],
+              ),
+              if (isLoading) LoadingPage(),
             ],
           ),
         ),
@@ -100,27 +102,27 @@ class _AddCrisisScreenState extends State<AddCrisisScreen> {
             ),
           ),
           const SizedBox(height: 6),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              const SizedBox(width: 6),
-              IconButton(
-                onPressed: () {
-                  context.read<CrisisCubit>().emitAddNewCrisis();
-                },
-                icon: Icon(
-                  Icons.smart_toy,
-                  color: AppColors.primaryBlue,
-                ),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text("Generate post with AI", style: TextStyle(fontSize: 12)),
-            ],
-          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.end,
+          //   children: [
+          //     const SizedBox(width: 6),
+          //     IconButton(
+          //       onPressed: () {
+          //         context.read<CrisisCubit>().emitAddNewCrisis();
+          //       },
+          //       icon: Icon(
+          //         Icons.smart_toy,
+          //         color: AppColors.primaryBlue,
+          //       ),
+          //     ),
+          //   ],
+          // ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.end,
+          //   children: [
+          //     Text("Generate post with AI", style: TextStyle(fontSize: 12)),
+          //   ],
+          // ),
         ],
       ),
     );
@@ -172,9 +174,16 @@ class _AddCrisisScreenState extends State<AddCrisisScreen> {
         ),
         onPressed: () {
           // Implement submit action
+          context.read<CrisisCubit>().emitAddNewCrisis();
         },
-        child:
-            Text("Submit", style: TextStyle(fontSize: 18, color: Colors.white)),
+        child: Text(
+          //"⚡️
+          "✨ Generate Post",
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.white,
+          ),
+        ),
       ),
     );
   }

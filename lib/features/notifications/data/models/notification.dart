@@ -6,19 +6,19 @@ import 'package:json_annotation/json_annotation.dart';
 part 'notification.g.dart';
 
 @JsonSerializable()
-class Notification {
+class ClsNotification {
 
   int? id;
   String? message;
   String? type;
   bool? isRead;
-  Notification({
+  ClsNotification({
     this.id,
     this.message,
     this.type,
     this.isRead,
   });
 
-  factory Notification.fromJson(Map<String, dynamic> json) =>
-      _$NotificationFromJson(json);
+  factory ClsNotification.fromJson(Map<String, dynamic> json) =>
+      _$ClsNotificationFromJson(json);
 }
