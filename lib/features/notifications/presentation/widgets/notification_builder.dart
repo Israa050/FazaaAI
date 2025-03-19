@@ -7,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:salam_hack/features/notifications/logic/cubit/notification_cubit.dart';
 import 'package:salam_hack/features/notifications/logic/cubit/notification_state.dart';
 import 'package:salam_hack/features/notifications/presentation/widgets/notification_list_view.dart';
-import 'package:salam_hack/features/post/logic/cubit/post_cubit.dart';
 import 'package:salam_hack/main.dart';
 import '../../../../core/widgets/loading.dart';
 

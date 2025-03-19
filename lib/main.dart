@@ -37,9 +37,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.primaryBlue,
       ),
-       onGenerateRoute: appRouter.generateRoute,
-      initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
-     // home: PostScreen(),
+      // onGenerateRoute: appRouter.generateRoute,
+      //initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
+     // home: UserProfilePage(),
     );
   }
 }
@@ -53,6 +53,9 @@ checkIfLoggedInUser() async {
     isLoggedInUser = false;
   }
 }
+
+
+
 
 // class TestPost extends StatelessWidget {
 //   const TestPost({super.key});

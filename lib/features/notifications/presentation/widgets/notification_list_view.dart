@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salam_hack/features/notifications/data/models/notification.dart';
 import 'package:salam_hack/features/notifications/presentation/widgets/notification_tile.dart';
-import 'package:salam_hack/features/post/data/models/post_response.dart';
-import 'package:salam_hack/features/post/presentation/widgets/post_card.dart';
 
 class NotificationListView extends StatelessWidget {
   List<ClsNotification>? notifications;
@@ -17,10 +15,18 @@ class NotificationListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.all(8.0),
-          child: NotificationTile(
-              title: notifications![index].message!,
-              location: notifications![index].type!,
-              time: ''),
+          child: NotificationTileTests(
+            title:notifications?[index].message ?? "message",
+              type: notifications?[index].type ?? 'type',
+              location: '',
+              time: ''
+               ),
+          
+          //  NotificationTile(
+          //     title: notifications?[index].message ?? "message",
+          //     location: notifications?[index].type ?? 'type',
+          //     time: ''
+          //     ),
           // CustomCardInfo(
           //   isPost: true,
           //   priority: posts[index].urgency,
