@@ -63,7 +63,7 @@ class CrisisCard extends StatelessWidget {
             TextButton.icon(
               onPressed: () {},
               icon: Icon(Icons.edit, size: 18, color: Colors.blue),
-              label: Text(generatedCrisisResponse.user!.username ?? 'username',style: TextStyles.font14DarkBlueMedium,),
+              label: Text(generatedCrisisResponse.username ?? 'username',style: TextStyles.font14DarkBlueMedium,),
             ),
 
             // // Details Button

@@ -16,6 +16,7 @@ class NotificationListView extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.all(8.0),
           child: NotificationTileTests(
+            notification: notifications![index],
             title:notifications?[index].message ?? "message",
               type: notifications?[index].type ?? 'type',
               location: '',

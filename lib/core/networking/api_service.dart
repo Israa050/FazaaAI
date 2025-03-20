@@ -9,9 +9,14 @@ import 'package:salam_hack/core/models/clsuser.dart';
 import 'package:salam_hack/core/models/match_request.dart';
 import 'package:salam_hack/features/crisis/data/model/generated_crisis_response.dart';
 import 'package:salam_hack/features/crisis/data/model/report_crisis_request.dart';
+import 'package:salam_hack/features/dashboard/data/models/saftey_check_request_body.dart';
+import 'package:salam_hack/features/dashboard/data/models/saftey_check_response.dart';
 import 'package:salam_hack/features/notifications/data/models/notification.dart';
 import 'package:salam_hack/features/post/data/models/post_request_body.dart';
 import 'package:salam_hack/features/post/data/models/post_response.dart';
+import 'package:salam_hack/features/profile/data/models/leaderboard_response.dart';
+import 'package:salam_hack/features/profile/data/models/profile.dart';
+import 'package:salam_hack/features/profile/presentation/screens/profile_page.dart';
 import '../models/crisis.dart';
 import '../models/post.dart';
 import '../models/shelter.dart';
@@ -118,5 +123,20 @@ abstract class ApiService {
 
   @POST('${ApiConstants.matchRequestReject}/{id}')
   Future<String> rejectMatchRequest(@Path() String id);
+
+
+  // @POST(ApiConstants.checkSafteyStatus)
+  // Future<SafteyCheckResponse> checkSafteyStatus(@Body() SafteyCheckRequestBody safteyCheckRequestBody );
+
+  @GET('${ApiConstants.userProfile}/{userId}')
+  Future<Profile> getUserProfile(@Path('userId') String userId);
+
+
+  @GET(ApiConstants.leaderBoard)
+  Future<List<LeaderboardResponse>> getLeaderBoard();
+
+
+  @PUT('${ApiConstants.notificationSafetyResponse}/{id}')
+  Future<String> checkSafetyStatus(@Query(ApiConstants.status) String status);
   
 }

@@ -10,4 +10,6 @@ abstract class Routes {
   static const String addPostScreen = '/addPost'; 
   static const String notificationsScreen = '/notifications'; 
   static const String addCrisisScreen = '/addCrisis'; 
+  static const String profileScreen = '/profile'; 
+  static const String leaderboardScreen = '/leaderboard'; 
 }

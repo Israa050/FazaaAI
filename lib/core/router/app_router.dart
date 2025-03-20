@@ -7,6 +7,9 @@ import 'package:salam_hack/features/dashboard/logic/cubit/home_cubit.dart';
 import 'package:salam_hack/features/dashboard/presentation/dashboarde.dart';
 import 'package:salam_hack/features/notifications/logic/cubit/notification_cubit.dart';
 import 'package:salam_hack/features/notifications/presentation/screens/notifications_page.dart';
+import 'package:salam_hack/features/profile/logic/cubit/profile_cubit.dart';
+import 'package:salam_hack/features/profile/presentation/screens/profile_page.dart';
+import 'package:salam_hack/features/profile/presentation/widgets/profile_bloc_builder.dart';
 import '../di/dependency_injection.dart';
 import 'routes.dart';
 import '../../features/auth/logic/cubit/auth_cubit.dart';
@@ -101,6 +104,16 @@ class AppRouter {
             create: (context) => getIt<NotificationCubit>(),
             child: NotificationsPage(),
           ),
+        );
+
+      case Routes.profileScreen:
+        return MaterialPageRoute(
+          builder: (_) => UserProfilePage(),
+        );
+
+      case Routes.leaderboardScreen:
+        return MaterialPageRoute(
+          builder: (_) => Placeholder(),
         );
 
       default:

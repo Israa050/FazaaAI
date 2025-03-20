@@ -14,6 +14,9 @@ class ClsUser {
   String? phoneNumber;
   String? firstName;
   String? lastName;
+  int? pointsToNextRank;
+  String? rank;
+  int? reputationPoints;
   ClsUser({
     this.id,
     this.username,
@@ -22,6 +25,9 @@ class ClsUser {
     this.phoneNumber,
     this.firstName,
     this.lastName,
+    this.pointsToNextRank,
+    this.rank,
+    this.reputationPoints
   });
 
    factory ClsUser.fromJson(Map<String, dynamic> json) =>

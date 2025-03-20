@@ -18,7 +18,7 @@ void showCrisisDialog(BuildContext context, GeneratedCrisisResponse crisis) {
               SizedBox(height: 8),
               Text("City: ${crisis.city}"),
               SizedBox(height: 8),
-              Text("Reported by: ${crisis.user?.username}"),
+              Text("Reported by: ${crisis.username}"),
               SizedBox(height: 8),
               Text("User Description:", style: TextStyle(fontWeight: FontWeight.bold)),
               Text(crisis.userDescription!),

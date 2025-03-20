@@ -1,6 +1,6 @@
 
 class ApiConstants {
-  static const String apiBaseUrl = "https://ec74-41-233-50-128.ngrok-free.app/api/";
+  static const String apiBaseUrl = "https://cf7b-41-233-49-172.ngrok-free.app/api/";
 
   static const String users = "users";
   static const String crisis = "crisis";
@@ -27,4 +27,10 @@ class ApiConstants {
   static const String myMatchRequest = "match-request/my";
   static const String matchRequestAccept = "match-request/accept";
   static const String matchRequestReject = "match-request/reject";
+
+  static const String checkSafteyStatus = "safety-check/status";
+  static const String userProfile = "users/profile";
+  static const String leaderBoard = "users/leaderboard";
+  static const String notificationSafetyResponse = "notifications/safety-response";
+  static const String status = "status";
 }
