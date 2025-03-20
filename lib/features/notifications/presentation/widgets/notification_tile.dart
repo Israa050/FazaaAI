@@ -1,7 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:salam_hack/core/themes/colors.dart';
 import 'package:salam_hack/core/themes/styles.dart';
+import 'package:salam_hack/features/notifications/data/models/notification.dart';
+import 'package:salam_hack/features/notifications/logic/cubit/notification_cubit.dart';
 
 class NotificationTile extends StatelessWidget {
   final String title;
@@ -55,9 +58,11 @@ class NotificationTileTests extends StatelessWidget {
   final VoidCallback? onTap;
   final VoidCallback? onAccept; // Callback for accepting a match
   final VoidCallback? onReject; // Callback for rejecting a match
+  final ClsNotification notification;
 
   const NotificationTileTests({
     Key? key,
+   required  this.notification,
     required this.title,
     required this.location,
     required this.time,
@@ -78,6 +83,7 @@ class NotificationTileTests extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            
             ListTile(
               leading: Container(
                 padding: const EdgeInsets.all(8),
@@ -105,9 +111,15 @@ class NotificationTileTests extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ElevatedButton.icon(
-                      onPressed: onReject,
+                      onPressed: (){
+                          if(notification.matchRequestId != null){
+                          print('Reject Match');
+                        context.read<NotificationCubit>().emitRejectMatch(notification.matchRequestId.toString());
+                        }
+                          print(' Out Reject Match');
+                      },
                       icon: const Icon(Icons.cancel, color: Colors.red),
-                      label: Text("Reject",style: TextStyles.font14LightGrayRegular.copyWith(color: Colors.white),),
+                      label: Text("Reject",style: TextStyles.font14LightGrayRegular.copyWith(color: Colors.black),),
                       style: ElevatedButton.styleFrom(
                         disabledBackgroundColor: AppColors.primaryBlue,
                         shape: RoundedRectangleBorder(
@@ -116,9 +128,55 @@ class NotificationTileTests extends StatelessWidget {
                       ),
                     ),
                     ElevatedButton.icon(
-                      onPressed: onAccept,
-                      icon: const Icon(Icons.check_circle, color: Colors.white),
-                      label: Text("Accept",style: TextStyles.font14LightGrayRegular.copyWith(color: Colors.white),),
+                      onPressed: (){
+                        if(notification.matchRequestId != null){
+                          print('Accept Match');
+                        context.read<NotificationCubit>().emitAcceptMatch(notification.matchRequestId.toString());
+                        }
+                          print(' Out Accept Match');
+
+                      },
+                      icon: const Icon(Icons.check_circle, color: Colors.green),
+                      label: Text("Accept",style: TextStyles.font14LightGrayRegular.copyWith(color: Colors.black),),
+                      style: ElevatedButton.styleFrom(
+                        disabledBackgroundColor: AppColors.primaryBlue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              if (type == "safety_check") // Show buttons only for match type
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ElevatedButton.icon(
+                      onPressed: (){
+                         print('Safety Status');
+                        context.read<NotificationCubit>().emitCheckSafetyStatus('Not_Safe');
+                      },
+                      icon: const Icon(Icons.cancel, color: Colors.red),
+                      label: Text("Not Safe",style: TextStyles.font14LightGrayRegular.copyWith(color: Colors.black),),
+                      style: ElevatedButton.styleFrom(
+                        disabledBackgroundColor: AppColors.primaryBlue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                    ),
+                    ElevatedButton.icon(
+                      onPressed: (){
+                          print('Safety Status');
+                        context.read<NotificationCubit>().emitCheckSafetyStatus('Safe');
+
+                      },
+                      icon: const Icon(Icons.check_circle, color: Colors.green),
+                      label: Text("I'm safe",style: TextStyles.font14LightGrayRegular.copyWith(color: Colors.black),),
                       style: ElevatedButton.styleFrom(
                         disabledBackgroundColor: AppColors.primaryBlue,
                         shape: RoundedRectangleBorder(

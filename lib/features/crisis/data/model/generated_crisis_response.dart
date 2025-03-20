@@ -13,7 +13,7 @@ class GeneratedCrisisResponse {
   String? enhancedDescription;
   String? survivalGuide;
   bool? resolved;
-  UsetData? user;
+  String? username;
 
   GeneratedCrisisResponse({
     this.id,

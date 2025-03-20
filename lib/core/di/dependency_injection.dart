@@ -5,6 +5,8 @@ import 'package:salam_hack/features/dashboard/data/home_repo.dart';
 import 'package:salam_hack/features/dashboard/logic/cubit/home_cubit.dart';
 import 'package:salam_hack/features/notifications/data/repo/notification_repo.dart';
 import 'package:salam_hack/features/notifications/logic/cubit/notification_cubit.dart';
+import 'package:salam_hack/features/profile/data/repo/profile_repo.dart';
+import 'package:salam_hack/features/profile/logic/cubit/profile_cubit.dart';
 import '../networking/api_service.dart';
 import '../networking/dio_factory.dart';
 import '../../features/auth/data/repo/auth_repository.dart';
@@ -38,10 +40,13 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<CrisisCubit>(()=> CrisisCubit(crisisRepo: getIt()));
 
   getIt.registerLazySingleton<HomeRepo>(()=> HomeRepo(getIt()));
-  getIt.registerLazySingleton<HomeCubit>(()=> HomeCubit(getIt()));
+  getIt.registerFactory<HomeCubit>(()=> HomeCubit(getIt()));
 
 
   getIt.registerLazySingleton<NotificationRepo>(()=> NotificationRepo(getIt()));
-  getIt.registerLazySingleton<NotificationCubit>(()=> NotificationCubit(getIt()));
+  getIt.registerFactory<NotificationCubit>(()=> NotificationCubit(getIt()));
+
+   getIt.registerLazySingleton<ProfileRepo>(()=> ProfileRepo(getIt()));
+  getIt.registerFactory<ProfileCubit>(()=> ProfileCubit(getIt()));
   
 }

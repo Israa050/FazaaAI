@@ -7,6 +7,7 @@ import 'package:salam_hack/features/auth/logic/cubit/auth_cubit.dart';
 import 'package:salam_hack/features/auth/logic/cubit/auth_state.dart';
 import 'package:salam_hack/features/auth/widgets/custom_text_button.dart';
 import 'package:salam_hack/features/auth/widgets/custom_text_form_field.dart';
+import 'package:salam_hack/features/dashboard/presentation/widgets/saftey_check_dialog.dart';
 
 class Login extends StatelessWidget {
   Login({super.key});

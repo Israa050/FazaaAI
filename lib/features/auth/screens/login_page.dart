@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:salam_hack/features/dashboard/presentation/widgets/saftey_check_dialog.dart';
 import '../../../core/router/routes.dart';
 import '../../../core/themes/styles.dart';
 import '../logic/cubit/auth_cubit.dart';
@@ -117,8 +118,10 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   AppTextButton(
                     onPressed: () {
+                        showSafetyCheckDialog(context, 'Flood');
+
                       if(_formKey.currentState!.validate()){
-                      context.read<AuthCubit>().emitLoginState();
+                      //context.read<AuthCubit>().emitLoginState();
                   //      Navigator.of(context)
                   // .pushReplacementNamed(Routes.homeScreen);
                       }

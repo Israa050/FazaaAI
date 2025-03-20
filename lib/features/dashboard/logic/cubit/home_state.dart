@@ -9,4 +9,5 @@ class HomeState<T> with _$HomeState<T> {
   const factory HomeState.loading() = Loading;
   const factory HomeState.succuss(T data) = Succuss<T>;
   const factory HomeState.error({required String message}) = Error;
+  const factory HomeState.safetyCheck(T data) = SafetyCheck<T>;
 }

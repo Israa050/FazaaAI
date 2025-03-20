@@ -11,7 +11,8 @@ ClsNotification _$ClsNotificationFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num?)?.toInt(),
       message: json['message'] as String?,
       type: json['type'] as String?,
-      isRead: json['isRead'] as bool?,
+      read: json['read'] as bool?,
+      matchRequestId: (json['matchRequestId'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$ClsNotificationToJson(ClsNotification instance) =>
@@ -19,5 +20,6 @@ Map<String, dynamic> _$ClsNotificationToJson(ClsNotification instance) =>
       'id': instance.id,
       'message': instance.message,
       'type': instance.type,
-      'isRead': instance.isRead,
+      'read': instance.read,
+      'matchRequestId': instance.matchRequestId,
     };

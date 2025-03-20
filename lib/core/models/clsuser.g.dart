@@ -14,6 +14,9 @@ ClsUser _$ClsUserFromJson(Map<String, dynamic> json) => ClsUser(
       phoneNumber: json['phoneNumber'] as String?,
       firstName: json['firstName'] as String?,
       lastName: json['lastName'] as String?,
+      pointsToNextRank: (json['pointsToNextRank'] as num?)?.toInt(),
+      rank: json['rank'] as String?,
+      reputationPoints: (json['reputationPoints'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$ClsUserToJson(ClsUser instance) => <String, dynamic>{
@@ -24,4 +27,7 @@ Map<String, dynamic> _$ClsUserToJson(ClsUser instance) => <String, dynamic>{
       'phoneNumber': instance.phoneNumber,
       'firstName': instance.firstName,
       'lastName': instance.lastName,
+      'pointsToNextRank': instance.pointsToNextRank,
+      'rank': instance.rank,
+      'reputationPoints': instance.reputationPoints,
     };

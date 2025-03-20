@@ -1,11 +1,7 @@
 
-import 'package:dio/dio.dart';
-import 'package:salam_hack/core/models/clspost.dart';
 import 'package:salam_hack/features/post/data/models/post_request_body.dart';
 import 'package:salam_hack/features/post/data/models/post_response.dart';
 
-import '../../../../core/models/post.dart';
-import '../../../../core/models/user.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_service.dart';
