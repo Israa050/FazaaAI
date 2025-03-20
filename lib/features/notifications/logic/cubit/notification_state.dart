@@ -9,4 +9,5 @@ class NotificationState<T> with _$NotificationState<T> {
   const factory NotificationState.loading() = Loading;
   const factory NotificationState.success(T data) = Success<T>;
   const factory NotificationState.error({required String error}) = Error;
+  const factory NotificationState.checkedSafety({required String message}) = CheckedSafety;
 }

@@ -9,7 +9,7 @@ class LeaderboardResponse {
 
   int? id;
   String? username;
-  double? reputationPoints;
+  int? reputationPoints;
   String? rank;
   String? address;
   LeaderboardResponse({

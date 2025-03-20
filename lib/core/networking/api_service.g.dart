@@ -10,7 +10,7 @@ part of 'api_service.dart';
 
 class _ApiService implements ApiService {
   _ApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://cf7b-41-233-49-172.ngrok-free.app/api/';
+    baseUrl ??= 'https://8738-102-46-123-90.ngrok-free.app/api/';
   }
 
   final Dio _dio;
@@ -609,7 +609,7 @@ class _ApiService implements ApiService {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'users/leaderboard',
+            'users/top-helpers',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -632,7 +632,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<String> checkSafetyStatus(String status) async {
+  Future<String> checkSafetyStatus(String status, String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'status': status};
     final _headers = <String, dynamic>{};
@@ -641,7 +641,7 @@ class _ApiService implements ApiService {
       Options(method: 'PUT', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'notifications/safety-response/{id}',
+            'notifications/safety-response/${id}',
             queryParameters: queryParameters,
             data: _data,
           )

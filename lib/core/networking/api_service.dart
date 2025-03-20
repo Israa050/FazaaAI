@@ -132,11 +132,11 @@ abstract class ApiService {
   Future<Profile> getUserProfile(@Path('userId') String userId);
 
 
-  @GET(ApiConstants.leaderBoard)
+  @GET('users/top-helpers')
   Future<List<LeaderboardResponse>> getLeaderBoard();
 
 
   @PUT('${ApiConstants.notificationSafetyResponse}/{id}')
-  Future<String> checkSafetyStatus(@Query(ApiConstants.status) String status);
+  Future<String> checkSafetyStatus(@Query(ApiConstants.status) String status, @Path() String id);
   
 }

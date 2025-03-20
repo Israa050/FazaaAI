@@ -38,9 +38,9 @@ class NotificationRepo {
     }
   }
 
-  Future<ApiResult<String>> checkSafetyStatus(String status)async{
+  Future<ApiResult<String>> checkSafetyStatus(String status,String id)async{
      try {
-      final response = await _apiService.checkSafetyStatus(status);
+      final response = await _apiService.checkSafetyStatus(status,id);
       return ApiResult.success(response);
     } catch (errro) {
       return ApiResult.failure(ApiErrorHandler.handle(errro));

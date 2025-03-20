@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:salam_hack/core/helper/show_dialog.dart';
 import 'package:salam_hack/features/notifications/logic/cubit/notification_cubit.dart';
 import 'package:salam_hack/features/notifications/logic/cubit/notification_state.dart';
 import 'package:salam_hack/features/notifications/presentation/widgets/notification_list_view.dart';
@@ -31,8 +32,14 @@ class _NotificationsBlocBuilderState extends State<NotificationsBlocBuilder> {
       onRefresh: ()async {
         context.read<NotificationCubit>().emitLoadAllNotifications(currentUser!.id.toString());
       },
-      child: BlocBuilder<NotificationCubit, NotificationState>(builder: (context,state){
-      
+      child: BlocConsumer<NotificationCubit, NotificationState>(
+         listener: (context, state) {
+        if(state is CheckedSafety){
+          showCustomDialog(context, title: 'Safety Check', description: '${state.message}', isSuccess: true);
+          context.read<NotificationCubit>().emitLoadAllNotifications(currentUser!.id.toString()); 
+        }
+      },
+        builder: (context,state){
         if(state is Success){
           return NotificationListView(notifications: state.data);
         }else if (state is Error){

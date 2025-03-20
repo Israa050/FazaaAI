@@ -14,7 +14,7 @@ class ProfileCubit extends Cubit<ProfileState> {
 
     response.when(
       success: (profile) {
-        emit(ProfileState.success(profile));
+        emit(ProfileState.userProfile(profile));
       },
       failure: (error) {
         emit(ProfileState.error(message: error.message?? ''));

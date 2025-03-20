@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:salam_hack/core/helper/ranks.dart';
+import 'package:salam_hack/core/router/routes.dart';
 import 'package:salam_hack/core/themes/colors.dart';
 import 'package:salam_hack/features/profile/data/models/profile.dart';
 import 'package:salam_hack/main.dart';
@@ -56,7 +57,7 @@ class UserProfilePage extends StatelessWidget {
                 SizedBox(height: 20),
                 _buildInfoCard(),
                 SizedBox(height: 20),
-                _buildRankCard(progress),
+                _buildRankCard(progress,context),
               ],
             ),
           ),
@@ -125,7 +126,7 @@ class UserProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildRankCard(double progress) {
+  Widget _buildRankCard(double progress, BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       elevation: 5,
@@ -142,9 +143,10 @@ class UserProfilePage extends StatelessWidget {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               IconButton(
-                icon: Icon(Icons.leaderboard, color: Colors.deepPurple),
+                icon: Icon(Icons.leaderboard, color: Colors.blue),
                 onPressed: () {
                   // TODO: Navigate to leaderboard screen
+                  Navigator.of(context).pushNamed(Routes.leaderboardScreen);
                   print("Leaderboard button pressed!");
                 },
               ),

@@ -50,20 +50,18 @@ class _DashboardeState extends State<Dashboarde> {
         ],
       ),
       backgroundColor: Colors.white,
-      body:  BlocConsumer<HomeCubit, HomeState>(
-        listener: (context, state) {
-          if(state is Succuss){
-            //showSafetyCheckDialog(context, '');
-          }
-        },
+      body:  BlocBuilder<HomeCubit, HomeState>(
           builder: (context, state) {
-       //     if(state is Succuss){
+           if(state is Succuss){
           return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               // padding: const EdgeInsets.all(20.0),
               children: [
                 Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
                     children: <Widget>[
@@ -216,11 +214,11 @@ class _DashboardeState extends State<Dashboarde> {
                   ),
                 ),
               ]);
-          // //  }
-          //   else if(state is Error){
-          //      setupError(state.message);
-          //   }
-          //   return LoadingPage();
+          }
+            else if(state is Error){
+               setupError(state.message);
+            }
+            return LoadingPage();
         },
       ),
     );

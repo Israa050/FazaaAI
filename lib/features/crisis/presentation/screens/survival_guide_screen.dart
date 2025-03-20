@@ -16,7 +16,7 @@ class SurvivalGuideScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> guideSteps = survivalGuide.split(RegExp(r'(\d+\.\s*)')).where((e) => e.trim().isNotEmpty).toList();
+    List<String> guideSteps = crisisType.split(RegExp(r'(\d+\.\s*)')).where((e) => e.trim().isNotEmpty).toList();
 
 
     return Scaffold(
@@ -46,11 +46,11 @@ class SurvivalGuideScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '$crisisType Survival Guide',
+                '$location Survival Guide',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               Text(
-                location,
+                survivalGuide,
                 style: TextStyle(fontSize: 16, color: Colors.grey[600]),
               ),
               const SizedBox(height: 8),

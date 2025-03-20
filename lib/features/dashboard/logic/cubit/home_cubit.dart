@@ -26,10 +26,10 @@ class HomeCubit extends Cubit<HomeState> {
     );
   }
 
-  void emitSafetyCheck(String safetyStatus)async{
+  void emitSafetyCheck(String safetyStatus,String id)async{
      emit(Loading());
 
-    var response = await homeRepo.getSafetyCheck(safetyStatus);
+    var response = await homeRepo.getSafetyCheck(safetyStatus,id);
 
     response.when(
       success: (safetyCheck) {

@@ -21,9 +21,9 @@ class HomeRepo {
     }
   }
 
-  Future<ApiResult<String>> getSafetyCheck(String safetyCheck)async{
+  Future<ApiResult<String>> getSafetyCheck(String safetyCheck,String id)async{
      try {
-      final response = await _apiService.checkSafetyStatus(safetyCheck);
+      final response = await _apiService.checkSafetyStatus(safetyCheck,id);
       return ApiResult.success(response);
     } catch (errro) {
       return ApiResult.failure(ApiErrorHandler.handle(errro));

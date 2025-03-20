@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:salam_hack/core/models/clsuser.dart';
 import 'package:salam_hack/core/router/routes.dart';
-import 'package:salam_hack/features/dashboard/presentation/widgets/saftey_check_dialog.dart';
+import 'package:salam_hack/features/leader/leaderboaerd.dart';
 import 'core/di/dependency_injection.dart';
 import 'core/helper/constants.dart';
 import 'core/helper/extensions.dart';
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
       ),
        onGenerateRoute: appRouter.generateRoute,
       initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
-      //home: UserProfilePage(),
+      //home: Leaderboaerd(),
     );
   }
 }

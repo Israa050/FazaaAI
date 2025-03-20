@@ -46,12 +46,12 @@ class NotificationCubit extends Cubit<NotificationState> {
     );
   }
 
-  void emitCheckSafetyStatus(String status)async{
-        emit(NotificationState.loading());
-    var response = await notificationRepo.checkSafetyStatus(status);
+  void emitCheckSafetyStatus(String status,String id)async{
+        //emit(NotificationState.loading());
+    var response = await notificationRepo.checkSafetyStatus(status,id);
     response.when(
       success: (message) {
-        emit(NotificationState.success(message));
+        emit(NotificationState.checkedSafety(message: message));
       },
       failure: (error) {
         emit(Error(error: error.message?? ''));

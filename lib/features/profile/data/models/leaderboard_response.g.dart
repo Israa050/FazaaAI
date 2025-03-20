@@ -10,7 +10,7 @@ LeaderboardResponse _$LeaderboardResponseFromJson(Map<String, dynamic> json) =>
     LeaderboardResponse(
       id: (json['id'] as num?)?.toInt(),
       username: json['username'] as String?,
-      reputationPoints: (json['reputationPoints'] as num?)?.toDouble(),
+      reputationPoints: (json['reputationPoints'] as num?)?.toInt(),
       rank: json['rank'] as String?,
       address: json['address'] as String?,
     );

@@ -47,7 +47,7 @@ class CrisisCard extends StatelessWidget {
             SizedBox(width: 4),
             Expanded(
               child: Text(
-               generatedCrisisResponse.city??  "Central District, Main Street",
+               generatedCrisisResponse.survivalGuide??  "Central District, Main Street",
                 style: TextStyle(fontSize: 14, color: Colors.black87),
               ),
             ),

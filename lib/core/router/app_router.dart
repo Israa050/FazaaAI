@@ -5,6 +5,7 @@ import 'package:salam_hack/features/crisis/presentation/screens/add__crisis.dart
 import 'package:salam_hack/features/crisis/presentation/screens/add_crisis_page.dart';
 import 'package:salam_hack/features/dashboard/logic/cubit/home_cubit.dart';
 import 'package:salam_hack/features/dashboard/presentation/dashboarde.dart';
+import 'package:salam_hack/features/leader/leaderboaerd.dart';
 import 'package:salam_hack/features/notifications/logic/cubit/notification_cubit.dart';
 import 'package:salam_hack/features/notifications/presentation/screens/notifications_page.dart';
 import 'package:salam_hack/features/profile/logic/cubit/profile_cubit.dart';
@@ -113,7 +114,10 @@ class AppRouter {
 
       case Routes.leaderboardScreen:
         return MaterialPageRoute(
-          builder: (_) => Placeholder(),
+          builder: (_) => BlocProvider<ProfileCubit>(
+            create: (context) => getIt<ProfileCubit>(),
+            child: Leaderboaerd(),
+          ),
         );
 
       default:

@@ -22,6 +22,7 @@ mixin _$NotificationState<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function(String message) checkedSafety,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$NotificationState<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function(String message)? checkedSafety,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$NotificationState<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function(String message)? checkedSafety,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$NotificationState<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(CheckedSafety<T> value) checkedSafety,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$NotificationState<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(CheckedSafety<T> value)? checkedSafety,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$NotificationState<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(CheckedSafety<T> value)? checkedSafety,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,6 +141,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function(String message) checkedSafety,
   }) {
     return initial();
   }
@@ -146,6 +153,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function(String message)? checkedSafety,
   }) {
     return initial?.call();
   }
@@ -157,6 +165,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function(String message)? checkedSafety,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -172,6 +181,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(CheckedSafety<T> value) checkedSafety,
   }) {
     return initial(this);
   }
@@ -183,6 +193,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(CheckedSafety<T> value)? checkedSafety,
   }) {
     return initial?.call(this);
   }
@@ -194,6 +205,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(CheckedSafety<T> value)? checkedSafety,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -252,6 +264,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function(String message) checkedSafety,
   }) {
     return loading();
   }
@@ -263,6 +276,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function(String message)? checkedSafety,
   }) {
     return loading?.call();
   }
@@ -274,6 +288,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function(String message)? checkedSafety,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -289,6 +304,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(CheckedSafety<T> value) checkedSafety,
   }) {
     return loading(this);
   }
@@ -300,6 +316,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(CheckedSafety<T> value)? checkedSafety,
   }) {
     return loading?.call(this);
   }
@@ -311,6 +328,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(CheckedSafety<T> value)? checkedSafety,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -397,6 +415,7 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function(String message) checkedSafety,
   }) {
     return success(data);
   }
@@ -408,6 +427,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function(String message)? checkedSafety,
   }) {
     return success?.call(data);
   }
@@ -419,6 +439,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function(String message)? checkedSafety,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -434,6 +455,7 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(CheckedSafety<T> value) checkedSafety,
   }) {
     return success(this);
   }
@@ -445,6 +467,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(CheckedSafety<T> value)? checkedSafety,
   }) {
     return success?.call(this);
   }
@@ -456,6 +479,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(CheckedSafety<T> value)? checkedSafety,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -549,6 +573,7 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function(String message) checkedSafety,
   }) {
     return error(this.error);
   }
@@ -560,6 +585,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function(String message)? checkedSafety,
   }) {
     return error?.call(this.error);
   }
@@ -571,6 +597,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function(String message)? checkedSafety,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -586,6 +613,7 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(CheckedSafety<T> value) checkedSafety,
   }) {
     return error(this);
   }
@@ -597,6 +625,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(CheckedSafety<T> value)? checkedSafety,
   }) {
     return error?.call(this);
   }
@@ -608,6 +637,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(CheckedSafety<T> value)? checkedSafety,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -626,5 +656,165 @@ abstract class Error<T> implements NotificationState<T> {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckedSafetyImplCopyWith<T, $Res> {
+  factory _$$CheckedSafetyImplCopyWith(_$CheckedSafetyImpl<T> value,
+          $Res Function(_$CheckedSafetyImpl<T>) then) =
+      __$$CheckedSafetyImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$CheckedSafetyImplCopyWithImpl<T, $Res>
+    extends _$NotificationStateCopyWithImpl<T, $Res, _$CheckedSafetyImpl<T>>
+    implements _$$CheckedSafetyImplCopyWith<T, $Res> {
+  __$$CheckedSafetyImplCopyWithImpl(_$CheckedSafetyImpl<T> _value,
+      $Res Function(_$CheckedSafetyImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NotificationState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$CheckedSafetyImpl<T>(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckedSafetyImpl<T> implements CheckedSafety<T> {
+  const _$CheckedSafetyImpl({required this.message});
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'NotificationState<$T>.checkedSafety(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckedSafetyImpl<T> &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  /// Create a copy of NotificationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckedSafetyImplCopyWith<T, _$CheckedSafetyImpl<T>> get copyWith =>
+      __$$CheckedSafetyImplCopyWithImpl<T, _$CheckedSafetyImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) error,
+    required TResult Function(String message) checkedSafety,
+  }) {
+    return checkedSafety(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function(String message)? checkedSafety,
+  }) {
+    return checkedSafety?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? error,
+    TResult Function(String message)? checkedSafety,
+    required TResult orElse(),
+  }) {
+    if (checkedSafety != null) {
+      return checkedSafety(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(CheckedSafety<T> value) checkedSafety,
+  }) {
+    return checkedSafety(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(CheckedSafety<T> value)? checkedSafety,
+  }) {
+    return checkedSafety?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(CheckedSafety<T> value)? checkedSafety,
+    required TResult orElse(),
+  }) {
+    if (checkedSafety != null) {
+      return checkedSafety(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckedSafety<T> implements NotificationState<T> {
+  const factory CheckedSafety({required final String message}) =
+      _$CheckedSafetyImpl<T>;
+
+  String get message;
+
+  /// Create a copy of NotificationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CheckedSafetyImplCopyWith<T, _$CheckedSafetyImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
