@@ -1,4 +1,4 @@
-# Salam Neighborhood
+# Fazaa AI
 
 A new Flutter project.
 
